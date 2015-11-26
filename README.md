@@ -1,0 +1,2 @@
+# mandostrap
+FED Template
