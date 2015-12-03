@@ -1,0 +1,58 @@
+﻿//_tools.mixins.scss
+
+//Clear fix
+
+@mixin clearfix {
+    &:after {
+        visibility: hidden;
+        display: block;
+        content: "";
+        clear: both;
+        height: 0;
+    }
+}
+
+// Font-size
+
+@mixin font-size($size, $base: 16) {
+    $value: $size/$base;
+    font-size: ($value) + px;
+    font-size: ($value) + rem;
+}
+
+//Sizing helpers
+
+@mixin size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin square($size) {
+    @include size($size, $size);
+}
+
+// Truncating text
+
+@mixin text-truncate($maxwidth) {
+    display: inline-block;
+    max-width: $maxwidth;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+// Clear for floated grids
+
+@mixin wrap-every($n) {
+    &:nth-of-type(#{$n}n + 1) {
+        clear: left;
+    }
+}
+
+// Reset
+
+@mixin unwrap-every($n) {
+    &:nth-of-type(#{$n}n + 1) {
+        clear: none;
+    }
+}

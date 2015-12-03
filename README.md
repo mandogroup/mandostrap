@@ -1,2 +1,2 @@
-# mandostrap
-FED Template
+Mando Strap
+=========

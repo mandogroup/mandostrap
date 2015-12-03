@@ -1,2 +1,141 @@
+##############################################################
+# Mando ignores...
+##############################################################
+
+# All bin and obj folders.
+bin/
+obj/
+
+# Visual Studio files...
+*.user
+*.suo
+*.psess
+
+# General cache files.
+*.cache
+
+# Mac cache files.
+*/.DS_Store
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+__MACOSX
+
+
+# Windows cache.
+Thumbs.db
+
+# Sass Cache
+.sass-cache/
+
+# Temp files
+*~
+
+# Microsoft Office tempoary files.
+*.~vsd
+
+# Vim temporary files.
+*.swp
+erb
+
+# Photoshop stuff.
+*.psd
+
+##############################################################
+# Global Ignores.
+##############################################################
+
+Backups/
+
+# Visual Studio upgrade files.
+Source/PrecompiledWeb/
+Source/Backup/
+Source/_UpgradeReport_Files/
+
+# Node
+node_modules/
+bower_components/
+node_modules/
+/node_modules
+.project
+.settings
+.classpath
+
+
+# CSS
+
+.css
+.css.map
+.map
+main.css
+app.min.js
+vendor.min.js
+main.css.map
 .sass-cache
 *.css.map
+
+##############################################################
+# Sitecore Ignores.
+##############################################################
+
+# Sitecore project file.
+*.csproj.sitecore
+
+# Sitecore temp folder.
+Source/Websites/Sitecore/temp/
+
+# Sitecore media cache folder.
+Source/Presentation/Website/App_Data/MediaCache/
+
+# Sitecore logs, diagnostics etc.
+Source/Presentation/Website/Data/Submit Queue/
+Source/Presentation/Website/Data/diagnostics/
+Source/Presentation/Website/Data/logs/
+Source/Presentation/Website/Data/indexes/
+Source/Presentation/Website/Data/packages/
+Source/Presentation/Website/Data/viewstate/
+Source/Presentation/Website/Data/Dashboard reports/
+
+# Unnecessary shell logs etc.
+Source/Presentation/Website/sitecore/shell/Applications/Page Modes/Ouput/
+
+##############################################################
+# Umbraco Ignores.
+##############################################################
+
+# Any cached files.
+Cached/*
+
+# Uploaded assets.
+Source/Presentation/Website/media/
+
+# Umbraco cached XML file. 
+Source/Presentation/Website/App_Data/umbraco.config
+
+# Umbraco client dependency files.
+Source/Presentation/Website/App_Data/ClientDependency/
+
+# Courier temporary files.
+Source/Presentation/Website/App_Data/courier/
+
+# Umbraco log files.
+Source/Presentation/Website/App_Data/Logs/
+
+# Temporary files.
+Source/Presentation/Website/App_Data/TEMP/
+
+##############################################################
+# @@PROJECT@@ Ignores.
+##############################################################
+
+js/dev/vendor
+js/dev/lib/
+js/dist
+assets/icons/output
+assets/icons/minified
+assets/styles/vendor
+templates/dist

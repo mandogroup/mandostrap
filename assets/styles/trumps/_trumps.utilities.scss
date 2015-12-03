@@ -1,0 +1,48 @@
+﻿//_trumps.helpers.scss
+
+//E.G. float:left, display:none, visibility hidden, A11Y text,
+
+.visually-hidden {
+    position: absolute !important;
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+    overflow: hidden;
+}
+
+.is-hidden {
+    display: none;
+    visibility: hidden;
+}
+
+.is-hidden-mobile {
+    display: none;
+    visibility: hidden;
+
+    @media #{$tablet-landscape} {
+        display: block;
+        visibility: visible;
+
+        &--inline {
+            display: inline;
+            visibility: visible;
+        }
+    }
+}
+
+.is-hidden-desktop {
+    @media #{$tablet-landscape} {
+        display: none;
+        visibility: hidden;
+    }
+}
+
+.u-right {
+    float: right;
+}
+
+.u-left {
+    float: left;
+}

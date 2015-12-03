@@ -1,0 +1,69 @@
+﻿//_components.buttons.scss
+
+@mixin btn-theme($btn-color) {
+    border-color:$btn-color;
+    color:$btn-color;
+    
+    &:hover, 
+    &:focus {
+        background:$btn-color;
+        color:$white;
+    }
+
+}
+
+// Default button Style
+
+[class^="c-button"] {
+    display:inline-block;
+    box-sizing:border-box;
+    min-width:100%;
+    padding: .7rem 1.7rem;
+    border:1px solid;
+    border-radius:0;
+    background:transparent;
+    text-align:center;
+    text-decoration:none;
+    cursor:pointer;
+    transition: color 200ms, background-color 200ms;
+    @include font-size(20);
+
+    @media #{$tablet-portrait} {
+        min-width:11.5rem;
+    }
+
+    &:hover, 
+    &:focus {
+        color:$white;
+    }
+
+    //@include btn-theme($black);
+}
+
+.c-button--thm1 {
+    //@include btn-theme($blue);
+}
+
+.c-button--thm2 {
+    //@include btn-theme($aqua);
+}
+
+.c-button--thm3 {
+    //@include btn-theme($white);
+    &:hover, 
+    &:focus {
+        color:$black;
+    }
+}
+
+.c-button--icon {
+    [class^="icon-"] {
+        margin-left:15px;
+    }
+    &:hover, 
+    &:focus {
+        svg {
+            fill:$white;
+        }
+    }
+}

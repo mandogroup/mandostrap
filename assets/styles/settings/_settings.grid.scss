@@ -1,0 +1,13 @@
+//_settings.grids.scss
+
+//    @include span(8 of 12);
+//    @include container; 
+@import "../vendor/susy/susy";
+
+$susy: (
+  columns: 12,
+  container: 62em,
+  gutters: 4/17,
+  global-box-sizing: border-box,
+  //debug: (image: show)
+);

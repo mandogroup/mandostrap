@@ -1,0 +1,7 @@
+// Use min-width if "mobile first" Use max-width if "desktop down"
+
+$desktop:              "only screen and (min-width:64em)";//1024
+$tablet-landscape:     "only screen and (min-width: 60em)";//960
+$tablet-portrait:      "only screen and (min-width: 48em)";//768
+$tablet-portrait-only: "only screen and (min-width: 48em) and (max-width:59.938em)";//768 & 959
+$mobile-to-landscape:  "only screen and (max-width:59.938em)";//768 & 959

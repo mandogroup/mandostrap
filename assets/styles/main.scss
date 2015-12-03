@@ -1,0 +1,55 @@
+﻿/*
+
+main.scss: Main stylesheet imports
+------------
+Template Version:		1.0
+Start date:				20/10/2015
+------------ 
+
+TABLE OF CONTENTS
+==0    VENDOR
+==1    SETTINGS
+==2    TOOLS
+==3    BASE
+==4    OBJECTS
+==5    COMPONENTS
+    --- add layers if required e.g. THEME
+==X    TRUMPS
+
+
+//==0    VENDOR*/
+@import "vendor/_slick";
+
+//==1    SETTINGS - Global variables, config switches
+@import "settings/_settings.colors";
+@import "settings/_settings.reset"; 
+@import "settings/_settings.grid";
+@import "settings/_settings.breakpoints";
+@import "settings/_settings.fonts"; 
+
+//==2    TOOLS - Default mixins and functions
+@import "tools/_tools.mixins";
+
+//==3    BASE - H1-H6, basic links, lists
+@import "base/_base.links";
+@import "base/_base.page";
+@import "base/_base.type";
+@import "base/_base.forms";
+
+//==4    OBJECTS - cosmetic free patterns
+@import "objects/_objects.wrappers";
+@import "objects/_objects.columns";
+
+//==5    COMPONENTS - designed chunks of UI
+@import "components/_components.accessmenu";
+@import "components/_components.buttons";
+@import "components/_components.wysiwyg";
+@import "components/_components.forms";
+
+//==X    TRUMPS - helpers & overrides
+@import "trumps/_trumps.utilities";
+@import "trumps/_trumps.overrides";
+@import "trumps/_trumps.print";
+//@import "_trumps.hacks";
+
+
