@@ -50,7 +50,15 @@ module.exports = function (grunt) {
                 }]
             }
         },
-
+        // HTML Lint
+        htmllint: {
+            all: {
+                options: {
+                    ignore: ['Attribute "color" not allowed on element "link" at this point.', 'Bad value "mask-icon" for attribute "rel" on element "link": The string "mask-icon" is not a registered keyword.']
+                },
+                src: ["templates/dist/**/*.htm"]
+            }
+        },
         // Bower - For initial project start up. Download files from GitHub and move them to where we want them
         bowercopy: {
             options: {

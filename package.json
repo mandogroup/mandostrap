@@ -16,6 +16,7 @@
     "grunt-contrib-uglify": "^0.10.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-grunticon": "^2.2.2",
+    "grunt-html": "^5.0.1",
     "grunt-modernizr": "^1.0.1",
     "grunt-postcss": "^0.6.0",
     "grunt-real-favicon": "^0.1.3",
