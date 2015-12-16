@@ -238,7 +238,7 @@ module.exports = function (grunt) {
             },
             bake: {
                 files: ['templates/bake-views/**/*.htm', 'templates/bake-components/**/*.htm'],
-                tasks: ['bake:build']
+                tasks: ['bake:build', 'htmllint']
             }
         },
         // Favicon
@@ -293,6 +293,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('favicon', ['realFavicon']);
     grunt.registerTask('default', ['bowercopy','sass', 'postcss', 'bake', 'concat', 'uglify', 'modernizr', 'svgmin', 'grunticon:myIcons']);
-    grunt.registerTask('dev', ['sass', 'postcss', 'bake', 'concat', 'uglify', 'jshint', 'watch']);
+    grunt.registerTask('dev', ['sass', 'postcss', 'bake', 'htmllint', 'concat', 'uglify', 'jshint', 'watch']);
 
 };
