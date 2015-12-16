@@ -6,12 +6,9 @@
 */
 
 module.exports = function (grunt) {
-
     require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
-
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-
         sass: {
             options: {
                 sourceMap: true,
@@ -23,7 +20,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-
         // Runs through distribution CSS file and add vendor prefixers where necessary (overwriting original)
         postcss: {
             options: {
@@ -36,8 +32,6 @@ module.exports = function (grunt) {
                 src: 'assets/styles/main.css'
             }
         },
-
-
         // HTML Bake - Templating Utility
         bake: {
             build: {
@@ -50,7 +44,6 @@ module.exports = function (grunt) {
                 }]
             }
         },
-
         // Bower - For initial project start up. Download files from GitHub and move them to where we want them
         bowercopy: {
             options: {
@@ -77,38 +70,29 @@ module.exports = function (grunt) {
                 }
             }
         },
-
+        //Modernizr custom build
         modernizr: {
             dist: {
-                // [REQUIRED] Path to the build you're using for development.
-                "devFile": "js/dev/lib/modernizr-latest.js",
+                "dest": "js/dev/lib/modernizr.js",
+                "parseFiles": true,
+                "customTests": [],
+                "devFile": false,
+                "tests": [
+                 //Add tests here
+                ],
+                "options": [
+                  "setClasses"
+                ],
+                "uglify": true,
 
-                // Path to save out the built file.
-                "outputFile": "js/dev/lib/modernizr.js",
-
-                // When parseFiles = true, this task will crawl all *.js, *.css, *.scss and *.sass files,
-                // except files that are in node_modules/.
-                // You can override this by defining a "files" array below.
                 "files": {
                     "src": [
                         'js/dev/mando/*.js',
-                        'assets/styles/**/*.css',
+                        'assets/styles/**/*.css'
                     ]
                 },
-
-                // This handler will be passed an array of all the test names passed to the Modernizr API, and will run after the API call has returned
-                // "handler": function (tests) {},
-
-                // When parseFiles = true, matchCommunityTests = true will attempt to
-                // match user-contributed tests.
-                "matchCommunityTests": false,
-
-                // Have custom Modernizr tests? Add paths to their location here.
-                "customTests": []
             }
-
         },
-
         // Minify SVG
         svgmin: {
             dist: {
@@ -156,7 +140,6 @@ module.exports = function (grunt) {
                 }]
             }
         },
-
         // Grunticon
         grunticon: {
             myIcons: {
@@ -172,7 +155,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-
         // Concat Javacript Files
         concat: {
             vendorjs: {
@@ -184,7 +166,6 @@ module.exports = function (grunt) {
                 dest: 'js/dist/mando.js'
             },
         },
-
         // Uglify - minify all the javascript files together
         uglify: {
             my_target: {
@@ -197,7 +178,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-
         // Checks if js in valid
         jshint: {
             files: ['js/dev/mando/**/*.js' ],
@@ -207,7 +187,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-
         // Watch script keeps an eye on the files listed running the corresponding tasks when a change is detected
         watch: {
             css: {
@@ -278,13 +257,10 @@ module.exports = function (grunt) {
             }
         }
     });
-
     // ===================================================
     // TASK DEFINITIONS
     // ===================================================
-
     grunt.registerTask('favicon', ['realFavicon']);
     grunt.registerTask('default', ['bowercopy','sass', 'postcss', 'bake', 'concat', 'uglify', 'modernizr', 'svgmin', 'grunticon:myIcons']);
     grunt.registerTask('dev', ['sass', 'postcss', 'bake', 'concat', 'uglify', 'jshint', 'watch']);
-
 };
