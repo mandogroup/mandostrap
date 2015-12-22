@@ -50,7 +50,15 @@ module.exports = function (grunt) {
                 }]
             }
         },
-
+        // HTML Lint
+        htmllint: {
+            all: {
+                options: {
+                    ignore: ['Attribute "color" not allowed on element "link" at this point.', 'Bad value "mask-icon" for attribute "rel" on element "link": The string "mask-icon" is not a registered keyword.']
+                },
+                src: ["templates/dist/**/*.htm"]
+            }
+        },
         // Bower - For initial project start up. Download files from GitHub and move them to where we want them
         bowercopy: {
             options: {
@@ -230,7 +238,7 @@ module.exports = function (grunt) {
             },
             bake: {
                 files: ['templates/bake-views/**/*.htm', 'templates/bake-components/**/*.htm'],
-                tasks: ['bake:build']
+                tasks: ['bake:build', 'htmllint']
             }
         },
         // Favicon
@@ -285,6 +293,6 @@ module.exports = function (grunt) {
 
     grunt.registerTask('favicon', ['realFavicon']);
     grunt.registerTask('default', ['bowercopy','sass', 'postcss', 'bake', 'concat', 'uglify', 'modernizr', 'svgmin', 'grunticon:myIcons']);
-    grunt.registerTask('dev', ['sass', 'postcss', 'bake', 'concat', 'uglify', 'jshint', 'watch']);
+    grunt.registerTask('dev', ['sass', 'postcss', 'bake', 'htmllint', 'concat', 'uglify', 'jshint', 'watch']);
 
 };
