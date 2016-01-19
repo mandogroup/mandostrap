@@ -16,8 +16,6 @@
 
 [class^="c-button"] {
     display:inline-block;
-    box-sizing:border-box;
-    min-width:100%;
     padding: .7rem 1.7rem;
     border:1px solid;
     border-radius:0;
@@ -25,16 +23,10 @@
     text-align:center;
     text-decoration:none;
     cursor:pointer;
-    transition: color 200ms, background-color 200ms;
-    @include font-size(20);
-
-    @media #{$tablet-portrait} {
-        min-width:11.5rem;
-    }
 
     &:hover, 
     &:focus {
-        color:$white;
+        color:$grey;
     }
 
     //@include btn-theme($black);
