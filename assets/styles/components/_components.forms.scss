@@ -1,1 +1,187 @@
-﻿
+﻿//_components.forms.scss
+
+//Form Layouts
+
+//2 column form element
+.c-form--2col {
+    @include clearfix;
+
+    .c-form__element {
+        @media #{$tablet-landscape} {
+            @include gallery(6 of 12);
+        }
+    }
+}
+
+
+//Inline form
+.c-form--inline {
+    @include clearfix;
+
+    .c-form__element {
+
+        @media #{$tablet-landscape} {
+            margin-right: gutters();
+        }
+    }
+
+    .c-form__element,
+    .c-form__element-control {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .c-form__element-label {
+        margin-bottom: 0;
+    }
+
+    legend {
+      margin-bottom:.5rem;
+        @media #{$tablet-landscape} {
+              float: left;
+        }
+        span {
+            display: inline-block;
+            margin-right: 3rem;
+        }
+    }
+}
+
+//Stacked form
+.c-form--stacked {
+    .c-form__element {
+        display: block;
+    }
+
+    .c-form__element-label {
+        display: block;
+    }
+}
+
+
+//Form Elements
+
+.c-form__element {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.c-form__element-control {
+    &--small {
+        width: 174px;
+
+        @media #{$tablet-landscape} {
+            width: 50%;
+        }
+    }
+
+    @media #{$tablet-landscape} {
+
+
+        &--med {
+            width: 70%;
+        }
+    }
+}
+
+//Form Element Labels
+
+.c-form__element-label {
+    cursor: pointer;
+    font-weight: normal;
+    margin: 2rem 0 1rem;
+    @include font-size(20);
+}
+
+
+
+
+//Form Element Checkboxes
+.c-form__checkbox {
+    display:table-row;
+    .c-form__element-label {
+        display: table-cell;
+        margin: 0;
+        padding:0 10px 0 0;
+        vertical-align: middle;
+        @include font-size(15);
+
+        &--terms {
+            @include font-size(13);
+        }
+    }
+
+    &--hidden {
+        display:block;
+        .c-form__element-label {
+            display: block;
+            margin-bottom: .5rem;
+            padding: .7rem;
+            background: $white;
+            border-radius: 22px;
+            border: 1px solid $black;
+            color: $black;
+            @include font-size(16);
+
+            @media #{$tablet-landscape} {
+                padding: .7rem 1.2rem;
+                @include font-size(17);
+            }
+        }
+
+        [type="checkbox"] {
+            position: absolute;
+            clip: rect(0 0 0 0);
+            padding: 0;
+            overflow: hidden;
+            border: 0;
+            @include square(1px);
+
+            &:checked {
+                > .c-form__element-label,
+                ~ .c-form__element-label {
+                    background: $black;
+                    color: $white;
+                }
+            }
+
+            &:focus {
+                > .c-form__element-label,
+                ~ .c-form__element-label {
+                    border: 1px solid $grey;
+                }
+            }
+        }
+    }
+}
+
+
+//Form Element Custom Select
+.c-form__element-control-select {
+    position: relative;
+
+    &:after {
+        position: absolute;
+        right: 15px;
+        top: 5px;
+        content: '';
+        display: inline-block;
+        border-top: 8px solid rgba($black,.5);
+        border-right: 8px solid rgba($black,.5);
+        transform: rotate(135deg);
+        pointer-events: none;
+        @include square(24px);
+    }
+
+    select {
+        appearance: none;
+        padding-right: 55px;
+
+        &::-ms-expand {
+            display: none;
+        }
+        /* for IE 11 */
+    }
+}
+
+

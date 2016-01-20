@@ -2,7 +2,7 @@
 
 
 $(function () {
-    // select();
+	select();
     // mandoTabs();
     // equalHeights();
     // mandoVideo();
