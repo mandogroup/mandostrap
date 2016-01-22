@@ -4,7 +4,7 @@
 
     h1, h2, h3, h4, h5, h6, caption {
         text-transform: uppercase;
-        @include font-primary;
+        font-family: font-heading;
     }
 
     p, li, dd, dt {
