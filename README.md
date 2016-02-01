@@ -9,7 +9,7 @@ Mando Strap
 ```
 /*
 
-### Placeholder
+## Placeholder
 
     <input type="text" placeholder="This is placeholder text">
 
