@@ -4,12 +4,12 @@ Mando Strap
 ### Styleguide
 [https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet](Markdown Cheatsheet)
 
-## Comment Structure
+### Comment Structure
 
 ```
 /*
 
-## Placeholder
+### Placeholder
 
     <input type="text" placeholder="This is placeholder text">
 
