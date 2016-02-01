@@ -13,12 +13,5 @@ Mando Strap
 
     <input type="text" placeholder="This is placeholder text">
 
-*//*
-
-### Textarea
-
-    <textarea></textarea>
-
 */
-
 ```
