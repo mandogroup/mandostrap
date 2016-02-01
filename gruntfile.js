@@ -8,6 +8,7 @@
 module.exports = function (grunt) {
 
     require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
+    grunt.loadNpmTasks('sassdown');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
@@ -21,6 +22,31 @@ module.exports = function (grunt) {
                 files: {
                     "assets/styles/main.css": "assets/styles/main.scss"
                 }
+            }
+        },
+
+        sassdown: {
+            styleguide: {
+                options: {
+                    assets: [
+                        'assets/styles/main.css'
+                    ],
+                    template: 'styleguide/template.hbs'
+
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'assets/styles/',
+                    src: [
+                        'base/*.scss',
+                        'components/*.scss',
+                        'objects/*.scss',
+                        'settings/*.scss',
+                        'tools/*.scss',
+                        'trumps/*.scss'
+                    ],
+                    dest: 'styleguide/'
+                }]
             }
         },
 
@@ -87,35 +113,27 @@ module.exports = function (grunt) {
         },
 
         modernizr: {
-            dist: {
-                // [REQUIRED] Path to the build you're using for development.
-                "devFile": "js/dev/lib/modernizr-latest.js",
+           dist: {
+               "dest": "js/dev/lib/modernizr.js",
+               "parseFiles": true,
+               "customTests": [],
+               "devFile": false,
+               "tests": [
+                //Add tests here
+               ],
+               "options": [
+                 "setClasses"
+               ],
+               "uglify": true,
 
-                // Path to save out the built file.
-                "outputFile": "js/dev/lib/modernizr.js",
-
-                // When parseFiles = true, this task will crawl all *.js, *.css, *.scss and *.sass files,
-                // except files that are in node_modules/.
-                // You can override this by defining a "files" array below.
-                "files": {
-                    "src": [
-                        'js/dev/mando/*.js',
-                        'assets/styles/**/*.css',
-                    ]
-                },
-
-                // This handler will be passed an array of all the test names passed to the Modernizr API, and will run after the API call has returned
-                // "handler": function (tests) {},
-
-                // When parseFiles = true, matchCommunityTests = true will attempt to
-                // match user-contributed tests.
-                "matchCommunityTests": false,
-
-                // Have custom Modernizr tests? Add paths to their location here.
-                "customTests": []
-            }
-
-        },
+               "files": {
+                   "src": [
+                       'js/dev/mando/*.js',
+                       'assets/styles/**/*.css'
+                   ]
+               },
+           }
+       },
 
         // Minify SVG
         svgmin: {
@@ -294,5 +312,6 @@ module.exports = function (grunt) {
     grunt.registerTask('favicon', ['realFavicon']);
     grunt.registerTask('default', ['bowercopy','sass', 'postcss', 'bake', 'concat', 'uglify', 'modernizr', 'svgmin', 'grunticon:myIcons']);
     grunt.registerTask('dev', ['sass', 'postcss', 'bake', 'htmllint', 'concat', 'uglify', 'jshint', 'watch']);
+    grunt.registerTask('styleguide', ['sassdown']);
 
 };

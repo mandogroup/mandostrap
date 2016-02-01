@@ -139,3 +139,6 @@ assets/icons/output
 assets/icons/minified
 assets/styles/vendor
 templates/dist
+*.sublime-workspace
+
+*.sublime-project
