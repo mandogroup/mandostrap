@@ -2,10 +2,6 @@
 
 *This is a work in progress*
 
-## Overview
-
-Mandostrap is a front end *starter pack/ bootstrap* project for speeding up component/template development for a websites.     
-
 
 ## RoadMap
 
@@ -19,10 +15,14 @@ Mandostrap is a front end *starter pack/ bootstrap* project for speeding up comp
  - Github Website v 1.0
  - JS standards v 1.1
  - JS OO programming v 1.1.5
- - JS Framework / dependency injection  v 1.2
+ - JS Frameworks / dependency injection  v 1.2
  - JS Unit testing 1.2.5
 
 ## Setup and Dependencies
+
+Mandostrap is a front end *skeleton assets project* project for speeding up component/template development for a websites.
+
+### Set up 
 
 Current dependencies
 
@@ -31,9 +31,10 @@ Current dependencies
 - Grunt
 - Bower
 
+
 ### Package manager
 
-We currently use **Bower** as our package manager, listed below are our common dependencies
+We currently use **Bower** as our package manager, listed below are our common dependencies Not all packages will be needed on every project so remove ones that are not needed or used.
 
     normalize-css   : "~3.0.3", // Reset for CSS styles
     jquery          : "~2.1.4", // jQuery no explanation needed 
@@ -100,8 +101,6 @@ We have two registerTasks:
 
 ## 1. File Structure
 
-
-
  - /assets/ 
   - /fonts/         - All Fonts files used on the site
   - /icon/          - All Icon fonts & SVG icons are stored here
@@ -120,7 +119,7 @@ We have two registerTasks:
     - main.css*
     - main.css.map*
     - main.scss
-  - /js/              - All JS logic and dom manipulation is here
+  - /js/              - All JS logic and Dom manipulation is here
     - /conditional/   
     - /lib*/
     - /mando
@@ -154,12 +153,14 @@ HTML attributes should come in this particular order for easier reading of code.
 ##### Example
 ```<a class="..." id="..." data-toggle="..." href="#">Example Link</a>```
 
-### 2.3 HTML5 standards
+### 2.3 HTML standards
 
-### 2.4 Reducing markup
+!!
 
 ### 2.5 Icon fonts vs SVG
 
+SVG's are preferred over iconfonts and sprites. Grunticon is used so that fallbacks are created. 
+Grunticon has the ability to embed SVG's in the document using Javascript. This can be done by adding a `span` with the `.icon-[name of icon]` class and adding `data-grunticon-embed` as an data attribute to the element.
 
 ## 3. CSS Standards
 
@@ -214,8 +215,8 @@ Example
 
 ### 3.3 Declaration Order
 - Declarations **must** be on their own line
-- Vendor prefixes **must** immediately preceed their unprefixed version. Vendor Prefixes should also be alphabetical order
-- Declarations *should* be ordered by group (`Content`, `Position`, `Box Model`, `Typography`, `Visual`, `Misc`)
+- Vendor prefixes **must** immediately preceed their unprefixed version.
+- Declarations *should* be ordered by group (`Content`, `Position`, `Box Model`, `Visual`, `Typography`, `Misc`)
 - Extends *should* be listed at the top of the declaration
 - Mixins and Functions *should* follow Extends
 - Mixins with one clear function (such as providing a fallback) *should* be placed within correct group (e.g. `font-size`, `linear-gradient` and `transition` mixins)
@@ -249,6 +250,11 @@ Example
       max-width: 800px;
       overflow: hidden;
 
+      // Visual
+      background-color: #ebe;
+      border-radius: 5px;
+      opacity: 1;
+
       // Typography
       color: #000;
       font-family: 'Arial', sans-serif;
@@ -258,24 +264,20 @@ Example
       text-decoration: none;
       text-indent: 0;
 
-      // Visual
-      background-color: #ebe;
-      border-radius: 5px;
-      opacity: 1;
-      transition: all 0.5s;
-
       // Misc
       // Can be used for any styles that do not fit into these groups
+      // e.g. transition: all 0.5s;
+
     }
 
 ### 3.4 Value Formatting
 - Do not use unit values after `0` values
-- Use shorthand properties when you can
+- Use shorthand properties where possible
 - If only overriding one value your *should* use longhand form to avoid unnecessary changes
 - Use 3 character Hexademical values when possible
 - Use single quotation marks instead of double
 - Always wrap strings in quotations
-- Values in `font-family` should all be individually wrapped in quotes except for final fallback value (e.g. `sans-serif, serif, monotype`)
+- Values in `font-family` should all be individually wrapped in quotes except for fallback values (e.g. `sans-serif, serif, monotype`)
 - Values **must** end with semi-colon
 - Include leading 0's in values for legibility (e.g. `font-size: .9em;` should be written `font-size: 0.9em;`)
 
@@ -298,11 +300,10 @@ Example
     }
 
 ### 3.5 Commenting
-- Comment tags *should* be a double slash `//` in Preprocessors.
+- Comment tags *should* be a double slash `//`.
 - Inline comments describing a declaration **must** be placed at the end of the value with a space either side of the comment tag
 - Block level comments about a **must** should be placed immediately above the selector and have one blank line above
-- Any comments describing whole components *should* follow the KSS commenting standard
-- Use comments to describe any elements that the code is unclear or if code may need to be explained
+- Use comments to describe any elements that the code is unclear. 
 
 ##### 3.5.1 KSS / Styleguide Commenting ( To be added  )
 
@@ -320,8 +321,11 @@ Example
       border: 1px solid #ebe;
     }
 
+### 3.6 Mobile first approach
 
-### 3.6 CSS Naming spacing
+Here at Mando we believe in mobile first and thats how we approach our CSS... nothing more we can say really.
+
+### 3.7 CSS Naming spacing
  
 **.o-** : Signify that something is an Object, and that it may be used in any number of unrelated contexts to the one you can currently see it in. Often used to Signify structure of a template for example a side column or header 
 
@@ -329,13 +333,13 @@ Example
 
 **.u-** : Signify that this class is a Utility class and it has a very specific role. these classes should not be bound onto or changed.
 
-**._-** : Signify that this class is the worst of the worst—a hack! Sometimes, although incredibly rarely, we need to add a class in our markup in order to force something to work
+**._-** : Signify that this class is a hack! Sometimes we need to add a class in our markup in order to force something to work, but these classes are only a temporary fix.
 
 **.js-** : Signify that this element has some behavior acting upon it via JavaScript.
 
 **.is- / .has-** : Signify that the piece of UI in question is currently styled a certain way because of a state or condition.
 
-### 3.7 CSS Naming Convention
+### 3.8 CSS Naming Convention
 
 We use a BEM (Block Element Modifier) naming convention and incorporating the namespacing discussed above.
 
