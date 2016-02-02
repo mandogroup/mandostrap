@@ -31,7 +31,7 @@ module.exports = function (grunt) {
                     assets: [
                         'assets/styles/main.css'
                     ],
-                    template: 'styleguide/template.hbs'
+                    template: 'templates/styleguide-template.hbs'
 
                 },
                 files: [{
@@ -257,6 +257,10 @@ module.exports = function (grunt) {
             bake: {
                 files: ['templates/bake-views/**/*.htm', 'templates/bake-components/**/*.htm'],
                 tasks: ['bake:build', 'htmllint']
+            },
+            sassdown: {
+                files: ['assets/styles/**/*.scss'],
+                tasks: ['sassdown'],
             }
         },
         // Favicon
@@ -311,7 +315,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('favicon', ['realFavicon']);
     grunt.registerTask('default', ['bowercopy','sass', 'postcss', 'bake', 'concat', 'uglify', 'modernizr', 'svgmin', 'grunticon:myIcons']);
-    grunt.registerTask('dev', ['sass', 'postcss', 'bake', 'htmllint', 'concat', 'uglify', 'jshint', 'watch']);
+    grunt.registerTask('dev', ['sass', 'postcss', 'bake', 'sassdown', 'htmllint', 'concat', 'uglify', 'jshint', 'watch']);
     grunt.registerTask('styleguide', ['sassdown']);
 
 };
