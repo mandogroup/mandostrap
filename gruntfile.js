@@ -26,7 +26,10 @@ module.exports = function (grunt) {
             styleguide: {
                 options: {
                     assets: [
-                        'assets/styles/main.css'
+                        'assets/styles/main.css',
+                        '/js/dev/lib/jquery.min.js',
+                        '/js/dist/vendor.min.js',
+                        '/js/dist/mando.min.js'
                     ],
                     template: 'templates/styleguide-template.hbs'
 
