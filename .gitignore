@@ -78,6 +78,10 @@ main.css.map
 .sass-cache
 *.css.map
 
+# Styleguide Output
+
+styleguide/
+
 ##############################################################
 # Sitecore Ignores.
 ##############################################################
@@ -113,7 +117,7 @@ Cached/*
 # Uploaded assets.
 Source/Presentation/Website/media/
 
-# Umbraco cached XML file. 
+# Umbraco cached XML file.
 Source/Presentation/Website/App_Data/umbraco.config
 
 # Umbraco client dependency files.
@@ -139,3 +143,6 @@ assets/icons/output
 assets/icons/minified
 assets/styles/vendor
 templates/dist
+*.sublime-workspace
+
+*.sublime-project

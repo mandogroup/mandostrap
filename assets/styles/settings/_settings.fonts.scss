@@ -1,6 +1,24 @@
 //_settings.fonts.scss
 
+<<<<<<< HEAD
 $font-body: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 $font-heading: Georgia, Times, 'Times New Roman', serif;
 
 
+=======
+//PRIMARY TYPEFACE
+$font-primary: "Arial", sans-serif;
+
+@mixin font-primary {
+    font-family: $font-primary;
+    font-weight: normal; //needed for firefox, otherwise font-family gets ignored
+}
+
+//SECONDARY TYPEFACE
+$font-secondary: "Arial", sans-serif;
+
+//TERTIARY TYPEFACE
+//$font-tertiary:
+
+//ADMIN TYPEFACE
+>>>>>>> feature/typography

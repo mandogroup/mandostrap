@@ -1,4 +1,4 @@
-# Mandostrap (name to be changed) 
+# Mandostrap (name to be changed)
 
 *This is a work in progress*
 
@@ -7,7 +7,7 @@
 
  - Style guide generator v 0.1
  - KSS commenting as standard v 0.1.5
- - Reusable design patterns and components v 0.2  
+ - Reusable design patterns and components v 0.2
  - Flexbox working standards v 0.3
  - Regression testing v 0.4
  - SVG standards v 0.5
@@ -22,7 +22,7 @@
 
 Mandostrap is a front end *skeleton assets project* project for speeding up component/template development for a websites.
 
-### Set up 
+### Set up
 
 Current dependencies
 
@@ -37,7 +37,7 @@ Current dependencies
 We currently use **Bower** as our package manager, listed below are our common dependencies Not all packages will be needed on every project so remove ones that are not needed or used.
 
     normalize-css   : "~3.0.3", // Reset for CSS styles
-    jquery          : "~2.1.4", // jQuery no explanation needed 
+    jquery          : "~2.1.4", // jQuery no explanation needed
     slick-carousel" : "~1.5.9", // Carousel plugin
     enquire         : "~2.1.2", // A library for responding to CSS media queries.
     susy            : "~2.2.7"  // CSS grid system
@@ -45,26 +45,26 @@ We currently use **Bower** as our package manager, listed below are our common d
 
 ### Task manager
 
-We currently use **Grunt (0.4.5)** as our task manager, listed below are our tasks 
-    
-    autoprefixer         : "^6.0.3", 
+We currently use **Grunt (0.4.5)** as our task manager, listed below are our tasks
+
+    autoprefixer         : "^6.0.3",
     // Add prefix to css ('ie 9','last 2 versions')
-    
-    grunt-bake           : "^0.3.15", 
+
+    grunt-bake           : "^0.3.15",
     // Bake static pages for production while using modular files while in development.
-    
-    grunt-bowercopy      : "^1.2.3", 
+
+    grunt-bowercopy      : "^1.2.3",
     // Copies dependencies to where you want them in your repository
-    
+
     grunt-contrib-concat : "^0.5.1",
     // Concatenate files.
 
     grunt-contrib-jshint : "^0.11.3",
     // Validate files with JSHint
-    
+
     grunt-contrib-uglify : "^0.10.0",
     // Minify javascript files with UglifyJS
-    
+
     grunt-contrib-watch  : "^0.6.1",
     // Run predefined tasks whenever watched file patterns are added, changed or deleted
 
@@ -92,7 +92,7 @@ We currently use **Grunt (0.4.5)** as our task manager, listed below are our tas
     matchdep             : "1.0.0
     // Use globule to filter npm module dependencies by name.
 
-We have two registerTasks: 
+We have two registerTasks:
 
 **Dev:**
 
@@ -101,11 +101,11 @@ We have two registerTasks:
 
 ## 1. File Structure
 
- - /assets/ 
+ - /assets/
   - /fonts/         - All Fonts files used on the site
   - /icon/          - All Icon fonts & SVG icons are stored here
-    - /raw/         - Raw SVG 
-    -  /output*/   
+    - /raw/         - Raw SVG
+    -  /output*/
     -  /minified*/
   - /img/            - Any hard coded images are stored here
   - /styles/         - Website styling are placed here Any CSS or Scss files
@@ -113,14 +113,14 @@ We have two registerTasks:
     - /components/   - Specific pieces of UI
     - /objects/      - Structure/Skeleton of the website
     - /settings/     - Variable Settings (e.g. brand colours, grid layout, etc)
-    - /tools/        - Common Scss mixins 
+    - /tools/        - Common Scss mixins
     - /trumps/       - Overwriting styles (e.g. print stylessheets, hack, etc)
     - /vendors*/     - Plugin css/Scss styles
     - main.css*
     - main.css.map*
     - main.scss
   - /js/              - All JS logic and Dom manipulation is here
-    - /conditional/   
+    - /conditional/
     - /lib*/
     - /mando
       - /logic/
@@ -159,14 +159,14 @@ HTML attributes should come in this particular order for easier reading of code.
 
 ### 2.5 Icon fonts vs SVG
 
-SVG's are preferred over iconfonts and sprites. Grunticon is used so that fallbacks are created. 
+SVG's are preferred over iconfonts and sprites. Grunticon is used so that fallbacks are created.
 Grunticon has the ability to embed SVG's in the document using Javascript. This can be done by adding a `span` with the `.icon-[name of icon]` class and adding `data-grunticon-embed` as an data attribute to the element.
 
 ## 3. CSS Standards
 
 *This is a work in progress and needs to reviewed*
 
-These standards are only applied to **Scss/Sass** and not **Output CSS**. 
+These standards are only applied to **Scss/Sass** and not **Output CSS**.
 
 ### 3.1 Spaces and Indentation
 - Use 2 spaces instead of tabs for indentation
@@ -303,7 +303,42 @@ Example
 - Comment tags *should* be a double slash `//`.
 - Inline comments describing a declaration **must** be placed at the end of the value with a space either side of the comment tag
 - Block level comments about a **must** should be placed immediately above the selector and have one blank line above
-- Use comments to describe any elements that the code is unclear. 
+- Use comments to describe any elements that the code is unclear.
+
+### Styleguides and Commenting
+Styleguides are automatically generated with [sassdown](https://github.com/nopr/sassdown) which parses [Markdown](https://daringfireball.net/projects/markdown/) comments contained in SASS files.
+
+There are two kinds of comments you can use on a project, the first is a SASS comment which will be ignored by [sassdown](https://github.com/nopr/sassdown):
+
+```
+// This is a SASS comment and will be ignored by [sassdown](https://github.com/nopr/sassdown)
+```
+
+The second is a CSS comment and will be used by [sassdown](https://github.com/nopr/sassdown) in the styleguide documentation
+
+```
+/* This is a CSS comment and will be used as documentation for styleguides */
+```
+
+### Styleguide Comment Structure
+
+Styles should be documented using a title (H3) followed by a brief description or any supporting documentation. An indented code example should then be used to show best practise. This will be rendered within the styleguide using the stylesheet. Each element/example should be wrapped in it's own comment tags.
+
+```
+/*
+
+### Placeholder
+
+Brief description of the input placeholder
+
+    <input type="text" placeholder="This is placeholder text">
+
+*/
+```
+
+[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+
 
 ##### 3.5.1 KSS / Styleguide Commenting ( To be added  )
 
@@ -326,8 +361,8 @@ Example
 Here at Mando we believe in mobile first and thats how we approach our CSS... nothing more we can say really.
 
 ### 3.7 CSS Naming spacing
- 
-**.o-** : Signify that something is an Object, and that it may be used in any number of unrelated contexts to the one you can currently see it in. Often used to Signify structure of a template for example a side column or header 
+
+**.o-** : Signify that something is an Object, and that it may be used in any number of unrelated contexts to the one you can currently see it in. Often used to Signify structure of a template for example a side column or header
 
 **.c-** : Signify that something is a Component. This is a concrete, implementation-specific piece of UI.
 
@@ -352,7 +387,5 @@ We use a BEM (Block Element Modifier) naming convention and incorporating the na
 e.g. ```c-feature__image--large```
 
 
-## 4. JS Standards (Coming soon) 
-
-
+## 4. JS Standards (Coming soon)
 
