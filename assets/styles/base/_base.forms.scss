@@ -1,5 +1,36 @@
 ﻿//_base.forms.scss
 
+/*
+
+### Placeholder
+
+    <input type="text" placeholder="This is placeholder text">
+
+*//*
+
+### Textarea
+
+    <textarea></textarea>
+
+*//*
+
+### Text Input
+
+    <input type="text" placeholder="Text input">
+    <input type="tel" placeholder="Telephone input">
+    <input type="email" placeholder="Email input">
+    <input type="password" placeholder="Password">
+    <input type="date">
+    <input type="month">
+    <input type="time">
+    <input type="week">
+    <input type="number">
+    <input type="url">
+    <input type="search">
+    <input type="color" value="#FF0000">
+
+*/
+
 [placeholder]:focus::-webkit-input-placeholder {
     color: transparent;
 }
@@ -19,6 +50,7 @@ input::-moz-placeholder {
 input:-ms-input-placeholder {
     color: lighten($black,20%);
 }
+
 
 
 textarea,
