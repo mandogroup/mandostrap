@@ -3,8 +3,6 @@
 	Available for use under the MIT License
 */
 
-'use strict';
-
 ;( function($, window, document, undefined ){
 	
 	$('.inputfile').each( function(){

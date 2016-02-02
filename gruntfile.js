@@ -6,13 +6,11 @@
 */
 
 module.exports = function (grunt) {
-
     require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
     grunt.loadNpmTasks('sassdown');
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-
         sass: {
             options: {
                 sourceMap: true,
@@ -24,7 +22,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-
         sassdown: {
             styleguide: {
                 options: {
@@ -32,7 +29,6 @@ module.exports = function (grunt) {
                         'assets/styles/main.css'
                     ],
                     template: 'templates/styleguide-template.hbs'
-
                 },
                 files: [{
                     expand: true,
@@ -62,8 +58,6 @@ module.exports = function (grunt) {
                 src: 'assets/styles/main.css'
             }
         },
-
-
         // HTML Bake - Templating Utility
         bake: {
             build: {
@@ -111,7 +105,7 @@ module.exports = function (grunt) {
                 }
             }
         },
-
+        //Modernizr custom build
         modernizr: {
            dist: {
                "dest": "js/dev/lib/modernizr.js",
@@ -134,7 +128,6 @@ module.exports = function (grunt) {
                },
            }
        },
-
         // Minify SVG
         svgmin: {
             dist: {
@@ -182,7 +175,6 @@ module.exports = function (grunt) {
                 }]
             }
         },
-
         // Grunticon
         grunticon: {
             myIcons: {
@@ -198,7 +190,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-
         // Concat Javacript Files
         concat: {
             vendorjs: {
@@ -210,7 +201,6 @@ module.exports = function (grunt) {
                 dest: 'js/dist/mando.js'
             },
         },
-
         // Uglify - minify all the javascript files together
         uglify: {
             my_target: {
@@ -223,7 +213,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-
         // Checks if js in valid
         jshint: {
             files: ['js/dev/mando/**/*.js' ],
@@ -233,7 +222,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-
         // Watch script keeps an eye on the files listed running the corresponding tasks when a change is detected
         watch: {
             css: {
@@ -308,14 +296,11 @@ module.exports = function (grunt) {
             }
         }
     });
-
     // ===================================================
     // TASK DEFINITIONS
     // ===================================================
-
     grunt.registerTask('favicon', ['realFavicon']);
     grunt.registerTask('default', ['bowercopy','sass', 'postcss', 'bake', 'concat', 'uglify', 'modernizr', 'svgmin', 'grunticon:myIcons']);
     grunt.registerTask('dev', ['sass', 'postcss', 'bake', 'sassdown', 'htmllint', 'concat', 'uglify', 'jshint', 'watch']);
     grunt.registerTask('styleguide', ['sassdown']);
-
 };

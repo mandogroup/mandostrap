@@ -117,8 +117,10 @@ input[type="checkbox"] {
 }
 input[type="checkbox"],
 input[type="radio"] {
-    position:absolute;
-    top:5px;
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0 10px 0 0;
 }
 
 fieldset {
@@ -154,7 +156,7 @@ label.error {
         font-size: 12px;
         font-weight: bold;
         content: '!';
-        color: $grey-mid;
+        color: $grey;
     }
 }
 
@@ -188,6 +190,4 @@ label.error {
         display: none;
     }
 }
-.form {
-    margin-bottom:1rem;
-}
+
