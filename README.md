@@ -16,7 +16,7 @@ The second is a CSS comment and will be used by [sassdown](https://github.com/no
 /* This is a CSS comment and will be used as documentation for styleguides */
 ```
 
-### Comment Structure
+### Styleguide Comment Structure
 
 Styles should be documented using a title (H3) followed by a brief description or any supporting documentation. An indented code example should then be used to show best practise. This will be rendered within the styleguide using the stylesheet. Each element/example should be wrapped in it's own comment tags.
 
