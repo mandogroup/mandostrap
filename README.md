@@ -4,13 +4,13 @@ Mando Strap
 ### Styleguides and Commenting
 Styleguides are automatically generated with [sassdown](https://github.com/nopr/sassdown) which parses [Markdown](https://daringfireball.net/projects/markdown/) comments contained in SASS files.
 
-There are two kinds of comments you can use on a project, the first is a SASS comment which will be ignored by SASSDOWN
+There are two kinds of comments you can use on a project, the first is a SASS comment which will be ignored by [sassdown](https://github.com/nopr/sassdown):
 
 ```
-// This is a SASS comment and will be ignored by SASSDOWN
+// This is a SASS comment and will be ignored by [sassdown](https://github.com/nopr/sassdown)
 ```
 
-The second is a CSS comment and will be used by SASSDOWN in the styleguide documentation
+The second is a CSS comment and will be used by [sassdown](https://github.com/nopr/sassdown) in the styleguide documentation
 
 ```
 /* This is a CSS comment and will be used as documentation for styleguides */
