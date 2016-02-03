@@ -26,10 +26,11 @@ module.exports = function (grunt) {
             styleguide: {
                 options: {
                     assets: [
-                        'assets/styles/main.css'
+                      'assets/styles/main.css',
+                      'js/dist/styleguidejs.js'
+
                     ],
                     template: 'templates/styleguide-template.hbs'
-
                 },
                 files: [{
                     expand: true,
@@ -200,6 +201,10 @@ module.exports = function (grunt) {
                 src: ['js/dev/mando/**/*.js', 'js/dev/init.js'],
                 dest: 'js/dist/mando.js'
             },
+            styleguidejs: {
+            src: ['js/dev/lib/jquery.min.js','js/dev/vendor/*.js', 'js/dev/mando/**/*.js', 'js/dev/init.js'],
+            dest: 'js/dist/styleguidejs.js'
+          },
         },
         // Uglify - minify all the javascript files together
         uglify: {
@@ -302,5 +307,5 @@ module.exports = function (grunt) {
     grunt.registerTask('favicon', ['realFavicon']);
     grunt.registerTask('default', ['bowercopy','sass', 'postcss', 'bake', 'concat', 'uglify', 'modernizr', 'svgmin', 'grunticon:myIcons']);
     grunt.registerTask('dev', ['sass', 'postcss', 'bake', 'sassdown', 'htmllint', 'concat', 'uglify', 'jshint', 'watch']);
-    grunt.registerTask('styleguide', ['sassdown']);
+    grunt.registerTask('styleguide', ['sass', 'postcss','concat:styleguidejs','sassdown']);
 };
