@@ -24,6 +24,7 @@ obj/
 ehthumbs.db
 Thumbs.db
 __MACOSX
+.idea
 
 
 # Windows cache.
