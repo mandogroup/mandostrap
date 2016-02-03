@@ -103,81 +103,38 @@
 
 // Typographic Scale
 
+body {
+  font-family: $font-primary;
+  @include font-size($body-font-sizes);
+}
+
 p {
   padding-top: 0;
-  margin: 0 auto 1em auto;
-  font-size: 1rem;
-  line-height: 1.375;
-
-  @media only screen and (min-width: 48em) {
-    max-width: 36rem;
-  }
-
-  @media only screen and (min-width: 60em) {
-    max-width: 38rem;
-  }
-
+  margin: 0 auto 1rem auto;
 }
 
 h1 {
-  font-size: 2rem;
-  letter-spacing: -1px;
-  line-height: 1.25;
-
-  @media only screen and (min-width: 48em) {
-    font-size: 2.5rem;
-    letter-spacing: normal;
-    line-height: 1.125;
-  }
-
-  @media only screen and (min-width: 60em) {
-    font-size: 3rem;
-    letter-spacing: normal;
-    line-height: 1.05;
-    max-width: 12.66667rem;
-  }
+  @include font-size($h1-font-sizes);
 }
 
-
 h2 {
-  font-size: 1.625rem;
-  line-height: 1.15384615;
-
-  @media only screen and (min-width: 48em){
-    font-size: 2rem;
-    line-height: 1.25;
-    max-width: 18rem;
-  }
-
-  @media only screen and (min-width: 60em) {
-    font-size: 2.25rem;
-    line-height: 1.25;
-    max-width: 16.88889rem;
-  }
+  @include font-size($h2-font-sizes);
 }
 
 h3 {
-  font-size: 1.375rem;
-  line-height: 1.13636364;
-
-  @media only screen and (min-width: 48em) {
-    font-size: 1.5rem;
-    line-height: 1.25;
-  }
-
-  @media only screen and (min-width: 60em) {
-    font-size: 1.75rem;
-    line-height: 1.25;
-  }
+  @include font-size($h3-font-sizes);
 }
 
 h4 {
-  font-size: 1.125rem;
-  line-height: 1.11111111;
+  @include font-size($h4-font-sizes);
+}
 
-  @media only screen and (min-width: 48em) {
-    line-height: 1.22222222;
-  }
+h5 {
+  @include font-size($h5-font-sizes);
+}
+
+h6 {
+  @include font-size($h6-font-sizes);
 }
 
 blockquote {
@@ -186,22 +143,11 @@ blockquote {
   margin-bottom: 1rem;
   margin-right: auto;
   margin-left: auto;
-  font-size: 1.25rem;
-  line-height: 1.25;
-  font-family: $font-primary;
-  font-weight: 300;
-  font-style: normal;
   position: relative;
-
-  @media only screen and (min-width: 60em) {
-    font-size: 1.5rem;
-    line-height: 1.45833333;
-    width: 50%;
-    max-width: 11.6666667rem;
-  }
 }
 
 dl {
+
   dt {
     font-weight:bold;
   }
@@ -215,8 +161,6 @@ ul, ol {
   padding-top: 0;
   margin: 0 0 1em 0;
   padding:0 0 0 1.5rem;
-  font-size: 1rem;
-  line-height: 1.375;
 
   ul, ol {
     margin-top:0.5rem;

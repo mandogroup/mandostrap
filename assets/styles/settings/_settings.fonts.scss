@@ -1,5 +1,76 @@
 //_settings.fonts.scss
 
+// Responsive Font Size Mapping
+
+// TODO: Find a better way of pulling breakpoint values into mixin - this is a temporary solution
+
+$breakpoints: (
+  tablet-portrait-only: 'min-width: 48em) and (max-width:59.938em',
+  tablet-portrait:      'min-width: 48em',
+  tablet-landscape:     'min-width: 60em',
+  desktop:              'min-width: 64em'
+);
+
+// Left reference is break point, right values are font-size and line-height
+
+$body-font-sizes: (
+    null                    : (0.875rem, 1.3), // Mobile Default
+    tablet-portrait-only    : (0.875rem, 1.3), // Tablet Portrait Only
+    tablet-portrait         : (0.875rem, 1.3), // Tablet Portrait
+    tablet-landscape        : (1rem, 1.3), // Tablet Landscape
+    desktop                 : (1rem, 1.3)  // Desktop
+);
+
+$h1-font-sizes: (
+    null                    : (3.5rem,  1.3), // Mobile Default
+    tablet-portrait-only    : (3.5rem,  1.3), // Tablet Portrait Only
+    tablet-portrait         : (3.5rem,  1.3), // Tablet Portrait
+    tablet-landscape        : (3.5rem,  1.3), // Tablet Landscape
+    desktop                 : (7.594rem, 1.3)  // Desktop
+);
+
+$h2-font-sizes: (
+    null                    : (3rem, 1.3), // Mobile Default
+    tablet-portrait-only    : (3rem, 1.3), // Tablet Portrait Only
+    tablet-portrait         : (3rem, 1.3), // Tablet Portrait
+    tablet-landscape        : (3rem, 1.3), // Tablet Landscape
+    desktop                 : (5.063rem, 1.3)  // Desktop
+);
+
+$h3-font-sizes: (
+    null                    : (2.5rem, 1), // Mobile Default
+    tablet-portrait-only    : (2.5rem, 1), // Tablet Portrait Only
+    tablet-portrait         : (2.5rem, 1), // Tablet Portrait
+    tablet-landscape        : (2.5rem, 1), // Tablet Landscape
+    desktop                 : (3.375rem, 1)  // Desktop
+);
+
+$h4-font-sizes: (
+    null                    : (2rem, 1), // Mobile Default
+    tablet-portrait-only    : (2rem, 1), // Tablet Portrait Only
+    tablet-portrait         : (2rem, 1), // Tablet Portrait
+    tablet-landscape        : (2rem, 1), // Tablet Landscape
+    desktop                 : (2.25rem, 1)  // Desktop
+);
+
+$h5-font-sizes: (
+    null                    : (1.5rem, 1), // Mobile Default
+    tablet-portrait-only    : (1.5rem, 1), // Tablet Portrait Only
+    tablet-portrait         : (1.5rem, 1), // Tablet Portrait
+    tablet-landscape        : (1.5rem, 1), // Tablet Landscape
+    desktop                 : (1.5rem, 1)  // Desktop
+);
+
+$h6-font-sizes: (
+    null                    : (1rem, 1), // Mobile Default
+    tablet-portrait-only    : (1rem, 1), // Tablet Portrait Only
+    tablet-portrait         : (1rem, 1), // Tablet Portrait
+    tablet-landscape        : (1rem, 1), // Tablet Landscape
+    desktop                 : (1rem, 1)  // Desktop
+);
+
+// Font Stacks
+
 $font-body: Arial, 'Helvetica Neue', Helvetica, sans-serif;
 $font-heading: Georgia, Times, 'Times New Roman', serif;
 
@@ -13,8 +84,3 @@ $font-primary: "Arial", sans-serif;
 
 //SECONDARY TYPEFACE
 $font-secondary: "Arial", sans-serif;
-
-//TERTIARY TYPEFACE
-//$font-tertiary:
-
-//ADMIN TYPEFACE
