@@ -103,39 +103,34 @@
 
 // Typographic Scale
 
-p, ul, ol, dl {
+p {
   padding-top: 0;
   margin: 0 auto 1em auto;
   font-size: 1rem;
   line-height: 1.375;
-}
-@media (min-width: 43.75em) {
-  p, ul, ol, dl {
+
+  @media only screen and (min-width: 48em) {
     max-width: 36rem;
   }
-}
-@media (min-width: 56.25em) {
-  p, ul, ol, dl {
+
+  @media only screen and (min-width: 60em) {
     max-width: 38rem;
   }
+
 }
 
 h1 {
   font-size: 2rem;
   letter-spacing: -1px;
   line-height: 1.25;
-}
 
-@media (min-width: 43.75rem) {
-  h1 {
+  @media only screen and (min-width: 48em) {
     font-size: 2.5rem;
     letter-spacing: normal;
     line-height: 1.125;
   }
-}
 
-@media (min-width: 56.25em) {
-  h1 {
+  @media only screen and (min-width: 60em) {
     font-size: 3rem;
     letter-spacing: normal;
     line-height: 1.05;
@@ -143,19 +138,18 @@ h1 {
   }
 }
 
+
 h2 {
   font-size: 1.625rem;
   line-height: 1.15384615;
-}
-@media (min-width: 43.75em) {
-  h2 {
+
+  @media only screen and (min-width: 48em){
     font-size: 2rem;
     line-height: 1.25;
     max-width: 18rem;
   }
-}
-@media (min-width: 56.25em) {
-  h2 {
+
+  @media only screen and (min-width: 60em) {
     font-size: 2.25rem;
     line-height: 1.25;
     max-width: 16.88889rem;
@@ -165,35 +159,24 @@ h2 {
 h3 {
   font-size: 1.375rem;
   line-height: 1.13636364;
-}
-@media (min-width: 43.75em) {
-  h3 {
+
+  @media only screen and (min-width: 48em) {
     font-size: 1.5rem;
     line-height: 1.25;
-    max-width: 26.18182em;
   }
-}
-@media (min-width: 56.25em) {
-  h3 {
+
+  @media only screen and (min-width: 60em) {
     font-size: 1.75rem;
     line-height: 1.25;
-    max-width: 21.71429em;
   }
 }
 
 h4 {
   font-size: 1.125rem;
   line-height: 1.11111111;
-}
-@media (min-width: 43.75em) {
-  h4 {
+
+  @media only screen and (min-width: 48em) {
     line-height: 1.22222222;
-    max-width: 32em;
-  }
-}
-@media (min-width: 56.25em) {
-  h4 {
-    max-width: 33.77778em;
   }
 }
 
@@ -209,9 +192,8 @@ blockquote {
   font-weight: 300;
   font-style: normal;
   position: relative;
-}
-@media (min-width: 43.75em) {
-  blockquote {
+
+  @media only screen and (min-width: 60em) {
     font-size: 1.5rem;
     line-height: 1.45833333;
     width: 50%;
@@ -226,5 +208,17 @@ dl {
 
   dd {
     margin:0;
+  }
+}
+
+ul, ol {
+  padding-top: 0;
+  margin: 0 0 1em 0;
+  padding:0 0 0 1.5rem;
+  font-size: 1rem;
+  line-height: 1.375;
+
+  ul, ol {
+    margin-top:0.5rem;
   }
 }
