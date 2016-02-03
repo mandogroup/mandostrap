@@ -11,3 +11,4 @@ $susy: (
   global-box-sizing: border-box,
   //debug: (image: show)
 );
+@include border-box-sizing;

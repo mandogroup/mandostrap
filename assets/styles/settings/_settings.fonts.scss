@@ -1,17 +1,20 @@
 //_settings.fonts.scss
 
+$font-body: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+$font-heading: Georgia, Times, 'Times New Roman', serif;
+
 //PRIMARY TYPEFACE
-$font-primary: "Arial Black", "Arial Bold", Gadget, sans-serif;
+$font-primary: "Arial", sans-serif;
 
 @mixin font-primary {
     font-family: $font-primary;
-    font-weight: 900; //needed for firefox, otherwise font-family gets ignored
+    font-weight: normal; //needed for firefox, otherwise font-family gets ignored
 }
 
 //SECONDARY TYPEFACE
-$font-secondary: Rockwell,Courier Bold,Courier,Georgia,Times,Times New Roman,serif;
+$font-secondary: "Arial", sans-serif;
 
 //TERTIARY TYPEFACE
-//$font-tertiary: 
+//$font-tertiary:
 
 //ADMIN TYPEFACE
