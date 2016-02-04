@@ -248,7 +248,7 @@ module.exports = function (grunt) {
                 tasks: ['concat', 'uglify', 'jshint','modernizr']
             },
             bake: {
-                files: ['templates/bake-views/**/*.htm', 'templates/bake-components/**/*.htm'],
+                files: ['templates/bake-views/**/*.htm', 'templates/bake-includes/**/*.htm','templates/bake-components/**/*.htm'],
                 tasks: ['bake:build', 'htmllint']
             },
             sassdown: {
