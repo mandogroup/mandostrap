@@ -103,6 +103,7 @@ module.exports = function (grunt) {
                     'lib/jquery.min.js': 'jquery/dist/jquery.min.js',
                     'vendor/slick.js': 'slick-carousel/slick/slick.js',
                     'vendor/enquire.js': 'enquire/dist/enquire.js',
+                    'vendor/js.cookie.js': 'js-cookie/src/js.cookie.js'
                 }
             }
         },
