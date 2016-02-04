@@ -1,20 +1,44 @@
 ﻿//_components.wysiwyg.scss
 
+/*
+
+### WYSIWYG Compontents
+
+    <div class="c-wysiwyg">
+        <h1>Heading One (h1)</h1>
+        <h2>Heading Two (h2)</h2>
+        <h3>Heading Three (h3)</h3>
+        <h4>Heading Four (h4)</h4>
+        <h5>Heading Five (h5)</h5>
+        <h6>Heading Six (h6)</h6>
+
+        <p>Alice waited a little, half expecting to see it again, but it did not appear, and after a minute or two she walked on in the direction in which the March Hare was said to live. 'I've seen hatters before,' she said to herself; 'the March Hare will be much the most interesting, and perhaps as this is May it won't be raving mad—at least not so mad as it was in March.' As she said this, she looked up, and there was the Cat again, sitting on a branch of a tree.</p>
+
+        <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+        <p><del>This line of text is meant to be treated as deleted text.</del></p>
+        <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+        <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+        <p><u>This line of text will render as underlined</u></p>
+        <p><small>This line of text is meant to be treated as fine print.</small></p>
+        <p><strong>This line rendered as bold text.</strong></p>
+        <p><em>This line rendered as italicized text.</em></p>
+        <p><a href="#anchor">This is an anchor link</a></p>
+
+    </div>
+*/
+
 .c-wysiwyg {
 
     h1, h2, h3, h4, h5, h6, caption {
-        text-transform: uppercase;
-        font-family: font-heading;
+
     }
 
     p, li, dd, dt {
-        line-height:1.5;
-        @include font-size(16);
+
     }
 
     dt {
-        font-weight: bold;
-        margin-bottom: 0;
+
     }
 
     b, strong {
@@ -53,10 +77,6 @@
     }
 
     blockquote{
-        display: block;
-        @include font-size(24);
-        padding-left: 20px;
-        font-style: italic;
-        margin-left: 0;
+
     }
 }
