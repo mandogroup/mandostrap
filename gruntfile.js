@@ -8,7 +8,6 @@
 module.exports = function (grunt) {
     require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
     grunt.loadNpmTasks('sassdown');
-
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         sass: {
@@ -245,7 +244,7 @@ module.exports = function (grunt) {
                 }
             },
             js: {
-                files: ['js/dev/mando/**/*.js'],
+                files: ['js/dev/mando/**/*.js','js/dev/vendor/**/*.js','js/dev/init.js'],
                 tasks: ['concat', 'uglify', 'jshint','modernizr']
             },
             bake: {
