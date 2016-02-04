@@ -9,6 +9,6 @@ $(function () {
     // faq();
     // shareControl();
     carousel();
-    // bannerCarousel();
+    navigation();
 });
 

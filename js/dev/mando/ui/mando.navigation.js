@@ -1,3 +1,8 @@
-/**
- * Created by stuartrayson on 03/02/16.
- */
+
+navigation = function () {
+
+  var element = {
+
+  }
+
+}
