@@ -47,6 +47,7 @@ module.exports = function (grunt) {
                 }]
             }
         },
+
         // Runs through distribution CSS file and add vendor prefixers where necessary (overwriting original)
         postcss: {
             options: {

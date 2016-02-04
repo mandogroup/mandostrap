@@ -155,8 +155,6 @@ HTML attributes should come in this particular order for easier reading of code.
 
 ### 2.3 HTML standards
 
-!!
-
 ### 2.5 Icon fonts vs SVG
 
 SVG's are preferred over iconfonts and sprites. Grunticon is used so that fallbacks are created.
@@ -305,22 +303,17 @@ Example
 - Block level comments about a **must** should be placed immediately above the selector and have one blank line above
 - Use comments to describe any elements that the code is unclear.
 
-### Styleguides and Commenting
+### 3.6 Styleguides
 Styleguides are automatically generated with [sassdown](https://github.com/nopr/sassdown) which parses [Markdown](https://daringfireball.net/projects/markdown/) comments contained in SASS files.
 
-There are two kinds of comments you can use on a project, the first is a SASS comment which will be ignored by [sassdown](https://github.com/nopr/sassdown):
 
-```
-// This is a SASS comment and will be ignored by [sassdown](https://github.com/nopr/sassdown)
-```
-
-The second is a CSS comment and will be used by [sassdown](https://github.com/nopr/sassdown) in the styleguide documentation
+This is a CSS comment and will be used by [sassdown](https://github.com/nopr/sassdown) in the styleguide documentation
 
 ```
 /* This is a CSS comment and will be used as documentation for styleguides */
 ```
 
-### Styleguide Comment Structure
+#### 3.6.1 Styleguide Comment Structure
 
 Styles should be documented using a title (H3) followed by a brief description or any supporting documentation. An indented code example should then be used to show best practise. This will be rendered within the styleguide using the stylesheet. Each element/example should be wrapped in it's own comment tags.
 
@@ -335,26 +328,7 @@ Brief description of the input placeholder
 
 */
 ```
-
-[Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-
-
-
-##### 3.5.1 KSS / Styleguide Commenting ( To be added  )
-
-Example
-
-    .nav {
-      width: 100%
-    }
-
-    // Comment about this item
-    .item {
-      margin: 20px 5px; // Comment describing this properties effect
-      padding: 0 10px;
-      color: #000;
-      border: 1px solid #ebe;
-    }
+If you need any help writing Markdown take a look at this really handy [Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 ### 3.6 Mobile first approach
 
