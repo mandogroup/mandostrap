@@ -4,12 +4,12 @@
 
 ### Headings
 
-    <h1>h1. Standard heading</h1>
-    <h2>h2. Standard heading</h2>
-    <h3>h3. Standard heading</h3>
-    <h4>h4. Standard heading</h4>
-    <h5>h5. Standard heading</h5>
-    <h6>h6. Standard heading</h6>
+    <h1>Heading One (h1)</h1>
+    <h2>Heading Two (h2)</h2>
+    <h3>Heading Three (h3)</h3>
+    <h4>Heading Four (h4)</h4>
+    <h5>Heading Five (h5)</h5>
+    <h6>Heading Six (h6)</h6>
 
 *//*
 
@@ -44,52 +44,125 @@
 ### Unordered Lists
 
     <ul>
-      <li>Lorem ipsum dolor sit amet</li>
-      <li>Nulla volutpat aliquam velit
+      <li>Katana</li>
+      <li>Wakizashi
+      <li>Ninja-to</li>
+      <li>Tanto</li>
+      <li>Bokken</li>
+      <li>Projectile Weapons:
         <ul>
-          <li>Phasellus iaculis neque</li>
-          <li>Purus sodales ultricies</li>
-          <li>Vestibulum laoreet porttitor sem</li>
-          <li>Ac tristique libero volutpat at</li>
+          <li>Shiruken</li>
+          <li>Makibishi</li>
+          <li>Chakrams</li>
+          <li>Bo-hiya</li>
         </ul>
       </li>
-      <li>Faucibus porta lacus fringilla vel</li>
-      <li>Aenean sit amet erat nunc</li>
-      <li>Eget porttitor lorem</li>
     </ul>
 
-*/
-
-/*
+*//*
 
 ### Ordered Lists
 
     <ol>
-      <li>Lorem ipsum dolor sit amet</li>
-      <li>Nulla volutpat aliquam velit
-        <ul>
-          <li>Phasellus iaculis neque</li>
-          <li>Purus sodales ultricies</li>
-          <li>Vestibulum laoreet porttitor sem</li>
-          <li>Ac tristique libero volutpat at</li>
-        </ul>
-      </li>
-      <li>Faucibus porta lacus fringilla vel</li>
-      <li>Aenean sit amet erat nunc</li>
+      <li>Bajutsu – horsemanship</li>
+      <li>Bōjutsu – stick and staff techniques</li>
+      <li>Bōryaku – tactics</li>
+      <li>Chi-mon – geography</li>
       <li>Eget porttitor lorem</li>
+      <li>Chōhō – espionage</li>
+      <li>Hensōjutsu – disguise and impersonation</li>
+      <li>Intonjutsu – escaping and concealment</li>
+      <li>Kayakujutsu – pyrotechnics</li>
+      <li>Kenjutsu – sword techniques</li>
+      <li>Kusarigamajutsu – kusarigama (chain-sickle) techniques</li>
+      <li>Naginatajutsu – naginata (polearm) techniques</li>
+      <li>Seishinteki kyōyō – spiritual refinement</li>
+      <li>Shinobi-iri – stealth and infiltration</li>
+      <li>Shurikenjutsu – throwing weapons techniques</li>
+      <li>Sōjutsu – spear techniques</li>
+      <li>Sui-ren – water training</li>
+      <li>Taijutsu – unarmed combat</li>
+      <li>Tenmon – meteorology</li>
     </ol>
 
-*/
-
-/*
+*//*
 
 ### Definition List
 
     <dl>
-      <dt>Firefox</dt>
-      <dd>A free, open source, cross-platform, graphical web browser
-          developed by the Mozilla Corporation and hundreds of volunteers.</dd>
+      <dt>Ninja</dt>
+      <dd>A ninja (or shinobi) was a covert agent or mercenary in feudal Japan. The functions of the ninja included: espionage, sabotage, infiltration, assassination and guerrilla warfare. Their covert methods of waging irregular warfare were deemed "dishonorable" and "beneath" the samurai-caste, who observed strict rules about honor and combat.</dd>
     </dl>
 
 */
 
+// =============================================================================
+// END OF STYLEGUIDE DOCUMENTATION
+// All comments should now be inline (hidden - //)
+// =============================================================================
+
+// Typographic Scale
+
+body {
+  font-family: $font-primary;
+  @include font-size($body-font-sizes);
+}
+
+p {
+  padding-top: 0;
+  margin: 0 auto 1rem auto;
+}
+
+h1 {
+  @include font-size($h1-font-sizes);
+}
+
+h2 {
+  @include font-size($h2-font-sizes);
+}
+
+h3 {
+  @include font-size($h3-font-sizes);
+}
+
+h4 {
+  @include font-size($h4-font-sizes);
+}
+
+h5 {
+  @include font-size($h5-font-sizes);
+}
+
+h6 {
+  @include font-size($h6-font-sizes);
+}
+
+blockquote {
+  width: 85%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+
+dl {
+
+  dt {
+    font-weight:bold;
+  }
+
+  dd {
+    margin:0;
+  }
+}
+
+ul, ol {
+  padding-top: 0;
+  margin: 0 0 1em 0;
+  padding:0 0 0 1.5rem;
+
+  ul, ol {
+    margin-top:0.5rem;
+  }
+}
