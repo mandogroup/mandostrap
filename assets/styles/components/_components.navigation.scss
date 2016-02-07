@@ -1,0 +1,149 @@
+.c-navigation{
+  width: 100%;
+  background: #f1f1f1;
+}
+
+.c-navigation__inner{
+  width: span(12 of 12);
+  margin: 0 auto;
+}
+
+.c-navigation__logo{
+  float: left;
+  padding: 20px;
+  height: 57px;
+  color: #000;
+  line-height: 100%;
+  text-decoration: none;
+
+  &:focus,
+  &:hover{
+
+  }
+}
+
+.c-navigation__mobile-menu-btn{
+  position: relative;
+  display: block;
+  float: right;
+  width: auto;
+  height: 40px;
+  padding: 5px 5px 5px 50px;
+  margin: 10px 10px 10px;
+  background: none;
+  border: 1px solid #000;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  @media #{$tablet-portrait} {
+    display: none;
+  }
+
+}
+
+.c-navigation__mobile-menu-icon{
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  display: inline-block;
+  width: 30px;
+  height: 15px;
+}
+
+.c-navigation__mobile-menu-line{
+  position: absolute;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #000;
+
+  &--top{
+    @extend .c-navigation__mobile-menu-line;
+    top: 0;
+  }
+
+  &--middle{
+    @extend .c-navigation__mobile-menu-line;
+    top: 50%;
+    margin-top: -1px;
+  }
+
+  &--bottom{
+    @extend .c-navigation__mobile-menu-line;
+    top: 100%;
+  }
+}
+
+.c-navigation__menu{
+  display: none;
+  position: absolute;
+
+  &.active{
+
+  }
+
+  @media #{$tablet-portrait} {
+    float: left;
+    display: block;
+    position: static;
+
+    &.active{
+
+    }
+
+  }
+}
+
+.c-navigation__list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.c-navigation__item{
+  display: block;
+  float: left;
+}
+
+.c-navigation__link{
+  display: block;
+  height: 100%;
+  padding: 20px;
+  text-decoration: none;
+  background: none;
+  color: #000;
+
+  &:focus,
+  &:hover{
+    color: #000;
+    background: #f1f1f1 - 20%;
+  }
+}
+
+.c-navigation__item--dropdown{
+  @extend .c-navigation__item;
+}
+
+.c-navigation__link--dropdown{
+  @extend .c-navigation__link;
+  position: relative;
+  padding-right: 30px;
+
+  &:after{
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    margin-top: -2.5px;
+    @include arrow(bottom, #000, 5px);
+  }
+}
+
+.c-navigation__dropdown-menu{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+}

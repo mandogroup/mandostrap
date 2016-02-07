@@ -3,6 +3,6 @@ navigation = function () {
 
   var element = {
 
-  }
+  };
 
-}
+};
