@@ -36,6 +36,10 @@
   -moz-appearance: none;
   appearance: none;
 
+  &.active {
+    background:$grey;
+  }
+
   @media #{$tablet-portrait} {
     display: none;
   }
@@ -81,7 +85,9 @@
   position: absolute;
 
   &.active{
-
+    display:block;
+    position:relative;
+    clear:both;
   }
 
   @media #{$tablet-portrait} {
@@ -90,21 +96,34 @@
     position: static;
 
     &.active{
-
+      clear:none;
     }
 
   }
 }
 
 .c-navigation__list{
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  padding:0;
+  margin:0;
+  clear:both;
+
+  @media #{$tablet-portrait} {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
 }
 
 .c-navigation__item{
-  display: block;
-  float: left;
+  display:block;
+  width:100%;
+
+  @media #{$tablet-portrait} {
+    display: block;
+    float: left;
+    width:auto;
+  }
 }
 
 .c-navigation__link{
