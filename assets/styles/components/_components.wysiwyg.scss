@@ -102,8 +102,10 @@
     // Table Style
 
     .c-table__container {
-        width:640px;
-        overflow-x:scroll;
+        @media #{$tablet-landscape} {
+            width:640px;
+            overflow-x:scroll;
+        }
     }
 
     .c-table {
