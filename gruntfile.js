@@ -8,7 +8,6 @@
 module.exports = function (grunt) {
     require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
     grunt.loadNpmTasks('sassdown');
-
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         sass: {
@@ -104,6 +103,7 @@ module.exports = function (grunt) {
                     'lib/jquery.min.js': 'jquery/dist/jquery.min.js',
                     'vendor/slick.js': 'slick-carousel/slick/slick.js',
                     'vendor/enquire.js': 'enquire/dist/enquire.js',
+                    'vendor/js.cookie.js': 'js-cookie/src/js.cookie.js'
                 }
             }
         },
@@ -245,11 +245,11 @@ module.exports = function (grunt) {
                 }
             },
             js: {
-                files: ['js/dev/mando/**/*.js'],
+                files: ['js/dev/mando/**/*.js','js/dev/vendor/**/*.js','js/dev/init.js'],
                 tasks: ['concat', 'uglify', 'jshint','modernizr']
             },
             bake: {
-                files: ['templates/bake-views/**/*.htm', 'templates/bake-components/**/*.htm'],
+                files: ['templates/bake-views/**/*.htm', 'templates/bake-includes/**/*.htm','templates/bake-components/**/*.htm'],
                 tasks: ['bake:build', 'htmllint']
             },
             sassdown: {

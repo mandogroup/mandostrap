@@ -38,9 +38,10 @@ We currently use **Bower** as our package manager, listed below are our common d
 
     normalize-css   : "~3.0.3", // Reset for CSS styles
     jquery          : "~2.1.4", // jQuery no explanation needed
-    slick-carousel" : "~1.5.9", // Carousel plugin
+    slick-carousel  : "~1.5.9", // Carousel plugin
     enquire         : "~2.1.2", // A library for responding to CSS media queries.
-    susy            : "~2.2.7"  // CSS grid system
+    susy            : "~2.2.7", // CSS grid system
+    js-cookie       : "~2.1.0"  //  JavaScript API for handling cookies
 
 
 ### Task manager
