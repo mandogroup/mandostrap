@@ -2,7 +2,7 @@
   width: 100%;
   background: $grey-light;
 
-  &--is-fixed {
+  &[data-fixed="true"] {
     position:fixed;
   }
 }

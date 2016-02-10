@@ -20,7 +20,7 @@ navigation = function () {
         // Add it before the wrapper div
         $('.o-wrapper').before(pushMenu);
         // Add close button
-        $(".c-navigation__menu-push #main-navigation").prepend('<li class="c-navigation__item"><a class="c-navigation__link" href="#close" data-action="close">Close</a></li>');
+        $(".c-navigation__menu-push #main-navigation").prepend('<li class="c-navigation__item"><a class="c-navigation__link" href="#close" data-action="close">&#10006; Close</a></li>');
 
         // Set the new menu as the target
         var navTargetPush = $('.c-navigation__menu-push');
