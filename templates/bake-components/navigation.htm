@@ -1,4 +1,4 @@
-<nav class="c-navigation" data-fixed="false" role="navigation">
+<nav class="c-navigation c-navigation--is-fixed" role="navigation">
   <div class="o-wrapper__inner">
 
     <a class="c-navigation__logo" href="/">Company Logo</a>
@@ -29,9 +29,9 @@
 
           <li class="c-navigation__item--dropdown">
 
-            <a class="c-navigation__link--dropdown" href="">Dropdown</a>
+            <a class="c-navigation__link--dropdown" data-toggle="dropdown" href="#dropdown-01">Dropdown 1</a>
 
-            <ul class="c-navigation__dropdown-menu js-dropdown-menu">
+            <ul id="dropdown-01" class="c-navigation__dropdown-menu">
 
               <li class="c-navigation__dropdown-item">
                 <a class="c-navigation__dropdown-link" href="#">Link 1</a>
@@ -43,6 +43,28 @@
 
               <li class="c-navigation__dropdown-item">
                 <a class="c-navigation__dropdown-link" href="#">Link 3</a>
+              </li>
+
+            </ul>
+
+          </li>
+
+          <li class="c-navigation__item--dropdown">
+
+            <a class="c-navigation__link--dropdown" data-toggle="dropdown" href="#dropdown-02">Dropdown 2</a>
+
+            <ul class="c-navigation__dropdown-menu">
+
+              <li class="c-navigation__dropdown-item">
+                <a class="c-navigation__dropdown-link" href="#">Link 1b</a>
+              </li>
+
+              <li class="c-navigation__dropdown-item">
+                <a class="c-navigation__dropdown-link" href="#">Link 2b</a>
+              </li>
+
+              <li class="c-navigation__dropdown-item">
+                <a class="c-navigation__dropdown-link" href="#">Link 3b</a>
               </li>
 
             </ul>
