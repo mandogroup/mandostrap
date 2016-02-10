@@ -212,3 +212,35 @@
     background:$grey-light - 40%;
   }
 }
+
+// Push Navigation
+
+body.is-pushed {
+
+  left:70%;
+  position:relative;
+  overflow:hidden;
+
+}
+
+.c-navigation__menu-push {
+
+  display:none;
+  background: $grey-light;
+
+  &.is-active {
+
+    display:block;
+    position:absolute;
+    width:70%;
+    height:100%;
+    left:0;
+    position:fixed;
+
+  }
+
+  @media #{$tablet-portrait} {
+    display:none;
+  }
+
+}

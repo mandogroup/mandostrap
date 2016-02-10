@@ -5,19 +5,58 @@ navigation = function () {
     // -------------------------------------------------------------
 
     var navToggle = $("[data-toggle='button']"),
-        navTarget = navToggle.data('target'),
-        dropToggle = $("[data-toggle='dropdown']");
+        navTarget = navToggle.data("target");
 
     // Mobile Menu
     // -------------------------------------------------------------
 
-    navToggle.on("click", function(){
-        $(this).toggleClass("is-active");
-        $(navTarget).toggleClass("is-active");
-    });
+    // If have have the PUSH type data attribute
+    if ($('.c-navigation').data('type') === 'push') {
+
+        // Clone the mobile menu to a variable
+        var pushMenu = $('.c-navigation__menu').clone();
+        // Add the push menu class
+        pushMenu.addClass('c-navigation__menu-push');
+        // Add it before the wrapper div
+        $('.o-wrapper').before(pushMenu);
+        // Add close button
+        $(".c-navigation__menu-push #main-navigation").prepend('<li class="c-navigation__item"><a class="c-navigation__link" href="#close" data-action="close">Close</a></li>');
+
+        // Set the new menu as the target
+        var navTargetPush = $('.c-navigation__menu-push');
+        // Set the close button variable
+        var closeButton = $("[data-action='close']");
+
+        // Toggle the is-active and is-pushed classes on click
+        navToggle.on("click", function(){
+            $(this).toggleClass("is-active");
+            $(navTargetPush).toggleClass("is-active");
+            $('body').toggleClass("is-pushed");
+        });
+
+        // Close button
+        closeButton.on('click', function(){
+            navToggle.removeClass("is-active");
+            navTargetPush.removeClass("is-active");
+            $('body').removeClass("is-pushed");
+        });
+
+    // Otherwise we have a dropdown mennu type
+    } else {
+
+        // Toggle the is-active classes on click
+        navToggle.on("click", function(){
+            $(this).toggleClass("is-active");
+            $(navTarget).toggleClass("is-active");
+        });
+
+    }
 
     // Mega Menu / Dropdown
     // -------------------------------------------------------------
+
+    // Set the dropdown sub menu variable
+    var dropToggle = $("[data-toggle='dropdown']");
 
     dropToggle.on("click", function(){
         $(this).parent().siblings().removeClass('is-active');
@@ -31,9 +70,9 @@ navigation = function () {
     // https://css-tricks.com/dangers-stopping-event-propagation/
 
     $(document).on('click', function(event) {
-      if (!$(event.target).closest('.c-navigation').length) {
-        $('.c-navigation').find('.is-active').removeClass('is-active');
-      }
+        if (!$(event.target).closest('.c-navigation').length) {
+            $('.c-navigation').find('.is-active').removeClass('is-active');
+        }
     });
 
     // Window Resize
@@ -42,6 +81,8 @@ navigation = function () {
 
     $(window).on('resize', function(){
         $('.c-navigation').find('.is-active').removeClass('is-active');
+        $('body').removeClass("is-pushed");
+        $('.c-navigation__menu-push').removeClass("is-active");
     });
 
 };
