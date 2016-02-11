@@ -1,122 +1,155 @@
 ﻿//_objects.columns.scss
 .o-row {
-    @include clearfix;
+  @include clearfix;
 }
+
 .o-col,
-.o-col--x2 {min-height:100px;}
+.o-col--x2 {
+  min-height: 100px;
+}
+
 //2columns
 .o-row--2col {
-    @extend .o-row;
-    .o-col {
-         margin-bottom: gutter();
-        @media #{$tablet-landscape} {
-            @include span(6 );
-            &:first-child {
-                @include span(6 first);
-            }
-            &:last-child {
-                @include span(6 last);
-            }
-        }
+  @extend .o-row;
+  .o-col {
+    margin-bottom: gutter();
+    @media #{$tablet-landscape} {
+      @include span(6);
+      &:first-child {
+        @include span(6 first);
+      }
+      &:last-child {
+        @include span(6 last);
+      }
     }
+  }
 }
+
 //3columns
 .o-row--3col {
-    @extend .o-row;
+  @extend .o-row;
+  .o-col {
+    margin-bottom: gutter();
+    @media #{$tablet-landscape} {
+      @include span(3);
+      &:first-child {
+        @include span(3 first);
+      }
+      &:last-child {
+        @include span(3 last);
+      }
+    }
+  }
+  .o-col--x2 {
+    margin-bottom: gutter();
+    @media #{$tablet-landscape} {
+      @include span(9);
+      &:first-child {
+        @include span(9 first);
+      }
+      &:last-child {
+        @include span(9 last);
+      }
+    }
+  }
+  &.o-row--spread {
     .o-col {
-        margin-bottom: gutter();
-        @media #{$tablet-landscape} {
-            @include span(3);
-            &:first-child {
-                @include span(3 first);
-            }
-            &:last-child {
-                @include span(3 last);
-            }
-        }
+      margin-right: 0;
     }
     .o-col--x2 {
-        margin-bottom: gutter();
-        @media #{$tablet-landscape} {
-            @include span(9);
-            &:first-child {
-                @include span(9 first);
-            }
-            &:last-child {
-                @include span(9 last);
-            }
-        }
+      @include span(9 wide);
+      margin-right: 0;
     }
+  }
 }
+
 //4columns
-.o-row--4col {  
-    @extend .o-row;
+.o-row--4col {
+  @extend .o-row;
+  .o-col {
+    margin-bottom: gutter();
+    @media #{$tablet-landscape} {
+      @include span(3);
+      &:first-child {
+        @include span(3 first);
+      }
+      &:last-child {
+        @include span(3 last);
+      }
+    }
+  }
+  .o-col--x2 {
+    margin-bottom: gutter();
+    @media #{$tablet-landscape} {
+      @include span(6);
+      &:first-child {
+        @include span(6 first);
+      }
+      &:last-child {
+        @include span(6 last);
+      }
+    }
+  }
+  &.o-row--spreadright {
+    .o-col--x2 {
+      @include span(6 wide);
+      margin-right: 0;
+    }
+  }
+  &.o-row--spreadleft {
     .o-col {
-        margin-bottom: gutter();
-        @media #{$tablet-landscape} {
-            @include span(3);
-            &:first-child {
-                @include span(3 first);
-            }
-            &:last-child {
-                @include span(3 last);
-            }
-        }
+      margin-right: 0;
     }
     .o-col--x2 {
-        margin-bottom: gutter();
-        @media #{$tablet-landscape} {
-            @include span(6);
-
-            &:first-child {
-                @include span(6 first);
-            }
-
-            &:last-child {
-                @include span(6 last);
-            }
-        }
+      @include span(6 wide);
+      margin-right: 0;
     }
+  }
+  &.o-row--spread {
+    .o-col {
+      margin-right: 0;
+    }
+    .o-col--x2 {
+      @include span(6 wider);
+      margin-right: 0;
+    }
+  }
 }
+
 //2 Column Gallery
 .o-row--2col--gal {
-    @extend .o-row;
-    .o-col {
-        margin-bottom: gutter();
-        @media #{$tablet-portrait} {
-            @include gallery(6 of 12);
-           
-        }
+  @extend .o-row;
+  .o-col {
+    margin-bottom: gutter();
+    @media #{$tablet-portrait} {
+      @include gallery(6 of 12);
     }
+  }
 }
+
 //3 Column Gallery
 .o-row--3col--gal {
-    @extend .o-row;
-    .o-col {
-        
-        margin-bottom: gutter();
-        @media #{$tablet-portrait} {
-            @include gallery(6 of 12);
-        
-        }
-        @media #{$tablet-landscape} {
-            @include gallery(4 of 12);
-          
-        }
+  @extend .o-row;
+  .o-col {
+    margin-bottom: gutter();
+    @media #{$tablet-portrait} {
+      @include gallery(6 of 12);
     }
+    @media #{$tablet-landscape} {
+      @include gallery(4 of 12);
+    }
+  }
 }
+
 //4 Column Gallery
 .o-row--4col--gal {
-    .o-col {
-        
-        margin-bottom: gutter();
-        @media #{$tablet-portrait} {
-            @include gallery(6 of 12);
-          
-        }
-        @media #{$tablet-landscape} {
-            @include gallery(3 of 12);
-          
-        }
+  .o-col {
+    margin-bottom: gutter();
+    @media #{$tablet-portrait} {
+      @include gallery(6 of 12);
     }
+    @media #{$tablet-landscape} {
+      @include gallery(3 of 12);
+    }
+  }
 }
