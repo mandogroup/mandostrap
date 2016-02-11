@@ -49,11 +49,10 @@
 
 //Stacked form
 .c-form--stacked {
-    .c-form__element {
-        display: block;
-    }
-
     .c-form__element-label {
+        margin-top:2rem;
+    }
+    .c-form__element {
         display: block;
     }
 }
@@ -89,17 +88,23 @@
 .c-form__element-label {
     cursor: pointer;
     font-weight: normal;
-    margin: 2rem 0 1rem;
+    margin: 1rem 0;
     @include font-size(20);
+
+    &--block {
+        @extend .c-form__element-label;
+        display:block;
+    }
 }
 
 
 
 
-//Form Element Checkboxes
+//Form Element Checkboxes -- Default UI
 .c-form__checkbox {
     display:table-row;
-    .c-form__element-label {
+    .c-form__element-label
+ {
         display: table-cell;
         margin: 0;
         padding:0 10px 0 0;

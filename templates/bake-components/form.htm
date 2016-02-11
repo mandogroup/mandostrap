@@ -3,25 +3,25 @@
      <h2>Stacked</h2>
     <div class="c-form--stacked">
         <div class="c-form__element">
-            <label for="stacked1" class="visually-hidden">Small Length Control</label>
+            <label for="stacked1" class="c-form__element-label--block">Small Length Control</label>
             <div class="c-form__element-control c-form__element-control--small">
                 <input type="text" name="stacked1" id="stacked1" placeholder="Small Length Control" />
             </div>
         </div>
         <div class="c-form__element">
-            <label for="stacked2" class="visually-hidden">Medium Length Control</label>
+            <label for="stacked2" class="c-form__element-label--block">Medium Length Control</label>
             <div class="c-form__element-control c-form__element-control--med">
                 <input type="text" name="stacked2" id="stacked2" placeholder="Medium Length Control" />
             </div>
         </div>
         <div class="c-form__element">
-            <label for="stacked3" class="visually-hidden">Default Length Control</label>
+            <label for="stacked3" class="c-form__element-label--block">Default Length Control</label>
             <div class="c-form__element-control">
                 <input type="text" name="stacked3" id="stacked3" placeholder="Default Length Control" />
             </div>
         </div>
          <div class="c-form__element">
-            <label for="select" class="c-form__element-label">Custom Select Menu:</label>
+            <label for="select" class="c-form__element-label--block">Custom Select Menu:</label>
             <div class="c-form__element-control">
                 <select id="select" class="js-form-select">
                     <option value="option1">Option 1</option>
@@ -32,7 +32,18 @@
             </div>
         </div>
         <div class="c-form__element">
-            <label for="rq-additional" class="c-form__element-label">Textarea</label>
+            <label for="selectmulti" class="c-form__element-label--block">Custom Select Menu Multiple:</label>
+            <div class="c-form__element-control">
+                <select id="selectmulti" multiple="multiple">
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                    <option value="option4">Option 4</option>
+                </select>
+            </div>
+        </div>
+        <div class="c-form__element">
+            <label for="rq-additional" class="c-form__element-label--block">Textarea</label>
             <textarea id="rq-additional" rows="5" cols="5"></textarea>
         </div>
          <div class="c-form__element">
@@ -68,7 +79,7 @@
         <!-- File input -->
         <div class="c-form__element">
             <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
-            <label for="file" class="c-button c-button--icon"><span>Upload document</span><i class="icon-upload" data-grunticon-embed></i></label>
+            <label for="file" class="c-button c-button--icon"><span>Upload document button example</span><i class="icon-upload" data-grunticon-embed></i></label>
         </div>
     </div>
    
@@ -91,54 +102,54 @@
         </fieldset>
     </div>
     
-    <h3 class="c-form__element-label">Inline Small Fields</h3>
+    <h3>Inline Small Fields with ARIA Describedby</h3>
     <div class="c-form--inline">
         <div class="c-form__element">
-            <label for="rq-cd-pipelength" class="visually-hidden">Pipe Length</label>
+            <label for="rq-cd-pipelength" class="c-form__element-label">Pipe Length</label>
             <div class="c-form__element-control c-form__element-control--small">
-                <input type="text" name="rq-cd-pipelength" id="rq-cd-pipelength" placeholder="Pipe Length" />
+                <input type="text" name="rq-cd-pipelength" id="rq-cd-pipelength" placeholder="0" aria-describedby="info-PipeLength" />
             </div>
-            <span>Metres</span>
+            <span id="info-PipeLength">Metres</span>
         </div>
         <div class="c-form__element">
-            <label for="rq-cd-pipewidth" class="visually-hidden">Pipe Width</label>
+            <label for="rq-cd-pipewidth" class="c-form__element-label">Pipe Width</label>
             <div class="c-form__element-control c-form__element-control--small">
-                <input type="text" name="rq-cd-pipewidth" id="rq-cd-pipewidth" placeholder="Pipe Width" />
+                <input type="text" name="rq-cd-pipewidth" id="rq-cd-pipewidth" placeholder="0" aria-describedby="info-PipeWidth" />
             </div>
-            <span>mm</span>
+            <span id="info-PipeWidth">mm</span>
         </div>
     </div>
     <div class="c-form--inline">
         <div class="c-form__element">
             <label for="cb-subscribe" class="c-form__checkbox">
                 <input type="checkbox" id="cb-subscribe" name="cb-subscribe">
-                <span class="c-form__element-label c-form__element-label--terms">Subscribe to receive news and information about our services</span>
+                <span class="c-form__element-label c-form__element-label--terms">Smaller label text for terms &amp; conditions</span>
             </label>
         </div>
         <input type="submit" class="c-button u-right submit" value="Submit">
     </div>
-     <h2>Two columns</h2>
+     <h2>Two columns - Gallery</h2>
     <div class="c-form--2col">
         <div class="c-form__element">
-            <label for="cb-fullname" class="visually-hidden">Full Name</label>
+            <label for="cb-fullname"  class="c-form__element-label--block">Full Name</label>
             <div class="c-form__element-control">
                 <input type="text" id="cb-fullname" name="cb-fullname" placeholder="Full Name">
             </div>
         </div>
         <div class="c-form__element">
-            <label for="cb-company" class="visually-hidden">Company</label>
+            <label for="cb-company"  class="c-form__element-label--block">Company</label>
             <div class="c-form__element-control">
                 <input type="text" id="cb-company" name="cb-company" placeholder="Company" class="required" aria-required="true">
             </div>
         </div>
         <div class="c-form__element">
-            <label for="cb-email" class="visually-hidden">Email</label>
+            <label for="cb-email" class="c-form__element-label--block">Email</label>
             <div class="c-form__element-control">
                 <input type="email" id="cb-email" name="cb-email" placeholder="Email address" class="required" aria-required="true">
             </div>
         </div>
         <div class="c-form__element">
-            <label for="cb-email" class="visually-hidden">Telephone no</label>
+            <label for="cb-email" class="c-form__element-label--block">Telephone no</label>
             <div class="c-form__element-control">
                 <input type="tel" id="cb-tel" name="cb-tel" placeholder="Telephone no">
             </div>
