@@ -28,7 +28,9 @@
 
             if (fileName) {
                 $label.find('span').html(fileName);
-                $('<button type="button" class="c-textbutton inputfile__remove js-remove">Remove document</button>').insertAfter($label);
+                 if (!$('.js-remove')[0]) {
+                     $('<button type="button" class="c-textbutton inputfile__remove js-remove">Remove document</button>').insertAfter($label);
+                }
             }
             else {
                 resetFile();
