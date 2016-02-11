@@ -1,5 +1,36 @@
 ﻿//_base.forms.scss
 
+/*
+
+### Placeholder
+
+    <input type="text" placeholder="This is placeholder text">
+
+*//*
+
+### Textarea
+
+    <textarea></textarea>
+
+*//*
+
+### Text Input
+
+    <input type="text" placeholder="Text input">
+    <input type="tel" placeholder="Telephone input">
+    <input type="email" placeholder="Email input">
+    <input type="password" placeholder="Password">
+    <input type="date">
+    <input type="month">
+    <input type="time">
+    <input type="week">
+    <input type="number">
+    <input type="url">
+    <input type="search">
+    <input type="color" value="#FF0000">
+
+*/
+
 [placeholder]:focus::-webkit-input-placeholder {
     color: transparent;
 }
@@ -19,6 +50,7 @@ input::-moz-placeholder {
 input:-ms-input-placeholder {
     color: lighten($black,20%);
 }
+
 
 
 textarea,
@@ -85,8 +117,10 @@ input[type="checkbox"] {
 }
 input[type="checkbox"],
 input[type="radio"] {
-    position:absolute;
-    top:5px;
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    margin:0 10px 0 0;
 }
 
 fieldset {
@@ -122,7 +156,7 @@ label.error {
         font-size: 12px;
         font-weight: bold;
         content: '!';
-        color: #ccc;
+        color: $grey;
     }
 }
 
@@ -156,6 +190,4 @@ label.error {
         display: none;
     }
 }
-.form {
-    margin-bottom:1rem;
-}
+

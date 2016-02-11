@@ -3,7 +3,6 @@
 	Available for use under the MIT License
 */
 ; (function ($, window, document, undefined) {
-
     $('.inputfile').each(function () {
         var $input = $(this),
             $label = $input.next('label'),

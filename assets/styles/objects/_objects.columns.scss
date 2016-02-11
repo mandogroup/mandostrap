@@ -1,15 +1,72 @@
 ﻿//_objects.columns.scss
-
 .o-row {
     @include clearfix;
 }
-
-.o-row--2col{
+.o-col,
+.o-col--x2 {min-height:100px;}
+//2columns
+.o-row--2col {
     @extend .o-row;
-
-    .o-col{
+    .o-col {
+         margin-bottom: gutter();
         @media #{$tablet-landscape} {
-            @include span(6 border-box);
+            @include span(6 );
+            &:first-child {
+                @include span(6 first);
+            }
+            &:last-child {
+                @include span(6 last);
+            }
+        }
+    }
+}
+//3columns
+.o-row--3col {
+    @extend .o-row;
+    .o-col {
+        margin-bottom: gutter();
+        @media #{$tablet-landscape} {
+            @include span(3);
+            &:first-child {
+                @include span(3 first);
+            }
+            &:last-child {
+                @include span(3 last);
+            }
+        }
+    }
+    .o-col--x2 {
+        margin-bottom: gutter();
+        @media #{$tablet-landscape} {
+            @include span(9);
+            &:first-child {
+                @include span(9 first);
+            }
+            &:last-child {
+                @include span(9 last);
+            }
+        }
+    }
+}
+//4columns
+.o-row--4col {  
+    @extend .o-row;
+    .o-col {
+        margin-bottom: gutter();
+        @media #{$tablet-landscape} {
+            @include span(3);
+            &:first-child {
+                @include span(3 first);
+            }
+            &:last-child {
+                @include span(3 last);
+            }
+        }
+    }
+    .o-col--x2 {
+        margin-bottom: gutter();
+        @media #{$tablet-landscape} {
+            @include span(6);
 
             &:first-child {
                 @include span(6 first);
@@ -21,149 +78,45 @@
         }
     }
 }
-
-//4columns
-
-.o-row--4col .o-col {
-    @media #{$tablet-portrait-only} {
-        @include gallery(6 of 12 border-box);
-    }
-
-    @media #{$tablet-landscape} {
-        @include span(3 border-box);
-
-        &:first-child {
-            @include span(3 first);
-        }
-
-        &:last-child {
-            @include span(3 last);
-        }
-    }
-}
-//4columns
-.o-row--3col {
+//2 Column Gallery
+.o-row--2col--gal {
     @extend .o-row;
-    &.o-row--borders {
-        @media #{$tablet-landscape} {
-            background-image: url(data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==), url(data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==);
-            background-position: percentage(1/3) top, percentage(2/3) top;
-            background-repeat: repeat-y;
-        }
-
-        .o-col:nth-child(2) {
-            border-top: 1px solid rgba($white, .5);
-            border-bottom: 1px solid rgba($white, .5);
-
-            @media #{$tablet-landscape} {
-                border: 0;
-            }
-        }
-    }
-
     .o-col {
-
-
-        @media #{$tablet-portrait} {
-            @include span(4 border-box);
-
-            &:first-child {
-                @include span(4 first);
-            }
-
-            &:last-child {
-                @include span(4 last);
-            }
-        }
-    }
-
-    .o-col--x2 {
-        @media #{$tablet-portrait} {
-            @include span(8 border-box);
-
-            &:first-child {
-                @include span(8 first);
-            }
-
-            &:last-child {
-                @include span(8 last);
-            }
-        }
-    }
-}
-//Column padding modifier
-.o-row--colpadding .o-col {
-    @include pad(2%);
-}
-//Column margin modifier
-.o-row--colmarginB .o-col {
-    margin-bottom: gutters();
-}
-
-
-.o-row--2col--gal{
-    @extend .o-row;
-
-    .o-col {
-        @include gallery(12 of 12);
         margin-bottom: gutter();
-        
         @media #{$tablet-portrait} {
             @include gallery(6 of 12);
-            margin-bottom: gutter();
+           
         }
-
     }
- }
-
-.o-row--3col--gal{
+}
+//3 Column Gallery
+.o-row--3col--gal {
     @extend .o-row;
-
-   .o-col{
-        @include gallery(12 of 12);
-        margin-bottom: gutter();
+    .o-col {
         
+        margin-bottom: gutter();
         @media #{$tablet-portrait} {
             @include gallery(6 of 12);
-            margin-bottom: gutter();
+        
         }
-
         @media #{$tablet-landscape} {
             @include gallery(4 of 12);
-            margin-bottom: gutter();
+          
         }
-
     }
-
 }
-
-.o-row--4col--gal{
-
-    .o-col{
-        @include gallery(12 of 12);
-        margin-bottom: gutter();
+//4 Column Gallery
+.o-row--4col--gal {
+    .o-col {
         
+        margin-bottom: gutter();
         @media #{$tablet-portrait} {
             @include gallery(6 of 12);
-            margin-bottom: gutter();
+          
         }
-
         @media #{$tablet-landscape} {
             @include gallery(3 of 12);
-            margin-bottom: gutter();
-        }
-    }
-
-}
-
-.o-row--1col--gal{
-    .o-col{
-        display: block;
-        margin-bottom: 20px;
-
-        @media #{$tablet-portrait} {
-            display: table;
-            min-height: 360px;
+          
         }
     }
 }

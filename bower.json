@@ -21,6 +21,7 @@
     "jquery": "~2.1.4",
     "slick-carousel": "~1.5.9",
     "enquire": "~2.1.2",
-    "susy": "~2.2.7"
+    "susy": "~2.2.7",
+    "js-cookie": "~2.1.0"
   }
 }

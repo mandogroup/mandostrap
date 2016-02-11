@@ -7,6 +7,7 @@
 
 module.exports = function (grunt) {
     require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
+    grunt.loadNpmTasks('sassdown');
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
         sass: {
@@ -20,6 +21,32 @@ module.exports = function (grunt) {
                 }
             }
         },
+        sassdown: {
+            styleguide: {
+                options: {
+                    assets: [
+                      'assets/styles/main.css',
+                      'js/dist/styleguidejs.js'
+
+                    ],
+                    template: 'templates/styleguide-template.hbs'
+                },
+                files: [{
+                    expand: true,
+                    cwd: 'assets/styles/',
+                    src: [
+                        'base/*.scss',
+                        'components/*.scss',
+                        'objects/*.scss',
+                        'settings/*.scss',
+                        'tools/*.scss',
+                        'trumps/*.scss'
+                    ],
+                    dest: 'styleguide/'
+                }]
+            }
+        },
+
         // Runs through distribution CSS file and add vendor prefixers where necessary (overwriting original)
         postcss: {
             options: {
@@ -76,32 +103,33 @@ module.exports = function (grunt) {
                     'lib/jquery.min.js': 'jquery/dist/jquery.min.js',
                     'vendor/slick.js': 'slick-carousel/slick/slick.js',
                     'vendor/enquire.js': 'enquire/dist/enquire.js',
+                    'vendor/js.cookie.js': 'js-cookie/src/js.cookie.js'
                 }
             }
         },
         //Modernizr custom build
         modernizr: {
-            dist: {
-                "dest": "js/dev/lib/modernizr.js",
-                "parseFiles": true,
-                "customTests": [],
-                "devFile": false,
-                "tests": [
-                 //Add tests here
-                ],
-                "options": [
-                  "setClasses"
-                ],
-                "uglify": true,
+           dist: {
+               "dest": "js/dev/lib/modernizr.js",
+               "parseFiles": true,
+               "customTests": [],
+               "devFile": false,
+               "tests": [
+                //Add tests here
+               ],
+               "options": [
+                 "setClasses"
+               ],
+               "uglify": true,
 
-                "files": {
-                    "src": [
-                        'js/dev/mando/*.js',
-                        'assets/styles/**/*.css'
-                    ]
-                },
-            }
-        },
+               "files": {
+                   "src": [
+                       'js/dev/mando/*.js',
+                       'assets/styles/**/*.css'
+                   ]
+               },
+           }
+       },
         // Minify SVG
         svgmin: {
             dist: {
@@ -174,6 +202,10 @@ module.exports = function (grunt) {
                 src: ['js/dev/mando/**/*.js', 'js/dev/init.js'],
                 dest: 'js/dist/mando.js'
             },
+            styleguidejs: {
+            src: ['js/dev/lib/jquery.min.js','js/dev/vendor/*.js', 'js/dev/mando/**/*.js', 'js/dev/init.js'],
+            dest: 'js/dist/styleguidejs.js'
+          },
         },
         // Uglify - minify all the javascript files together
         uglify: {
@@ -213,12 +245,16 @@ module.exports = function (grunt) {
                 }
             },
             js: {
-                files: ['js/dev/mando/**/*.js'],
+                files: ['js/dev/mando/**/*.js','js/dev/vendor/**/*.js','js/dev/init.js'],
                 tasks: ['concat', 'uglify', 'jshint','modernizr']
             },
             bake: {
-                files: ['templates/bake-views/**/*.htm', 'templates/bake-components/**/*.htm'],
+                files: ['templates/bake-views/**/*.htm', 'templates/bake-includes/**/*.htm','templates/bake-components/**/*.htm'],
                 tasks: ['bake:build', 'htmllint']
+            },
+            sassdown: {
+                files: ['assets/styles/**/*.scss'],
+                tasks: ['sassdown'],
             }
         },
         // Favicon
@@ -271,5 +307,6 @@ module.exports = function (grunt) {
     // ===================================================
     grunt.registerTask('favicon', ['realFavicon']);
     grunt.registerTask('default', ['bowercopy','sass', 'postcss', 'bake', 'concat', 'uglify', 'modernizr', 'svgmin', 'grunticon:myIcons']);
-    grunt.registerTask('dev', ['sass', 'postcss', 'bake', 'htmllint', 'concat', 'uglify', 'jshint', 'watch']);
+    grunt.registerTask('dev', ['sass', 'postcss', 'bake', 'sassdown', 'htmllint', 'concat', 'uglify', 'jshint', 'watch']);
+    grunt.registerTask('styleguide', ['sass', 'postcss','concat:styleguidejs','sassdown']);
 };

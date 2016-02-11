@@ -16,7 +16,10 @@
     display: none;
     visibility: hidden;
 }
-
+.is-visible {
+    display: block;
+    visibility: visible;
+}
 .is-hidden-mobile {
     display: none;
     visibility: hidden;

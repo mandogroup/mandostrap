@@ -41,10 +41,13 @@ TABLE OF CONTENTS
 @import "objects/_objects.columns";
 
 //==5    COMPONENTS - designed chunks of UI
+@import "components/_components.browserupgrade";
 @import "components/_components.accessmenu";
+@import "components/_components.cookie";
 @import "components/_components.buttons";
 @import "components/_components.wysiwyg";
 @import "components/_components.forms";
+@import "components/_components.carousel";
 
 //==X    TRUMPS - helpers & overrides
 @import "trumps/_trumps.utilities";
