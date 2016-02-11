@@ -113,6 +113,10 @@ p {
   margin: 0 auto 1rem auto;
 }
 
+a {
+  @include defaultTransition();
+}
+
 h1 {
   @include font-size($h1-font-sizes);
 }
