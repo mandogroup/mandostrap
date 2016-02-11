@@ -9,24 +9,24 @@
                 height: 0;
             }
         }
-        
+
         // Font-size
         @mixin font-size($size, $base: 16) {
             $value: $size/$base;
             font-size: ($value) + px;
             font-size: ($value) + rem;
         }
-        
+
         //Sizing helpers
         @mixin size($width, $height) {
             width: $width;
             height: $height;
         }
-        
+
         @mixin square($size) {
             @include size($size, $size);
         }
-        
+
         // Truncating text
         @mixin text-truncate($maxwidth) {
             display: inline-block;
@@ -35,21 +35,21 @@
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-        
+
         // Clear for floated grids
         @mixin wrap-every($n) {
             &:nth-of-type(#{$n}n + 1) {
                 clear: left;
             }
         }
-        
+
         // Reset
         @mixin unwrap-every($n) {
             &:nth-of-type(#{$n}n + 1) {
                 clear: none;
             }
         }
-        
+
         // Arrows
         @mixin arrow($direction, $color, $size) {
             display: inline-block;
@@ -76,7 +76,7 @@
                 border-bottom: $size solid transparent;
             }
         }
-        
+
         // Font Size Mapping With Line Height
         @mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
             @each $fs-breakpoint,
@@ -96,7 +96,7 @@
                 }
             }
         }
-        
+
         // Utility function for mixin font-size
         @mixin make-font-size($fs-font-size) {
             // If $fs-font-size is a list, include
@@ -110,4 +110,13 @@
             @else {
                 font-size: $fs-font-size;
             }
+        }
+
+        // Transition animation mixin
+
+        @mixin defaultTransition() {
+            -moz-transition: $transitionTarget, $transitionSpeed, $transitionType;
+            -ms-transition: $transitionTarget, $transitionSpeed, $transitionType;
+            -webkit-transition: $transitionTarget, $transitionSpeed, $transitionType;
+            transition: $transitionTarget, $transitionSpeed, $transitionType;
         }

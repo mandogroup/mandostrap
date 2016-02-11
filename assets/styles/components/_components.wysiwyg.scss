@@ -139,10 +139,15 @@
 
             tr {
 
+                &:nth-child(even) {
+                  background-color:$grey-light;
+                }
+
                 &:hover > td,
                 &:focus > td{
                     background-color:$grey-light;
                     box-shadow: $grey 0 -1px 0 inset;
+                    @include defaultTransition();
                 }
 
             }

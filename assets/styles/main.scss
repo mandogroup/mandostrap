@@ -4,7 +4,7 @@ main.scss: Main stylesheet imports
 ------------
 Template Version:		1.0
 Start date:				20/10/2015
------------- 
+------------
 
 TABLE OF CONTENTS
 ==0    VENDOR
@@ -22,10 +22,11 @@ TABLE OF CONTENTS
 
 //==1    SETTINGS - Global variables, config switches
 @import "settings/_settings.colors";
-@import "settings/_settings.reset"; 
+@import "settings/_settings.reset";
 @import "settings/_settings.grid";
 @import "settings/_settings.breakpoints";
-@import "settings/_settings.fonts"; 
+@import "settings/_settings.fonts";
+@import "settings/_settings.animation";
 
 //==2    TOOLS - Default mixins and functions
 @import "tools/_tools.mixins";
