@@ -1,0 +1,216 @@
+﻿//_components.hero.scss
+
+/*
+
+### Hero Banner Carousel/Slider
+
+    <div class="c-hero-slider js-hero-slider">
+        <div class="c-hero-slider__item">
+            <figure>
+                <picture>
+                    <source
+                        media="(min-width: 64em)"
+                        srcset="../../assets/img/styleguide/banner--desktop.svg"
+                        type="image/svg+xml">
+
+                    <source
+                        media="(min-width: 60em)"
+                        srcset="../../assets/img/styleguide/banner--tablet-landscape.svg"
+                        type="image/svg+xml">
+
+                    <source
+                        media="(min-width: 48em)"
+                        srcset="../../assets/img/styleguide/banner--tablet-portrait.svg"
+                        type="image/svg+xml">
+
+                    <source
+                        srcset="../../assets/img/styleguide/banner--mobile.svg"
+                        type="image/svg+xml">
+
+                    <img
+                        sizes=" (min-width: 64em) 100vw,
+                                (min-width: 60em) 100vw,
+                                (min-width: 48em) 100vw,
+                                (max-width: 48em) 100vw"
+                        srcset="
+                        ../../assets/img/styleguide/banner--desktop.jpg 1024w,
+                        ../../assets/img/styleguide/banner--tablet-landscape.jpg 960w,
+                        ../../assets/img/styleguide/banner--tablet-portrait.jpg 768w,
+                        ../../assets/img/styleguide/banner--mobile.jpg 300w"
+                        src="../../assets/img/styleguide/banner--fallback.jpg"
+                        alt="Banner description">
+                </picture>
+                <figcaption>Slide O1</figcaption>
+            </figure>
+        </div>
+        <div class="c-hero-slider__item">
+            <figure>
+                <picture>
+                    <source
+                        media="(min-width: 64em)"
+                        srcset="../../assets/img/styleguide/banner--desktop.svg"
+                        type="image/svg+xml">
+
+                    <source
+                        media="(min-width: 60em)"
+                        srcset="../../assets/img/styleguide/banner--tablet-landscape.svg"
+                        type="image/svg+xml">
+
+                    <source
+                        media="(min-width: 48em)"
+                        srcset="../../assets/img/styleguide/banner--tablet-portrait.svg"
+                        type="image/svg+xml">
+
+                    <source
+                        srcset="../../assets/img/styleguide/banner--mobile.svg"
+                        type="image/svg+xml">
+
+                    <img
+                        sizes=" (min-width: 64em) 100vw,
+                                (min-width: 60em) 100vw,
+                                (min-width: 48em) 100vw,
+                                (max-width: 48em) 100vw"
+                        srcset="
+                        ../../assets/img/styleguide/banner--desktop.jpg 1024w,
+                        ../../assets/img/styleguide/banner--tablet-landscape.jpg 960w,
+                        ../../assets/img/styleguide/banner--tablet-portrait.jpg 768w,
+                        ../../assets/img/styleguide/banner--mobile.jpg 300w"
+                        src="../../assets/img/styleguide/banner--fallback.jpg"
+                        alt="Banner description">
+                </picture>
+                <figcaption>Slide O2</figcaption>
+            </figure>
+        </div>
+    </div>
+
+*//*
+
+### Hero Banner using Picture and Figure
+
+    <div class="c-hero__picture">
+      <figure>
+          <picture>
+              <source
+                  media="(min-width: 64em)"
+                  srcset="../../assets/img/styleguide/banner--desktop.svg"
+                  type="image/svg+xml">
+
+              <source
+                  media="(min-width: 60em)"
+                  srcset="../../assets/img/styleguide/banner--tablet-landscape.svg"
+                  type="image/svg+xml">
+
+              <source
+                  media="(min-width: 48em)"
+                  srcset="../../assets/img/styleguide/banner--tablet-portrait.svg"
+                  type="image/svg+xml">
+
+              <source
+                  srcset="../../assets/img/styleguide/banner--mobile.svg"
+                  type="image/svg+xml">
+
+              <img
+                  sizes=" (min-width: 64em) 100vw,
+                          (min-width: 60em) 100vw,
+                          (min-width: 48em) 100vw,
+                          (max-width: 48em) 100vw"
+                  srcset="
+                  ../../assets/img/styleguide/banner--desktop.jpg 1024w,
+                  ../../assets/img/styleguide/banner--tablet-landscape.jpg 960w,
+                  ../../assets/img/styleguide/banner--tablet-portrait.jpg 768w,
+                  ../../assets/img/styleguide/banner--mobile.jpg 300w"
+                  src="../../assets/img/styleguide/banner--fallback.jpg"
+                  alt="Banner description">
+          </picture>
+          <figcaption>This is a caption for the image above</figcaption>
+      </figure>
+    </div>
+
+
+*//*
+
+### Hero Banner using Background Image
+
+    <div class="c-hero__background"
+      style="background:url(http://p-hold.com/clouds/1024/350) no-repeat center center;background-size:cover;">
+      <h2>Hero with Background Image</h2>
+    </div>
+
+*/
+
+.c-hero-slider {
+
+  img {
+    width:100%;
+    height:auto;
+  }
+
+  figure {
+    position:relative;
+    margin:0;
+  }
+
+  figcaption {
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:1rem 1rem 2rem 1rem;
+    background:$grey-light;
+  }
+
+  ul.slick-dots {
+    position:absolute;
+    bottom:2rem;
+    right:1rem;
+  }
+
+  .slick-next {
+    right:1rem;
+  }
+
+  .slick-prev {
+    left:1rem;
+  }
+
+}
+
+.c-hero__picture {
+
+  img {
+    width:100%;
+    height:auto;
+  }
+
+  figure {
+    position:relative;
+    margin:0;
+  }
+
+  figcaption {
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:1rem;
+    background:$grey-light;
+  }
+
+}
+
+.c-hero__background {
+  width:100%;
+  min-height:350px;
+  position:relative;
+
+  h2 {
+    position:absolute;
+    left:1.5rem;
+    bottom:1.5rem;
+    width:50%;
+    padding:1rem;
+    margin:0;
+    background:rgba(50,50,50,0.75);
+    color:$white;
+  }
+}
