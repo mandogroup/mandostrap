@@ -10,6 +10,6 @@ $(function () {
     // shareControl();
     carousel();
     cookieBanner();
-    // bannerCarousel();
+    navigation();
 });
 
