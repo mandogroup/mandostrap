@@ -13,17 +13,16 @@
 }
 
 .c-navigation__logo{
-  float: left;
-  padding: 20px;
-  height: 57px;
+  float:left;
+  padding:1rem;
   color: #000;
-  line-height: 100%;
   text-decoration: none;
 
   &:focus,
   &:hover{
 
   }
+
 }
 
 .c-navigation__mobile-menu-btn{
@@ -31,9 +30,9 @@
   display: block;
   float: right;
   width: auto;
-  height: 40px;
-  padding: 5px 5px 5px 50px;
-  margin: 10px 10px 10px;
+  height: 2.5rem;
+  padding: 0.3125rem 0.3125rem 0.3125rem 3.125rem;
+  margin: 0.625rem;
   background: none;
   border: 1px solid #000;
   -webkit-appearance: none;
@@ -52,11 +51,11 @@
 
 .c-navigation__mobile-menu-icon{
   position: absolute;
-  left: 10px;
-  top: 10px;
+  left: 0.625rem;
+  top: 0.625rem;
   display: inline-block;
-  width: 30px;
-  height: 15px;
+  width: 1.875rem;
+  height: 0.938rem;
 }
 
 .c-navigation__mobile-menu-line{
@@ -133,7 +132,7 @@
 .c-navigation__link{
   display: block;
   height: 100%;
-  padding: 20px;
+  padding: 1rem;
   text-decoration: none;
   background: none;
   color: #000;
@@ -170,7 +169,7 @@
     content: "";
     position: absolute;
     top: 50%;
-    right: 10px;
+    right: 0.625rem;
     margin-top: -2.5px;
     @include arrow(bottom, #000, 5px);
   }
