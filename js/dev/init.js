@@ -9,6 +9,7 @@ $(function () {
     // faq();
     // shareControl();
     carousel();
+    cookieBanner();
     navigation();
 });
 
