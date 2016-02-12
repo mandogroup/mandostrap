@@ -1,0 +1,48 @@
+﻿//_components.hero.scss
+
+/*
+
+### Picture Element
+[Good starting point](http://alistapart.com/article/responsive-images-in-practice)
+
+    <figure>
+        <picture>
+              <source
+                media="(min-width: 64em)"
+                srcset="http://placehold.it/600x600?text=Desktop">
+
+              <source
+                media="(min-width: 60em)"
+                srcset="http://placehold.it/500x500?text=Tablet+Landscape">
+
+              <source
+                media="(min-width: 48em)"
+                srcset="http://placehold.it/400x400?text=Tablet+Portriat">
+
+              <source
+                media="(max-width: 48em)"
+                srcset="http://placehold.it/320x320?text=Mobile">
+
+              <img
+                src="http://placehold.it/600x600?text=Fallback"
+                alt="an images">
+        </picture>
+        <figcaption>This is a figure caption!</figcaption>
+    <figure>
+
+*/
+
+figure {
+  position:relative;
+  margin:0;
+  display:inline-block;
+
+  figcaption {
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:1rem 1rem 1rem 1rem;
+  }
+}
+
