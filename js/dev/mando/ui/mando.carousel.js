@@ -1,4 +1,5 @@
 carousel = function () {
+
   $('.js-carousel').slick({
     dots: true,
     infinite: true,
@@ -34,4 +35,5 @@ carousel = function () {
       }
     ]
   });
+
 };
