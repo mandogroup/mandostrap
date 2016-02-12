@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>MandostrapCore</id>
+    <version>$version$</version>
+    <title>Mandostrap Core</title>
+    <authors>Stuart Rayson, Simon Melhuish, Heidi Crook</authors>
+    <owners>Stuart Rayson</owners>
+    <licenseUrl>https://github.com/mandogroup/mandostrap/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/mandogroup/mandostrap/</projectUrl>
+    <iconUrl>https://avatars3.githubusercontent.com/u/7890777?s=140</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Initial core package to allow front-end assets to be easily used within projects.</description>
+    <releaseNotes></releaseNotes>
+    <copyright>Copyright &#x00A9; Mando Group Ltd.  All rights reserved.</copyright>
+    <tags>FED</tags>
+  </metadata>
+  <files>
+	<file src="templates\bake-views\home.htm" target="templates\" />
+  </files>
+</package>
