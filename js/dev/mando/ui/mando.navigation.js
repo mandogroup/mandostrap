@@ -11,19 +11,19 @@ navigation = function () {
     // -------------------------------------------------------------
 
     // If have have the PUSH type data attribute
-    if ($('.c-navigation').data('type') === 'push') {
+    if ($('.js-navigation').data('type') === 'push') {
 
         // Clone the mobile menu to a variable
-        var pushMenu = $('.c-navigation__menu').clone();
+        var pushMenu = $('.js-navigation__menu').clone();
         // Add the push menu class
         pushMenu.addClass('c-navigation__menu-push');
         // Add it before the wrapper div
         $('.o-wrapper').before(pushMenu);
         // Add close button
-        $(".c-navigation__menu-push #main-navigation").prepend('<li class="c-navigation__item"><a class="c-navigation__link" href="#close" data-action="close">&#10006; Close</a></li>');
+        $(".c-navigation__menu-push js-navigation__menu-push #main-navigation").prepend('<li class="c-navigation__item"><a class="c-navigation__link" href="#close" data-action="close">&#10006; Close</a></li>');
 
         // Set the new menu as the target
-        var navTargetPush = $('.c-navigation__menu-push');
+        var navTargetPush = $('.js-navigation__menu-push');
         // Set the close button variable
         var closeButton = $("[data-action='close']");
 
@@ -71,7 +71,7 @@ navigation = function () {
 
     $(document).on('click', function(event) {
         if (!$(event.target).closest('.c-navigation').length) {
-            $('.c-navigation').find('.is-active').removeClass('is-active');
+            $('.js-navigation').find('.is-active').removeClass('is-active');
         }
     });
 
@@ -80,9 +80,9 @@ navigation = function () {
     // Hides all dropdowns when we resize the browser
 
     $(window).on('resize', function(){
-        $('.c-navigation').find('.is-active').removeClass('is-active');
+        $('.js-navigation').find('.is-active').removeClass('is-active');
         $('body').removeClass("is-pushed");
-        $('.c-navigation__menu-push').removeClass("is-active");
+        $('.js-navigation__menu-push').removeClass("is-active");
     });
 
 };
