@@ -1,8 +1,6 @@
 /*
 	gruntfile.js
 	------------
-	Project Name:   	NWG
-	------------
 */
 
 module.exports = function (grunt) {
@@ -38,8 +36,6 @@ module.exports = function (grunt) {
                         'base/*.scss',
                         'components/*.scss',
                         'objects/*.scss',
-                        'settings/*.scss',
-                        'tools/*.scss',
                         'trumps/*.scss'
                     ],
                     dest: 'styleguide/'
@@ -305,8 +301,7 @@ module.exports = function (grunt) {
     // ===================================================
     // TASK DEFINITIONS
     // ===================================================
-    grunt.registerTask('favicon', ['realFavicon']);
-    grunt.registerTask('default', ['bowercopy','sass', 'postcss', 'bake', 'concat', 'uglify', 'modernizr', 'svgmin', 'grunticon:myIcons']);
-    grunt.registerTask('dev', ['sass', 'postcss', 'bake', 'sassdown', 'htmllint', 'concat', 'uglify', 'jshint', 'watch']);
+    grunt.registerTask('default', ['realFavicon', 'bowercopy','sass', 'postcss', 'bake', 'concat', 'uglify', 'modernizr', 'svgmin', 'grunticon:myIcons']);
+    grunt.registerTask('dev', ['sass', 'postcss', 'bake', 'sassdown', 'htmllint', 'jshint', 'watch']);
     grunt.registerTask('styleguide', ['sass', 'postcss','concat:styleguidejs','sassdown']);
 };

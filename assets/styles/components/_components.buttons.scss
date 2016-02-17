@@ -1,4 +1,278 @@
-﻿//_components.buttons.scss
+﻿//-------------------------------------------
+// _components.buttons.scss
+//-------------------------------------------
+
+@mixin btn-theme($btn-color) {
+  border-color: $btn-color;
+  color: $btn-color;
+
+  &:hover,
+  &:focus {
+    background: $btn-color;
+    color: $white;
+  }
+
+}
+
+// Default button Style
+
+[class^="c-button"] {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  background-clip: padding-box;
+  border: 1px solid $grey-mid;
+  border-radius: 3px;
+  background: transparent;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  color: $grey-dark;
+  line-height: 2.125rem;
+  text-decoration: none;
+  -webkit-appearance: none;
+  white-space: normal;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  &:hover,
+  &:focus {
+    background: $grey-light;
+    color: $grey-dark;
+    @include defaultTransition();
+  }
+
+  //@include btn-theme($black);
+
+  + [class^="c-button"] {
+    margin-left: 1rem;
+  }
+}
+
+// Button with Icon
+
+// TEMP ICON STYLE - NEEDS TO BE REPLACED BY GLYPH/FONT/WHATEVER APPROACH WE GO FOR!
+
+[class^="icon"] {
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  background: $facebook-color;
+  vertical-align: middle;
+}
+
+[class^="c-button--icon"]:disabled {
+  cursor: not-allowed;
+
+  [class^="icon"] {
+    opacity: 0.5;
+  }
+}
+
+.c-button--icon-right {
+
+  [class^="icon"] {
+    margin-left: 0.5rem;
+  }
+
+}
+
+.c-button--icon-left {
+
+  [class^="icon"] {
+    margin-right: 0.5rem;
+  }
+
+}
+
+// Button with icon (no text)
+
+.c-button--icon-bare {
+  border: none;
+  padding: 0;
+  line-height: 1;
+}
+
+.c-button--icon-container {
+  border: none;
+  line-height: 1;
+  padding: 0 0.5rem;
+
+  &:hover,
+  &:focus {
+    background: none;
+  }
+}
+
+.c-button--icon-border {
+  padding: 0 0.5rem;
+
+}
+
+// Link Style Button
+
+.c-button--link {
+  border: none;
+  text-decoration: underline;
+  background: none;
+  padding: 0;
+
+  &:hover,
+  &:focus {
+    background: none;
+  }
+}
+
+// Disabled Button
+
+.c-button--disabled,
+.c-button:disabled {
+  color: $grey;
+  border-color: $grey;
+
+  &:hover,
+  &:focus {
+    color: $grey;
+    border-color: $grey;
+    background: none;
+    cursor: not-allowed;
+  }
+}
+
+// Button Sizes
+
+.c-button--mini {
+  font-size: 75%;
+  line-height: 1.8;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.c-button--small {
+  font-size: 85%;
+  line-height: 2.2;
+}
+
+.c-button--large {
+  font-size: 115%;
+  line-height: 2.6;
+}
+
+.c-button--mega {
+  font-size: 130%;
+  line-height: 2.6;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+// Stacked Buttons
+
+.c-button--stacked {
+  display: block;
+
+  + [class^="c-button"] {
+    margin-left: 0rem;
+    margin-top: 1rem;
+  }
+}
+
+// Reset Button
+
+.c-button--reset {
+
+  &:before {
+    content: '\2716';
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+}
+
+.c-button--reset-bare {
+  border: none;
+  background: none;
+  text-decoration: underline;
+  padding: 0;
+  line-height: 1;
+
+  &:before {
+    content: '\2716';
+    display: inline-block;
+    margin-right: 0.5rem;
+  }
+
+  &:hover,
+  &:focus {
+    background: none;
+  }
+}
+
+// Button Group
+
+.c-button-group {
+  display: inline-block;
+  vertical-align: middle;
+  border: none;
+  padding: 0;
+
+  &:hover,
+  &:focus {
+    color: none;
+    border-color: none;
+    background: none;
+  }
+
+  [class^="c-button"]:first-child:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+  }
+
+  [class^="c-button"]:not(:first-child):not(:last-child) {
+    border-radius: 0;
+    margin-left: -1px;
+  }
+
+  [class^="c-button"]:last-child:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px;
+  }
+
+  [class^="c-button"] {
+    float: left;
+  }
+
+  [class^="c-button"] + [class^="c-button"] {
+    margin: 0;
+  }
+}
+
+// Block/Full Width Button
+
+.c-button--block {
+  display: block;
+  width: 100%;
+}
+
+.c-button--thm1 {
+  //@include btn-theme($blue);
+}
+
+.c-button--thm2 {
+  //@include btn-theme($aqua);
+}
+
+.c-button--thm3 {
+  //@include btn-theme($white);
+  &:hover,
+  &:focus {
+    color: $black;
+  }
+}
 
 /*
 
@@ -132,277 +406,3 @@
     <button class="c-button--block">Standard Button</button>
 
 */
-
-@mixin btn-theme($btn-color) {
-    border-color:$btn-color;
-    color:$btn-color;
-
-    &:hover,
-    &:focus {
-        background:$btn-color;
-        color:$white;
-    }
-
-}
-
-// Default button Style
-
-[class^="c-button"] {
-    position:relative;
-    display:inline-block;
-    padding:0;
-    background-clip: padding-box;
-    border:1px solid $grey-mid;
-    border-radius:3px;
-    background:transparent;
-    text-align:center;
-    text-decoration:none;
-    cursor:pointer;
-    color:$grey-dark;
-    line-height: 2.125rem;
-    text-decoration: none;
-    -webkit-appearance: none;
-    white-space: normal;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    padding-left:1rem;
-    padding-right:1rem;
-
-    &:hover,
-    &:focus {
-        background:$grey-light;
-        color:$grey-dark;
-        @include defaultTransition();
-    }
-
-    //@include btn-theme($black);
-
-    + [class^="c-button"] {
-        margin-left: 1rem;
-    }
-}
-
-// Button with Icon
-
-// TEMP ICON STYLE - NEEDS TO BE REPLACED BY GLYPH/FONT/WHATEVER APPROACH WE GO FOR!
-
-[class^="icon"] {
-    width:1rem;
-    height:1rem;
-    display:inline-block;
-    background:$facebook-color;
-    vertical-align: middle;
-}
-
-[class^="c-button--icon"]:disabled {
-    cursor:not-allowed;
-
-    [class^="icon"] {
-        opacity:0.5;
-    }
-}
-
-.c-button--icon-right {
-
-    [class^="icon"] {
-        margin-left:0.5rem;
-    }
-
-}
-
-.c-button--icon-left {
-
-    [class^="icon"] {
-        margin-right:0.5rem;
-    }
-
-}
-
-// Button with icon (no text)
-
-.c-button--icon-bare {
-    border:none;
-    padding:0;
-    line-height:1;
-}
-
-.c-button--icon-container {
-    border:none;
-    line-height:1;
-    padding:0 0.5rem;
-
-    &:hover,
-    &:focus {
-        background:none;
-    }
-}
-
-.c-button--icon-border {
-    padding:0 0.5rem;
-
-}
-
-
-
-// Link Style Button
-
-.c-button--link {
-    border:none;
-    text-decoration:underline;
-    background:none;
-    padding:0;
-
-    &:hover,
-    &:focus {
-        background:none;
-    }
-}
-
-// Disabled Button
-
-.c-button--disabled,
-.c-button:disabled {
-    color:$grey;
-    border-color:$grey;
-
-    &:hover,
-    &:focus {
-        color:$grey;
-        border-color:$grey;
-        background:none;
-        cursor:not-allowed;
-    }
-}
-
-// Button Sizes
-
-.c-button--mini {
-    font-size:75%;
-    line-height: 1.8;
-    padding-left:0.5rem;
-    padding-right:0.5rem;
-}
-
-.c-button--small {
-    font-size:85%;
-    line-height: 2.2;
-}
-
-.c-button--large {
-    font-size:115%;
-    line-height:2.6;
-}
-
-.c-button--mega {
-    font-size:130%;
-    line-height:2.6;
-    padding-left:1.5rem;
-    padding-right:1.5rem;
-}
-
-// Stacked Buttons
-
-.c-button--stacked {
-    display:block;
-
-    + [class^="c-button"] {
-        margin-left: 0rem;
-        margin-top: 1rem;
-    }
-}
-
-// Reset Button
-
-.c-button--reset {
-
-    &:before {
-        content:'\2716';
-        display:inline-block;
-        margin-right:0.5rem;
-    }
-}
-
-.c-button--reset-bare {
-    border:none;
-    background:none;
-    text-decoration:underline;
-    padding:0;
-    line-height: 1;
-
-    &:before {
-        content:'\2716';
-        display:inline-block;
-        margin-right:0.5rem;
-    }
-
-    &:hover,
-    &:focus {
-        background:none;
-    }
-}
-
-// Button Group
-
-.c-button-group {
-    display:inline-block;
-    vertical-align:middle;
-    border:none;
-    padding:0;
-
-    &:hover,
-    &:focus {
-        color:none;
-        border-color:none;
-        background:none;
-    }
-
-    [class^="c-button"]:first-child:not(:last-child) {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-
-    }
-
-    [class^="c-button"]:not(:first-child):not(:last-child) {
-        border-radius: 0;
-        margin-left:-1px;
-    }
-
-    [class^="c-button"]:last-child:not(:first-child) {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        margin-left:-1px;
-    }
-
-    [class^="c-button"] {
-        float:left;
-    }
-
-    [class^="c-button"] + [class^="c-button"] {
-        margin:0;
-    }
-}
-
-// Block/Full Width Button
-
-.c-button--block {
-    display:block;
-    width:100%;
-}
-
-.c-button--thm1 {
-    //@include btn-theme($blue);
-}
-
-.c-button--thm2 {
-    //@include btn-theme($aqua);
-}
-
-.c-button--thm3 {
-    //@include btn-theme($white);
-    &:hover,
-    &:focus {
-        color:$black;
-    }
-}

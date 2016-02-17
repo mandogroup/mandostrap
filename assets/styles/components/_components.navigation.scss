@@ -1,31 +1,35 @@
-.c-navigation{
+//-------------------------------------------
+// _components.navigation.scss
+//-------------------------------------------
+
+.c-navigation {
   width: 100%;
   background: $grey-light;
 
   &[data-fixed="true"] {
-    position:fixed;
+    position: fixed;
   }
 }
 
-.c-navigation__inner{
+.c-navigation__inner {
   width: span(12 of 12);
   margin: 0 auto;
 }
 
-.c-navigation__logo{
-  float:left;
-  padding:1rem;
+.c-navigation__logo {
+  float: left;
+  padding: 1rem;
   color: #000;
   text-decoration: none;
 
   &:focus,
-  &:hover{
+  &:hover {
 
   }
 
 }
 
-.c-navigation__mobile-menu-btn{
+.c-navigation__mobile-menu-btn {
   position: relative;
   display: block;
   float: right;
@@ -40,7 +44,7 @@
   appearance: none;
 
   &.is-active {
-    background:$grey-light - 20%;
+    background: $grey-light - 20%;
   }
 
   @media #{$tablet-portrait} {
@@ -49,7 +53,7 @@
 
 }
 
-.c-navigation__mobile-menu-icon{
+.c-navigation__mobile-menu-icon {
   position: absolute;
   left: 0.625rem;
   top: 0.625rem;
@@ -58,7 +62,7 @@
   height: 0.938rem;
 }
 
-.c-navigation__mobile-menu-line{
+.c-navigation__mobile-menu-line {
   position: absolute;
   left: 0;
   display: block;
@@ -66,31 +70,31 @@
   height: 2px;
   background: #000;
 
-  &--top{
+  &--top {
     @extend .c-navigation__mobile-menu-line;
     top: 0;
   }
 
-  &--middle{
+  &--middle {
     @extend .c-navigation__mobile-menu-line;
     top: 50%;
     margin-top: -1px;
   }
 
-  &--bottom{
+  &--bottom {
     @extend .c-navigation__mobile-menu-line;
     top: 100%;
   }
 }
 
-.c-navigation__menu{
+.c-navigation__menu {
   display: none;
   position: absolute;
 
-  &.is-active{
-    display:block;
-    position:relative;
-    clear:both;
+  &.is-active {
+    display: block;
+    position: relative;
+    clear: both;
   }
 
   @media #{$tablet-portrait} {
@@ -98,17 +102,17 @@
     display: block;
     position: static;
 
-    &.is-active{
-      clear:none;
+    &.is-active {
+      clear: none;
     }
 
   }
 }
 
-.c-navigation__list{
-  padding:0;
-  margin:0;
-  clear:both;
+.c-navigation__list {
+  padding: 0;
+  margin: 0;
+  clear: both;
 
   @media #{$tablet-portrait} {
     list-style: none;
@@ -118,18 +122,18 @@
 
 }
 
-.c-navigation__item{
-  display:block;
-  width:100%;
+.c-navigation__item {
+  display: block;
+  width: 100%;
 
   @media #{$tablet-portrait} {
     display: block;
     float: left;
-    width:auto;
+    width: auto;
   }
 }
 
-.c-navigation__link{
+.c-navigation__link {
   display: block;
   height: 100%;
   padding: 1rem;
@@ -144,12 +148,12 @@
   }
 }
 
-.c-navigation__item--dropdown{
+.c-navigation__item--dropdown {
   @extend .c-navigation__item;
 
   &.is-active {
     .c-navigation__dropdown-menu {
-      display:block
+      display: block
     }
 
     .c-navigation__link {
@@ -160,12 +164,12 @@
   }
 }
 
-.c-navigation__link--dropdown{
+.c-navigation__link--dropdown {
   @extend .c-navigation__link;
   position: relative;
   padding-right: 30px;
 
-  &:after{
+  &:after {
     content: "";
     position: absolute;
     top: 50%;
@@ -175,7 +179,7 @@
   }
 }
 
-.c-navigation__dropdown-menu{
+.c-navigation__dropdown-menu {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -183,32 +187,32 @@
   background: $grey-light - 20%;
 
   @media #{$tablet-portrait} {
-    position:absolute;
-    padding:1rem;
-    margin:auto;
-    left:0;
-    right:0;
-    max-width:62em;
+    position: absolute;
+    padding: 1rem;
+    margin: auto;
+    left: 0;
+    right: 0;
+    max-width: 62em;
   }
 
   &.is-active {
-    display:block;
+    display: block;
   }
 
 }
 
 .c-navigation__dropdown-link {
-  color:$black;
-  padding:0.5rem 1.5rem;
-  display:block;
-  text-decoration:none;
-    @media #{$tablet-portrait} {
-       padding:0.5rem;
-    }
+  color: $black;
+  padding: 0.5rem 1.5rem;
+  display: block;
+  text-decoration: none;
+  @media #{$tablet-portrait} {
+    padding: 0.5rem;
+  }
 
   &:hover,
   &:focus {
-    background:$grey-light - 40%;
+    background: $grey-light - 40%;
   }
 }
 
@@ -216,30 +220,30 @@
 
 body.is-pushed {
 
-  left:70%;
-  position:relative;
-  overflow:hidden;
+  left: 70%;
+  position: relative;
+  overflow: hidden;
 
 }
 
 .c-navigation__menu-push {
 
-  display:none;
+  display: none;
   background: $grey-light;
 
   &.is-active {
 
-    display:block;
-    position:absolute;
-    width:70%;
-    height:100%;
-    left:0;
-    position:fixed;
+    display: block;
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    left: 0;
+    position: fixed;
 
   }
 
   @media #{$tablet-portrait} {
-    display:none;
+    display: none;
   }
 
 }
