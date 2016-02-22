@@ -1,3 +1,172 @@
 ﻿//_base.type.scss
 
+/*
 
+### Headings
+
+    <h1>Heading One (h1)</h1>
+    <h2>Heading Two (h2)</h2>
+    <h3>Heading Three (h3)</h3>
+    <h4>Heading Four (h4)</h4>
+    <h5>Heading Five (h5)</h5>
+    <h6>Heading Six (h6)</h6>
+
+*//*
+
+### Body Text
+
+    <p>Alice waited a little, half expecting to see it again, but it did not appear, and after a minute or two she walked on in the direction in which the March Hare was said to live. 'I've seen hatters before,' she said to herself; 'the March Hare will be much the most interesting, and perhaps as this is May it won't be raving mad—at least not so mad as it was in March.' As she said this, she looked up, and there was the Cat again, sitting on a branch of a tree.</p>
+
+*//*
+
+### Inline Text Elements
+
+    <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+    <p><del>This line of text is meant to be treated as deleted text.</del></p>
+    <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+    <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+    <p><u>This line of text will render as underlined</u></p>
+    <p><small>This line of text is meant to be treated as fine print.</small></p>
+    <p><strong>This line rendered as bold text.</strong></p>
+    <p><em>This line rendered as italicized text.</em></p>
+    <p><a href="javascript:void(0);">This is an anchor link</a></p>
+
+*//*
+
+### Blockquotes
+
+    <blockquote>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+    </blockquote>
+
+*//*
+
+### Unordered Lists
+
+    <ul>
+      <li>Katana</li>
+      <li>Wakizashi
+      <li>Ninja-to</li>
+      <li>Tanto</li>
+      <li>Bokken</li>
+      <li>Projectile Weapons:
+        <ul>
+          <li>Shiruken</li>
+          <li>Makibishi</li>
+          <li>Chakrams</li>
+          <li>Bo-hiya</li>
+        </ul>
+      </li>
+    </ul>
+
+*//*
+
+### Ordered Lists
+
+    <ol>
+      <li>Bajutsu – horsemanship</li>
+      <li>Bōjutsu – stick and staff techniques</li>
+      <li>Bōryaku – tactics</li>
+      <li>Chi-mon – geography</li>
+      <li>Eget porttitor lorem</li>
+      <li>Chōhō – espionage</li>
+      <li>Hensōjutsu – disguise and impersonation</li>
+      <li>Intonjutsu – escaping and concealment</li>
+      <li>Kayakujutsu – pyrotechnics</li>
+      <li>Kenjutsu – sword techniques</li>
+      <li>Kusarigamajutsu – kusarigama (chain-sickle) techniques</li>
+      <li>Naginatajutsu – naginata (polearm) techniques</li>
+      <li>Seishinteki kyōyō – spiritual refinement</li>
+      <li>Shinobi-iri – stealth and infiltration</li>
+      <li>Shurikenjutsu – throwing weapons techniques</li>
+      <li>Sōjutsu – spear techniques</li>
+      <li>Sui-ren – water training</li>
+      <li>Taijutsu – unarmed combat</li>
+      <li>Tenmon – meteorology</li>
+    </ol>
+
+*//*
+
+### Definition List
+
+    <dl>
+      <dt>Ninja</dt>
+      <dd>A ninja (or shinobi) was a covert agent or mercenary in feudal Japan. The functions of the ninja included: espionage, sabotage, infiltration, assassination and guerrilla warfare. Their covert methods of waging irregular warfare were deemed "dishonorable" and "beneath" the samurai-caste, who observed strict rules about honor and combat.</dd>
+    </dl>
+
+*/
+
+// =============================================================================
+// END OF STYLEGUIDE DOCUMENTATION
+// All comments should now be inline (hidden - //)
+// =============================================================================
+
+// Typographic Scale
+
+body {
+  font-family: $font-primary;
+  @include font-size($body-font-sizes);
+}
+
+p {
+  padding-top: 0;
+  margin: 0 auto 1rem auto;
+}
+
+a {
+  @include defaultTransition();
+}
+
+h1 {
+  @include font-size($h1-font-sizes);
+}
+
+h2 {
+  @include font-size($h2-font-sizes);
+}
+
+h3 {
+  @include font-size($h3-font-sizes);
+}
+
+h4 {
+  @include font-size($h4-font-sizes);
+}
+
+h5 {
+  @include font-size($h5-font-sizes);
+}
+
+h6 {
+  @include font-size($h6-font-sizes);
+}
+
+blockquote {
+  width: 85%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+
+dl {
+
+  dt {
+    font-weight:bold;
+  }
+
+  dd {
+    margin:0;
+  }
+}
+
+ul, ol {
+  padding-top: 0;
+  margin: 0 0 1em 0;
+  padding:0 0 0 1.5rem;
+
+  ul, ol {
+    margin-top:0.5rem;
+  }
+}

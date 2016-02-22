@@ -1,4 +1,4 @@
-/*
+﻿/*
 
 main.scss: Main stylesheet imports
 ------------
@@ -26,7 +26,10 @@ TABLE OF CONTENTS
 @import "settings/_settings.grid";
 @import "settings/_settings.breakpoints";
 @import "settings/_settings.fonts";
+<<<<<<< HEAD
 @import "settings/_settings.animation";
+=======
+>>>>>>> feature/hero-banner
 
 //==2    TOOLS - Default mixins and functions
 @import "tools/_tools.mixins";
@@ -49,9 +52,11 @@ TABLE OF CONTENTS
 @import "components/_components.wysiwyg";
 @import "components/_components.forms";
 @import "components/_components.carousel";
-@import "components/_components.hero";
+<<<<<<< HEAD
 @import "components/_components.navigation";
-@import "components/_components.picture";
+=======
+@import "components/_components.hero";
+>>>>>>> feature/hero-banner
 
 //==X    TRUMPS - helpers & overrides
 @import "trumps/_trumps.utilities";

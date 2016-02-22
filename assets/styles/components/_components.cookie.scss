@@ -1,0 +1,22 @@
+﻿//_components.cookie.scss
+
+.c-cookie {
+	display:none;
+	position:relative;
+	padding:10px 40px 10px 20px;
+	background:$grey;
+
+}
+
+.c-cookie__btn {
+	position:absolute;
+	top:15px;
+	right:10px;
+	padding:10px;
+	background:transparent;
+	border:0;
+	[class^=icon-] {
+		display:block;
+		@include square(20px);
+	}
+}

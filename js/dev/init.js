@@ -8,5 +8,9 @@ $(function () {
     // mandoVideo();
     // faq();
     // shareControl();
+    carousel();
+    heroCarousel();
+    cookieBanner();
+    navigation();
 });
 
