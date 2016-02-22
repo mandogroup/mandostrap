@@ -10,11 +10,10 @@
             }
         }
 
-        // Font-size
-        @mixin font-size($size, $base: 16) {
-            $value: $size/$base;
-            font-size: ($value) + px;
-            font-size: ($value) + rem;
+        // Px to rem
+        @mixin rem($prop, $px, $base: 16) {
+            $value: $px/$base;
+            #{$prop}: ($value) + rem;
         }
 
         //Sizing helpers

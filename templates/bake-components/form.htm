@@ -1,194 +1,252 @@
 <div class="o-wrapper__inner">
-    
-     <h2>Stacked</h2>
-    <div class="c-form--stacked">
-        <div class="c-form__element">
-            <label for="stacked1" class="c-form__element-label--block">Small Length Control</label>
-            <div class="c-form__element-control c-form__element-control--small">
-                <input type="text" name="stacked1" id="stacked1" placeholder="Small Length Control" />
-            </div>
-        </div>
-        <div class="c-form__element">
-            <label for="stacked2" class="c-form__element-label--block">Medium Length Control</label>
-            <div class="c-form__element-control c-form__element-control--med">
-                <input type="text" name="stacked2" id="stacked2" placeholder="Medium Length Control" />
-            </div>
-        </div>
-        <div class="c-form__element">
-            <label for="stacked3" class="c-form__element-label--block">Default Length Control</label>
-            <div class="c-form__element-control">
-                <input type="text" name="stacked3" id="stacked3" placeholder="Default Length Control" />
-            </div>
-        </div>
-         <div class="c-form__element">
-            <label for="select" class="c-form__element-label--block">Custom Select Menu:</label>
-            <div class="c-form__element-control">
-                <select id="select" class="js-form-select">
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                    <option value="option4">Option 4</option>
-                </select>
-            </div>
-        </div>
-        <div class="c-form__element">
-            <label for="selectmulti" class="c-form__element-label--block">Custom Select Menu Multiple:</label>
-            <div class="c-form__element-control">
-                <select id="selectmulti" multiple="multiple">
-                    <option value="option1">Option 1</option>
-                    <option value="option2">Option 2</option>
-                    <option value="option3">Option 3</option>
-                    <option value="option4">Option 4</option>
-                </select>
-            </div>
-        </div>
-        <div class="c-form__element">
-            <label for="rq-additional" class="c-form__element-label--block">Textarea</label>
-            <textarea id="rq-additional" rows="5" cols="5"></textarea>
-        </div>
-         <div class="c-form__element">
-            <label for="chq" class="c-form__checkbox">
-                <input type="checkbox" name="chq" id="chq" />
-                <span class="c-form__element-label">Checkbox example</span>
-            </label>
-        </div>
-         <div class="c-form__element">
-            <label for="rdi" class="c-form__checkbox">
-                <input type="radio" name="rdi" id="rdi" />
-                <span class="c-form__element-label">Radio example</span>
-            </label>
-        </div>
-         <div class="c-form__element">
-            <label for="chq-hidden1" class="c-form__checkbox c-form__checkbox--hidden">
-                <input type="checkbox" name="chq-hidden" id="chq-hidden1" />
-                <span class="c-form__element-label">Hidden Checkbox 1</span>
-            </label>
-        </div>
-        <div class="c-form__element">
-            <label for="chq-hidden2" class="c-form__checkbox c-form__checkbox--hidden">
-                <input type="checkbox" name="chq-hidden" id="chq-hidden2" />
-                <span class="c-form__element-label">Hidden Checkbox 2</span>
-            </label>
-        </div>
-        <div class="c-form__element">
-            <label for="chq-hidden3" class="c-form__checkbox c-form__checkbox--hidden">
-                <input type="checkbox" name="chq-hidden" id="chq-hidden3" />
-                <span class="c-form__element-label">Hidden Checkbox 3</span>
-            </label>
-        </div>
-        <!-- File input -->
-        <div class="c-form__element">
-            <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
-            <label for="file" class="c-button c-button--icon"><span>Upload document button example</span><i class="icon-upload" data-grunticon-embed></i></label>
-        </div>
+  <h2>Stacked</h2>
+  <div class="c-form--stacked">
+    <div class="c-form__element">
+      <label for="stacked1" class="c-form__element-label--block">Small Length Control</label>
+      <div class="c-form__element-control c-form__element-control--small">
+        <input type="text" name="stacked1" id="stacked1" placeholder="Small Length Control" />
+      </div>
     </div>
-   
-    <h2>Inline</h2>
-    <div class="c-form--inline">
-        <fieldset>
-            <legend><span>Fieldset Legend</span></legend>
-            <div class="c-form__element">
-                <label for="fieldset-yes" class="c-form__checkbox">
-                    <input type="checkbox" name="fieldset" id="fieldset-yes" value="yes" />
-                    <span class="c-form__element-label">Yes</span>
-                </label>
-            </div>
-            <div class="c-form__element">
-                <label for="fieldset-no" class="c-form__checkbox">
-                    <input type="checkbox" name="fieldset" id="fieldset-no" value="No" />
-                    <span class="c-form__element-label">No</span>
-                </label>
-            </div>
-        </fieldset>
+    <div class="c-form__element">
+      <label for="stacked2" class="c-form__element-label--block">Medium Length Control</label>
+      <div class="c-form__element-control c-form__element-control--med">
+        <input type="text" name="stacked2" id="stacked2" placeholder="Medium Length Control" />
+      </div>
     </div>
-    
-    <h3>Inline Small Fields with ARIA Describedby</h3>
-    <div class="c-form--inline">
-        <div class="c-form__element">
-            <label for="rq-cd-pipelength" class="c-form__element-label">Pipe Length</label>
-            <div class="c-form__element-control c-form__element-control--small">
-                <input type="text" name="rq-cd-pipelength" id="rq-cd-pipelength" placeholder="0" aria-describedby="info-PipeLength" />
-            </div>
-            <span id="info-PipeLength">Metres</span>
-        </div>
-        <div class="c-form__element">
-            <label for="rq-cd-pipewidth" class="c-form__element-label">Pipe Width</label>
-            <div class="c-form__element-control c-form__element-control--small">
-                <input type="text" name="rq-cd-pipewidth" id="rq-cd-pipewidth" placeholder="0" aria-describedby="info-PipeWidth" />
-            </div>
-            <span id="info-PipeWidth">mm</span>
-        </div>
+    <div class="c-form__element">
+      <label for="stacked3" class="c-form__element-label--block">Default Length Control</label>
+      <div class="c-form__element-control">
+        <input type="text" name="stacked3" id="stacked3" placeholder="Default Length Control" />
+      </div>
     </div>
-    <div class="c-form--inline">
-        <div class="c-form__element">
-            <label for="cb-subscribe" class="c-form__checkbox">
-                <input type="checkbox" id="cb-subscribe" name="cb-subscribe">
-                <span class="c-form__element-label c-form__element-label--terms">Smaller label text for terms &amp; conditions</span>
-            </label>
-        </div>
-        <input type="submit" class="c-button u-right submit" value="Submit">
+    <div class="c-form__element">
+      <label for="select" class="c-form__element-label--block">Custom Select Menu:</label>
+      <div class="c-form__element-control">
+        <select id="select" class="js-form-select">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+        </select>
+      </div>
     </div>
-     <h2>Two columns - Gallery</h2>
-    <div class="c-form--2col">
-        <div class="c-form__element">
-            <label for="cb-fullname"  class="c-form__element-label--block">Full Name</label>
-            <div class="c-form__element-control">
-                <input type="text" id="cb-fullname" name="cb-fullname" placeholder="Full Name">
-            </div>
-        </div>
-        <div class="c-form__element">
-            <label for="cb-company"  class="c-form__element-label--block">Company</label>
-            <div class="c-form__element-control">
-                <input type="text" id="cb-company" name="cb-company" placeholder="Company" class="required" aria-required="true">
-            </div>
-        </div>
-        <div class="c-form__element">
-            <label for="cb-email" class="c-form__element-label--block">Email</label>
-            <div class="c-form__element-control">
-                <input type="email" id="cb-email" name="cb-email" placeholder="Email address" class="required" aria-required="true">
-            </div>
-        </div>
-        <div class="c-form__element">
-            <label for="cb-email" class="c-form__element-label--block">Telephone no</label>
-            <div class="c-form__element-control">
-                <input type="tel" id="cb-tel" name="cb-tel" placeholder="Telephone no">
-            </div>
-        </div>
-        <div class="c-form__element">
-            <label for="rq-interest7" class="c-form__checkbox">
-                <input type="checkbox" name="rq-interest" id="rq-interest7" />
-                <span class="c-form__element-label">Checkbox number 1</span>
-            </label>
-        </div>
-        <div class="c-form__element">
-            <label for="rq-interest8" class="c-form__checkbox">
-                <input type="checkbox" name="rq-interest" id="rq-interest8" />
-                <span class="c-form__element-label">Checkbox number 2</span>
-            </label>
-        </div>
-        <div class="c-form__element">
-            <label for="rq-interest9" class="c-form__checkbox">
-                <input type="checkbox" name="rq-interest" id="rq-interest9" />
-                <span class="c-form__element-label">Checkbox number 3</span>
-            </label>
-        </div>
-        <div class="c-form__element">
-            <label for="rq-interest10" class="c-form__checkbox">
-                <input type="checkbox" name="rq-interest" id="rq-interest10" />
-                <span class="c-form__element-label">Checkbox number 4</span>
-            </label>
-        </div>
-        <div class="c-form__element">
-            <label for="rq-interest11" class="c-form__checkbox">
-                <input type="checkbox" name="rq-interest" id="rq-interest11" />
-                <span class="c-form__element-label">Checkbox number 5</span>
-            </label>
-        </div>
-        <div class="c-form__element">
-            <label for="rq-interest12" class="c-form__checkbox">
-                <input type="checkbox" name="rq-interest" id="rq-interest12" />
-                <span class="c-form__element-label">Checkbox number 5</span>
-            </label>
-        </div>
+    <div class="c-form__element">
+      <label for="selectmulti" class="c-form__element-label--block">Custom Select Menu Multiple:</label>
+      <div class="c-form__element-control">
+        <select id="selectmulti" multiple="multiple">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+        </select>
+      </div>
     </div>
+    <div class="c-form__element">
+      <label for="rq-additional" class="c-form__element-label--block">Textarea</label>
+      <textarea id="rq-additional" rows="5" cols="5"></textarea>
+    </div>
+    <div class="c-form__element">
+      <label for="chq" class="c-form__checkbox">
+        <input type="checkbox" name="chq" id="chq" />
+        <span class="c-form__element-label">Checkbox example</span>
+      </label>
+    </div>
+    <div class="c-form__element">
+      <label for="rdi" class="c-form__checkbox">
+        <input type="radio" name="rdi" id="rdi" />
+        <span class="c-form__element-label">Radio example</span>
+      </label>
+    </div>
+    <div class="c-form__element">
+      <label for="chq-hidden1" class="c-form__checkbox c-form__checkbox--hidden">
+        <input type="checkbox" name="chq-hidden" id="chq-hidden1" />
+        <span class="c-form__element-label">Hidden Checkbox 1</span>
+      </label>
+    </div>
+    <div class="c-form__element">
+      <label for="chq-hidden2" class="c-form__checkbox c-form__checkbox--hidden">
+        <input type="checkbox" name="chq-hidden" id="chq-hidden2" />
+        <span class="c-form__element-label">Hidden Checkbox 2</span>
+      </label>
+    </div>
+    <div class="c-form__element">
+      <label for="chq-hidden3" class="c-form__checkbox c-form__checkbox--hidden">
+        <input type="checkbox" name="chq-hidden" id="chq-hidden3" />
+        <span class="c-form__element-label">Hidden Checkbox 3</span>
+      </label>
+    </div>
+    <!-- File input -->
+    <div class="c-form__element">
+      <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
+      <label for="file" class="c-button c-button--icon"><span>Upload document button example</span><i class="icon-upload" data-grunticon-embed></i></label>
+    </div>
+  </div>
+  <h2>Inline</h2>
+  <div class="c-form--inline">
+    <fieldset>
+      <legend><span>Fieldset Legend</span></legend>
+      <div class="c-form__element">
+        <label for="fieldset-yes" class="c-form__checkbox">
+          <input type="checkbox" name="fieldset" id="fieldset-yes" value="yes" />
+          <span class="c-form__element-label">Yes</span>
+        </label>
+      </div>
+      <div class="c-form__element">
+        <label for="fieldset-no" class="c-form__checkbox">
+          <input type="checkbox" name="fieldset" id="fieldset-no" value="No" />
+          <span class="c-form__element-label">No</span>
+        </label>
+      </div>
+    </fieldset>
+  </div>
+  <h3>Inline Small Fields with ARIA Describedby</h3>
+  <div class="c-form--inline">
+    <div class="c-form__element">
+      <label for="rq-cd-pipelength" class="c-form__element-label">Pipe Length</label>
+      <div class="c-form__element-control c-form__element-control--small">
+        <input type="text" name="rq-cd-pipelength" id="rq-cd-pipelength" placeholder="0" aria-describedby="info-PipeLength" />
+      </div>
+      <span id="info-PipeLength">Metres</span>
+    </div>
+    <div class="c-form__element">
+      <label for="rq-cd-pipewidth" class="c-form__element-label">Pipe Width</label>
+      <div class="c-form__element-control c-form__element-control--small">
+        <input type="text" name="rq-cd-pipewidth" id="rq-cd-pipewidth" placeholder="0" aria-describedby="info-PipeWidth" />
+      </div>
+      <span id="info-PipeWidth">mm</span>
+    </div>
+  </div>
+  <div class="c-form--inline">
+    <div class="c-form__element">
+      <label for="cb-subscribe" class="c-form__checkbox">
+        <input type="checkbox" id="cb-subscribe" name="cb-subscribe">
+        <span class="c-form__element-label c-form__element-label--terms">Smaller label text for terms &amp; conditions</span>
+      </label>
+    </div>
+    <input type="submit" class="c-button u-right submit" value="Submit">
+  </div>
+  <h2>Two columns</h2>
+  <div class="c-form__row--2col">
+    <div class="c-form__element">
+      <div class="c-form__col">
+        <label for="cb-fullname" class="c-form__element-label--block">Full Name</label>
+      </div>
+      <div class="c-form__col">
+        <div class="c-form__element-control">
+          <input type="text" id="cb-fullname" name="cb-fullname" placeholder="Full Name">
+        </div>
+      </div>
+    </div>
+    <div class="c-form__element">
+      <div class="c-form__col">
+        <label for="cb-company" class="c-form__element-label--block">Company</label>
+      </div>
+      <div class="c-form__col">
+        <div class="c-form__element-control">
+          <input type="text" id="cb-company" name="cb-company" placeholder="Company" class="required" aria-required="true">
+        </div>
+      </div>
+    </div>
+    <div class="c-form__element">
+      <fieldset>
+        <legend class="c-form__col"><span class="c-form__element-label">Fieldset Legend</span></legend>
+        <div class="c-form__col">
+          <div class="c-form__element">
+            <label for="fieldset-yes2" class="c-form__checkbox">
+              <input type="checkbox" name="fieldset" id="fieldset-yes2" value="yes">
+              <span class="c-form__element-label">Yes Vertical</span>
+            </label>
+          </div>
+          <div class="c-form__element">
+            <label for="fieldset-no2" class="c-form__checkbox">
+              <input type="checkbox" name="fieldset" id="fieldset-no2" value="No">
+              <span class="c-form__element-label">No Vertical</span>
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    <div class="c-form__element">
+      <fieldset>
+        <legend class="c-form__col"><span class="c-form__element-label">Fieldset Legend</span></legend>
+        <div class="c-form__2col-col c-form--inline">
+          <div class="c-form__element">
+            <label for="fieldset-yes2" class="c-form__checkbox">
+              <input type="checkbox" name="fieldset" id="fieldset-yes2" value="yes">
+              <span class="c-form__element-label">Yes Horizontal</span>
+            </label>
+          </div>
+          <div class="c-form__element">
+            <label for="fieldset-no2" class="c-form__checkbox">
+              <input type="checkbox" name="fieldset" id="fieldset-no2" value="No">
+              <span class="c-form__element-label">No Horizontal</span>
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+  </div>
+  <h2>Two columns - Gallery</h2>
+  <div class="c-form__row--2col--gal">
+    <div class="c-form__element">
+      <label for="cb-fullname2" class="c-form__element-label--block">Full Name</label>
+      <div class="c-form__element-control">
+        <input type="text" id="cb-fullname2" name="cb-fullname2" placeholder="Full Name">
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="cb-company2" class="c-form__element-label--block">Company</label>
+      <div class="c-form__element-control">
+        <input type="text" id="cb-company2" name="cb-company2" placeholder="Company" class="required" aria-required="true">
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="cb-email" class="c-form__element-label--block">Email</label>
+      <div class="c-form__element-control">
+        <input type="email" id="cb-email" name="cb-email" placeholder="Email address" class="required" aria-required="true">
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="cb-email" class="c-form__element-label--block">Telephone no</label>
+      <div class="c-form__element-control">
+        <input type="tel" id="cb-tel" name="cb-tel" placeholder="Telephone no">
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="rq-interest7" class="c-form__checkbox">
+        <input type="checkbox" name="rq-interest" id="rq-interest7" />
+        <span class="c-form__element-label">Checkbox number 1</span>
+      </label>
+    </div>
+    <div class="c-form__element">
+      <label for="rq-interest8" class="c-form__checkbox">
+        <input type="checkbox" name="rq-interest" id="rq-interest8" />
+        <span class="c-form__element-label">Checkbox number 2</span>
+      </label>
+    </div>
+    <div class="c-form__element">
+      <label for="rq-interest9" class="c-form__checkbox">
+        <input type="checkbox" name="rq-interest" id="rq-interest9" />
+        <span class="c-form__element-label">Checkbox number 3</span>
+      </label>
+    </div>
+    <div class="c-form__element">
+      <label for="rq-interest10" class="c-form__checkbox">
+        <input type="checkbox" name="rq-interest" id="rq-interest10" />
+        <span class="c-form__element-label">Checkbox number 4</span>
+      </label>
+    </div>
+    <div class="c-form__element">
+      <label for="rq-interest11" class="c-form__checkbox">
+        <input type="checkbox" name="rq-interest" id="rq-interest11" />
+        <span class="c-form__element-label">Checkbox number 5</span>
+      </label>
+    </div>
+    <div class="c-form__element">
+      <label for="rq-interest12" class="c-form__checkbox">
+        <input type="checkbox" name="rq-interest" id="rq-interest12" />
+        <span class="c-form__element-label">Checkbox number 5</span>
+      </label>
+    </div>
+  </div>
 </div>

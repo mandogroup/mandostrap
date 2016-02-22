@@ -105,7 +105,6 @@
 
 body {
   font-family: $font-primary;
-  @include font-size($body-font-sizes);
 }
 
 p {
