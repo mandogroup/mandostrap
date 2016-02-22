@@ -17,6 +17,6 @@ cookieBanner = function () {
     Cookies.set('msCookie', 'true', { expires: 365, path: '/' });
     //Remove banner
     cookieBtn.on("click", function () {
-        cookieNotice.removeClass('is-visible').addClass('is-hidden'); 
+        cookieNotice.removeClass('is-visible'); 
     });     
 };
