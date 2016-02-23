@@ -17,7 +17,6 @@
   .c-form__col:first-child {
     @media #{$tablet-landscape} {
       @include span(3)
-
     }
   }
   .c-form__col:last-child {
@@ -90,14 +89,24 @@
   cursor: pointer;
   font-weight: normal;
   margin: 1rem 0;
-  @include rem(font-size,20);
+  @include rem(font-size, 20);
   &--block {
     @extend .c-form__element-label;
     display: block;
   }
 }
 
-//Form Element Checkboxes -- Default UI
+//Hidden Checkbox placeholder
+%hidden-input {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  @include square(1px);
+}
+
+//Form Element Radio & Checkboxes
 .c-form__checkbox {
   display: table-row;
   .c-form__element-label {
@@ -105,11 +114,12 @@
     margin: 0;
     padding: 0 10px 0 0;
     vertical-align: middle;
-    @include rem(font-size,15);
+    @include rem(font-size, 15);
     &--terms {
-      @include rem(font-size,13);
+      @include rem(font-size, 13);
     }
   }
+  //Hidden Checkbox
   &--hidden {
     display: block;
     .c-form__element-label {
@@ -120,19 +130,14 @@
       border-radius: 22px;
       border: 1px solid $black;
       color: $black;
-      @include rem(font-size,16);
+      @include rem(font-size, 16);
       @media #{$tablet-landscape} {
         padding: .7rem 1.2rem;
-        @include rem(font-size,17);
+        @include rem(font-size, 17);
       }
     }
     [type="checkbox"] {
-      position: absolute;
-      clip: rect(0 0 0 0);
-      padding: 0;
-      overflow: hidden;
-      border: 0;
-      @include square(1px);
+      @extend %hidden-input;
       &:checked {
         > .c-form__element-label,
         ~ .c-form__element-label {
@@ -146,6 +151,98 @@
           border: 1px solid $grey;
         }
       }
+    }
+  }
+  //Checkboxes -- Faux UI
+  &--faux {
+    [type="checkbox"] {
+      @extend %hidden-input;
+      &:checked > .c-form__checkbox--faux-ui,
+      &:checked ~ .c-form__checkbox--faux-ui {
+        &:after {
+          position: absolute;
+          top: -2px;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          margin: auto;
+          display: block;
+          content: '';
+          border-bottom: 2px solid $black;
+          border-left: 2px solid $black;
+          transform: rotate(-45deg);
+          @include size(8px, 5px);
+        }
+      }
+      &:focus > .c-form__checkbox--faux-ui,
+      &:focus ~ .c-form__checkbox--faux-ui {
+        border-color: $black;
+      }
+      &:focus:checked > .c-form__checkbox--faux-ui,
+      &:focus:checked ~ .c-form__checkbox--faux-ui {
+        border-color: $black;
+      }
+      &[disabled] > .c-form__checkbox--faux-ui,
+      &[disabled] ~ .c-form__checkbox--faux-ui {
+        border-color: rgba($grey, .5);
+        background: rgba($grey, .2);
+      }
+    }
+    &-ui {
+      position: relative;
+      display: inline-block;
+      @include square(13px);
+      margin-right: 10px;
+      border: 1px solid #d8dde6;
+      border-radius: 0.125rem;
+      background: #fff;
+    }
+  }
+}
+
+.c-form__radio {
+  @extend .c-form__checkbox;
+  &--faux {
+    [type="radio"] {
+      @extend %hidden-input;
+      &:checked > .c-form__radio--faux-ui,
+      &:checked ~ .c-form__radio--faux-ui {
+        &:after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          margin: auto;
+          display: block;
+          content: '';
+          @include square(5px);
+          border-radius:50%;
+          background:$black;
+        }
+      }
+      &:focus > .c-form__radio--faux-ui,
+      &:focus ~ .c-form__radio--faux-ui {
+        border-color: $black;
+      }
+      &:focus:checked > .c-form__radio--faux-ui,
+      &:focus:checked ~ .c-form__radio--faux-ui {
+        border-color: $black;
+      }
+      &[disabled] > .c-form__radio--faux-ui,
+      &[disabled] ~ .c-form__radio--faux-ui {
+        border-color: rgba($grey, .5);
+        background: rgba($grey, .2);
+      }
+    }
+    &-ui {
+      position: relative;
+      display: inline-block;
+      @include square(13px);
+      margin-right: 10px;
+      border: 1px solid #d8dde6;
+      border-radius: 50%;
+      background: #fff;
     }
   }
 }
