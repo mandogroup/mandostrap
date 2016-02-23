@@ -149,7 +149,7 @@ HTML attributes should come in this particular order for easier reading of code.
 3. data-*
 4. src, for, type, href, value
 5. title, alt
-6 .role, aria-*
+6. role, aria-*
 
 ##### Example
 ```<a class="..." id="..." data-toggle="..." href="#">Example Link</a>```

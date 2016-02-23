@@ -1,121 +1,122 @@
-﻿        //_tools.mixins.scss
-        //Clear fix
-        @mixin clearfix {
-            &:after {
-                visibility: hidden;
-                display: block;
-                content: "";
-                clear: both;
-                height: 0;
-            }
-        }
+﻿//-------------------------------------------
+// _tools.mixins.scss
+//-------------------------------------------
+// Px to rem
+@mixin rem($prop, $px, $base: 16) {
+  $value: $px/$base;
+  #{$prop}: ($value) + rem;
+}
 
-        // Px to rem
-        @mixin rem($prop, $px, $base: 16) {
-            $value: $px/$base;
-            #{$prop}: ($value) + rem;
-        }
+//Clear fix
+@mixin clearfix {
+  &:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0;
+  }
+}
 
-        //Sizing helpers
-        @mixin size($width, $height) {
-            width: $width;
-            height: $height;
-        }
+//Sizing helpers
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
 
-        @mixin square($size) {
-            @include size($size, $size);
-        }
+@mixin square($size) {
+  @include size($size, $size);
+}
 
-        // Truncating text
-        @mixin text-truncate($maxwidth) {
-            display: inline-block;
-            max-width: $maxwidth;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
+// Truncating text
+@mixin text-truncate($maxwidth) {
+  display: inline-block;
+  max-width: $maxwidth;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
-        // Clear for floated grids
-        @mixin wrap-every($n) {
-            &:nth-of-type(#{$n}n + 1) {
-                clear: left;
-            }
-        }
+// Clear for floated grids
+@mixin wrap-every($n) {
+  &:nth-of-type(#{$n}n + 1) {
+    clear: left;
+  }
+}
 
-        // Reset
-        @mixin unwrap-every($n) {
-            &:nth-of-type(#{$n}n + 1) {
-                clear: none;
-            }
-        }
+// Reset
+@mixin unwrap-every($n) {
+  &:nth-of-type(#{$n}n + 1) {
+    clear: none;
+  }
+}
 
-        // Arrows
-        @mixin arrow($direction, $color, $size) {
-            display: inline-block;
-            height: 0;
-            width: 0;
-            @if $direction=='top' {
-                border-left: $size solid transparent;
-                border-right: $size solid transparent;
-                border-bottom: $size solid $color;
-            }
-            @else if $direction=='right' {
-                border-top: $size solid transparent;
-                border-bottom: $size solid transparent;
-                border-left: $size solid $color;
-            }
-            @else if $direction=='bottom' {
-                border-top: $size solid $color;
-                border-right: $size solid transparent;
-                border-left: $size solid transparent;
-            }
-            @else if $direction=='left' {
-                border-top: $size solid transparent;
-                border-right: $size solid $color;
-                border-bottom: $size solid transparent;
-            }
-        }
+// Arrows
+@mixin arrow($direction, $color, $size) {
+  display: inline-block;
+  height: 0;
+  width: 0;
+  @if $direction=='top' {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  }
+  @else if $direction=='right' {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+  }
+  @else if $direction=='bottom' {
+    border-top: $size solid $color;
+    border-right: $size solid transparent;
+    border-left: $size solid transparent;
+  }
+  @else if $direction=='left' {
+    border-top: $size solid transparent;
+    border-right: $size solid $color;
+    border-bottom: $size solid transparent;
+  }
+}
 
-        // Font Size Mapping With Line Height
-        @mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
-            @each $fs-breakpoint,
-            $fs-font-size in $fs-map {
-                @if $fs-breakpoint==null {
-                    @include make-font-size($fs-font-size);
-                }
-                @else {
-                    // If $fs-font-size is a key that exists in
-                    // $fs-breakpoints, use the value
-                    @if map-has-key($fs-breakpoints, $fs-breakpoint) {
-                        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
-                    }
-                    @media only screen and ($fs-breakpoint) {
-                        @include make-font-size($fs-font-size);
-                    }
-                }
-            }
-        }
+// Font Size Mapping With Line Height
+@mixin font-size($fs-map, $fs-breakpoints: $breakpoints) {
+  @each $fs-breakpoint,
+  $fs-font-size in $fs-map {
+    @if $fs-breakpoint==null {
+      @include make-font-size($fs-font-size);
+    }
+    @else {
+      // If $fs-font-size is a key that exists in
+      // $fs-breakpoints, use the value
+      @if map-has-key($fs-breakpoints, $fs-breakpoint) {
+        $fs-breakpoint: map-get($fs-breakpoints, $fs-breakpoint);
+      }
+      @media only screen and ($fs-breakpoint) {
+        @include make-font-size($fs-font-size);
+      }
+    }
+  }
+}
 
-        // Utility function for mixin font-size
-        @mixin make-font-size($fs-font-size) {
-            // If $fs-font-size is a list, include
-            // both font-size and line-height
-            @if type-of($fs-font-size)=="list" {
-                font-size: nth($fs-font-size, 1);
-                @if (length($fs-font-size) > 1) {
-                    line-height: nth($fs-font-size, 2);
-                }
-            }
-            @else {
-                font-size: $fs-font-size;
-            }
-        }
+// Utility function for mixin font-size
+@mixin make-font-size($fs-font-size) {
+  // If $fs-font-size is a list, include
+  // both font-size and line-height
+  @if type-of($fs-font-size)=="list" {
+    font-size: nth($fs-font-size, 1);
+    @if (length($fs-font-size) > 1) {
+      line-height: nth($fs-font-size, 2);
+    }
+  }
+  @else {
+    font-size: $fs-font-size;
+  }
+}
 
-        // Transition animation mixin
-
-        @mixin defaultTransition() {
-            -moz-transition: $transitionTarget, $transitionSpeed, $transitionType;
-            -ms-transition: $transitionTarget, $transitionSpeed, $transitionType;
-            -webkit-transition: $transitionTarget, $transitionSpeed, $transitionType;
-            transition: $transitionTarget, $transitionSpeed, $transitionType;
-        }
+// Transition animation mixin
+@mixin defaultTransition() {
+  -moz-transition: $transitionTarget, $transitionSpeed, $transitionType;
+  -ms-transition: $transitionTarget, $transitionSpeed, $transitionType;
+  -webkit-transition: $transitionTarget, $transitionSpeed, $transitionType;
+  transition: $transitionTarget, $transitionSpeed, $transitionType;
+}

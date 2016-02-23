@@ -1,49 +1,51 @@
-﻿//_trumps.print.scss
+﻿//-------------------------------------------
+// _trumps.print.scss
+//-------------------------------------------
 
 @media print {
-    .c-wysiwyg {
-        display:block!important;
-        a[href]:after {
-            content: " (" attr(href) ")";
-        }
-
-        abbr[title]:after {
-            content: " (" attr(title) ")";
-        }
-
-        a[href^="#"]:after {
-            content: "";
-        }
+  .c-wysiwyg {
+    display: block !important;
+    a[href]:after {
+      content: " (" attr(href) ")";
     }
 
-    pre, blockquote {
-        page-break-inside: avoid;
+    abbr[title]:after {
+      content: " (" attr(title) ")";
     }
 
-    thead {
-        display: table-header-group;
+    a[href^="#"]:after {
+      content: "";
     }
+  }
 
-    tr, img {
-        page-break-inside: avoid;
-    }
+  pre, blockquote {
+    page-break-inside: avoid;
+  }
 
-    img {
-        max-width: 100% !important;
-    }
+  thead {
+    display: table-header-group;
+  }
 
-    p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-    }
+  tr, img {
+    page-break-inside: avoid;
+  }
 
-    h2, h3 {
-        page-break-after: avoid;
-    }
+  img {
+    max-width: 100% !important;
+  }
 
-    body {
-        color: black;
-    }
-    
-    // add components here
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2, h3 {
+    page-break-after: avoid;
+  }
+
+  body {
+    color: black;
+  }
+
+  // add components here
 }

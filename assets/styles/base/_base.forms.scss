@@ -1,172 +1,347 @@
-﻿  //_base.forms.scss
-  [placeholder]:focus::-webkit-input-placeholder {
-    color: transparent;
+//_base.forms.scss
+[placeholder]:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+[placeholder]:focus::-moz-placeholder {
+  color: transparent;
+}
+
+input::-webkit-input-placeholder {
+  color: lighten($black, 20%);
+}
+
+input::-moz-placeholder {
+  color: lighten($black, 20%);
+}
+
+input:-ms-input-placeholder {
+  color: lighten($black, 20%);
+}
+
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+textarea,
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="url"],
+input[type="search"],
+input[type="color"] {
+  box-sizing: border-box;
+  padding: 12px 15px;
+  width: 100%;
+  background: $white;
+  border: 1px solid lighten($black, 50%);
+  border-radius: 0;
+  color: lighten($black, 20%);
+  appearance: none;
+  @include rem(font-size, 17);
+  &[disabled] {
+    border-color: rgba($grey, .5);
   }
-  
-  [placeholder]:focus::-moz-placeholder {
-    color: transparent;
+  &.error {
+    border-color: $red;
+    outline: 1px solid $red;
   }
-  
-  input::-webkit-input-placeholder {
-    color: lighten($black, 20%);
+}
+
+select {
+  box-sizing: border-box;
+  background: $white;
+  border: 1px solid lighten($black, 50%);
+  border-radius: 0;
+  color: lighten($black, 20%);
+  padding: 11px 14px;
+  width: 100%;
+  @include font-size(17);
+}
+
+input[type="checkbox"] {
+  border-radius: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  margin: 0 10px 0 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+//Errors
+label.error {
+  position: relative;
+  padding-left: 17px;
+  color: $red;
+  @include rem(font-size, 14);
+  &:before,
+  &:after {
+    position: absolute;
+    display: inline-block;
   }
-  
-  input::-moz-placeholder {
-    color: lighten($black, 20%);
+  &:before {
+    content: '';
+    left: 0;
+    top: 2px;
+    background: $red;
+    border-radius: 100%;
+    @include square(13px);
   }
-  
-  input:-ms-input-placeholder {
-    color: lighten($black, 20%);
+  &:after {
+    left: 5px;
+    top: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    content: '!';
+    color: $grey;
   }
-  
-  textarea,
-  input[type="text"],
-  input[type="button"],
-  input[type="submit"],
-  input[type="search"] {
-    -webkit-appearance: none;
-  }
-  
-  input::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-  }
-  
-  button::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-  }
-  
-  textarea,
-  input[type="text"],
-  input[type="tel"],
-  input[type="email"],
-  input[type="password"],
-  input[type="datetime"],
-  input[type="datetime-local"],
-  input[type="date"],
-  input[type="month"],
-  input[type="time"],
-  input[type="week"],
-  input[type="number"],
-  input[type="url"],
-  input[type="search"],
-  input[type="color"] {
-    box-sizing: border-box;
-    padding: 12px 15px;
-    width: 100%;
-    background: $white;
-    border: 1px solid lighten($black, 50%);
-    border-radius: 0;
-    color: lighten($black, 20%);
-    appearance: none;
-    @include rem(font-size, 17);
-    &[disabled] {
-      border-color: rgba($grey, .5);
-    }
-    &.error {
-      border-color: $red;
-      outline: 1px solid $red;
-    }
-  }
-  
-  select {
-    box-sizing: border-box;
-    background: $white;
-    border: 1px solid lighten($black, 50%);
-    border-radius: 0;
-    color: lighten($black, 20%);
-    padding: 11px 14px;
-    width: 100%;
-    @include font-size(17);
-  }
-  
-  input[type="checkbox"] {
-    border-radius: 0;
-  }
-  
-  input[type="checkbox"],
-  input[type="radio"] {
-    width: 13px;
-    height: 13px;
-    padding: 0;
-    margin: 0 10px 0 0;
-  }
-  
-  fieldset {
-    margin: 0;
-    padding: 0;
-    border: 0;
-  }
-  
-  //Errors
-  label.error {
-    position: relative;
-    padding-left: 17px;
-    color: $red;
-    @include rem(font-size, 14);
-    &:before,
-    &:after {
-      position: absolute;
-      display: inline-block;
-    }
-    &:before {
-      content: '';
-      left: 0;
-      top: 2px;
-      background: $red;
-      border-radius: 100%;
-      @include square(13px);
-    }
-    &:after {
-      left: 5px;
-      top: 1px;
-      font-size: 12px;
-      font-weight: bold;
-      content: '!';
-      color: $grey;
-    }
-  }
-  
-  //Input File
-  .inputfile {
-    &:focus + label,
-    &.has-focus + label {
-      background: $black;
-      color: $white;
-      .icon-upload {
-        svg {
-          fill: $white;
-        }
+}
+
+//Input File
+.inputfile {
+  &:focus + label,
+  &.has-focus + label {
+    background: $black;
+    color: $white;
+    .icon-upload {
+      svg {
+        fill: $white;
       }
     }
-    .js & {
-      width: 0.1px;
-      height: 0.1px;
-      opacity: 0;
-      overflow: hidden;
-      position: absolute;
-      z-index: -1;
-    }
-    .no-js & + label {
-      display: none;
+  }
+  .js & {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+  .no-js & + label {
+    display: none;
+  }
+}
+
+
+/*
+=======
+﻿//-------------------------------------------
+// _base.forms.scss
+//-------------------------------------------
+
+[placeholder]:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+[placeholder]:focus::-moz-placeholder {
+  color: transparent;
+}
+
+input::-webkit-input-placeholder {
+  color: lighten($black, 20%);
+}
+
+input::-moz-placeholder {
+  color: lighten($black, 20%);
+}
+
+input:-ms-input-placeholder {
+  color: lighten($black, 20%);
+}
+
+textarea,
+input[type="text"],
+input[type="button"],
+input[type="submit"],
+input[type="search"] {
+  -webkit-appearance: none;
+}
+
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+textarea,
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="url"],
+input[type="search"],
+input[type="color"] {
+  box-sizing: border-box;
+  padding: 12px 15px;
+  width: 100%;
+  background: $white;
+  border: 1px solid lighten($black, 50%);
+  border-radius: 0;
+  color: lighten($black, 20%);
+  appearance: none;
+  @include font-size(17);
+
+  &.error {
+    border-color: $red;
+    outline: 1px solid $red;
+  }
+}
+
+select {
+  box-sizing: border-box;
+  background: $white;
+  border: 1px solid lighten($black, 50%);
+  border-radius: 0;
+  color: lighten($black, 20%);
+  padding: 11px 14px;
+  width: 100%;
+  @include font-size(17);
+}
+
+input[type="checkbox"] {
+  border-radius: 0;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: 13px;
+  height: 13px;
+  padding: 0;
+  margin: 0 10px 0 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+//Errors
+label.error {
+  position: relative;
+  padding-left: 17px;
+  color: $red;
+  @include font-size(14);
+
+  &:before,
+  &:after {
+    position: absolute;
+    display: inline-block;
+  }
+
+  &:before {
+    content: '';
+    left: 0;
+    top: 2px;
+    background: $red;
+    border-radius: 100%;
+    @include square(13px);
+  }
+
+  &:after {
+    left: 5px;
+    top: 1px;
+    font-size: 12px;
+    font-weight: bold;
+    content: '!';
+    color: $grey;
+  }
+}
+
+//Input File
+.inputfile {
+
+  &:focus + label,
+  &.has-focus + label {
+    background: $black;
+    color: $white;
+
+    .icon-upload {
+      svg {
+        fill: $white;
+      }
     }
   }
-  /*
+
+  .js & {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  .no-js & + label {
+    display: none;
+  }
+}
+
+*/
+
+
+/*
 
 ### Placeholder
 
     <input type="text" placeholder="This is placeholder text">
 
+
 */
-  /*
+
+
+/*
 
 ### Textarea
 
     <textarea></textarea>
 
 */
-  /*
+
+
+/*
 
 ### Text Input
 

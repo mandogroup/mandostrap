@@ -1,32 +1,6 @@
-/*
-
-### Carousel
-
-    <div class="js-carousel c-carousel">
-      <div class="c-carousel__item">
-        <a class="c-carousel__link" href="#">
-          <img class="c-carousel__image" src="http://placehold.it/150x150.png" alt="placeholder-image" />
-        </a>
-      </div>
-      <div class="c-carousel__item">
-        <a class="c-carousel__link" href="#">
-          <img class="c-carousel__image" src="http://placehold.it/150x150.png" alt="placeholder-image" />
-        </a>
-      </div>
-      <div class="c-carousel__item">
-        <a class="c-carousel__link" href="#">
-          <img class="c-carousel__image" src="http://placehold.it/150x150.png" alt="placeholder-image" />
-        </a>
-      </div>
-      <div class="c-carousel__item">
-        <a class="c-carousel__link" href="#">
-          <img class="c-carousel__image" src="http://placehold.it/150x150.png" alt="placeholder-image" />
-          <p class="c-carousel__caption">Caption</p>
-        </a>
-      </div>
-    </div>
-
-*/
+//-------------------------------------------
+// _components.carousel.scss
+//-------------------------------------------
 
 .c-carousel{
   position: relative;
@@ -158,3 +132,33 @@
   }
 
 }
+
+/*
+
+### Carousel
+
+    <div class="js-carousel c-carousel">
+      <div class="c-carousel__item">
+        <a class="c-carousel__link" href="#">
+          <img class="c-carousel__image" src="http://placehold.it/150x150.png" alt="placeholder-image" />
+        </a>
+      </div>
+      <div class="c-carousel__item">
+        <a class="c-carousel__link" href="#">
+          <img class="c-carousel__image" src="http://placehold.it/150x150.png" alt="placeholder-image" />
+        </a>
+      </div>
+      <div class="c-carousel__item">
+        <a class="c-carousel__link" href="#">
+          <img class="c-carousel__image" src="http://placehold.it/150x150.png" alt="placeholder-image" />
+        </a>
+      </div>
+      <div class="c-carousel__item">
+        <a class="c-carousel__link" href="#">
+          <img class="c-carousel__image" src="http://placehold.it/150x150.png" alt="placeholder-image" />
+          <p class="c-carousel__caption">Caption</p>
+        </a>
+      </div>
+    </div>
+
+*/

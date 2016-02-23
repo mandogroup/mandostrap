@@ -1,4 +1,83 @@
-﻿//_components.wysiwyg.scss
+﻿//-------------------------------------------
+// _components.wysiwyg.scss
+//-------------------------------------------
+
+.c-wysiwyg {
+
+  // Responsive Video Embed (requires wrapper)
+
+  .c-video--responsive {
+    position: relative;
+    padding-bottom: 56.25%; // 16:9
+    padding-top: 25px;
+    height: 0;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  // Table Style
+
+  .c-table__container {
+    @media #{$tablet-landscape} {
+      width: 640px;
+      overflow-x: scroll;
+    }
+  }
+
+  .c-table {
+    background: $white;
+    border-top: 1px solid #d8dde6;
+    border-bottom: 1px solid #d8dde6;
+
+    thead {
+
+      th {
+        text-transform: uppercase;
+        text-align: left;
+        padding: 0.5rem;
+        white-space: nowrap;
+        font-size: 1rem;
+        line-height: 1.3;
+      }
+
+    }
+
+    tbody {
+
+      td {
+        border-top: 1px solid #d8dde6;
+        text-align: left;
+        padding: 0.5rem;
+        white-space: nowrap;
+        font-size: 1rem;
+        line-height: 1.3;
+      }
+
+      tr {
+
+        &:nth-child(even) {
+          background-color: $grey-light;
+        }
+
+        &:hover > td,
+        &:focus > td {
+          background-color: $grey-light;
+          box-shadow: $grey 0 -1px 0 inset;
+          @include defaultTransition();
+        }
+
+      }
+
+    }
+  }
+
+}
 
 /*
 
@@ -80,84 +159,3 @@
 
 */
 
-.c-wysiwyg {
-
-    // Responsive Video Embed (requires wrapper)
-
-    .c-video--responsive {
-        position: relative;
-        padding-bottom: 56.25%; // 16:9
-        padding-top: 25px;
-        height: 0;
-
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-    }
-
-    // Table Style
-
-    .c-table__container {
-        @media #{$tablet-landscape} {
-            width:640px;
-            overflow-x:scroll;
-        }
-    }
-
-    .c-table {
-        background:$white;
-        border-top: 1px solid #d8dde6;
-        border-bottom: 1px solid #d8dde6;
-
-        thead {
-
-            th {
-                text-transform:uppercase;
-                text-align:left;
-                padding: 0.5rem;
-                white-space: nowrap;
-                font-size:1rem;
-                line-height:1.3;
-            }
-
-        }
-
-        tbody {
-
-            td {
-                border-top: 1px solid #d8dde6;
-                text-align:left;
-                padding: 0.5rem;
-                white-space: nowrap;
-                font-size:1rem;
-                line-height:1.3;
-            }
-
-            tr {
-
-                &:nth-child(even) {
-                  background-color:$grey-light;
-                }
-
-                &:hover > td,
-                &:focus > td{
-                    background-color:$grey-light;
-                    box-shadow: $grey 0 -1px 0 inset;
-                    @include defaultTransition();
-                }
-
-            }
-
-        }
-
-
-
-
-    }
-
-
-}

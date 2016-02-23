@@ -1,4 +1,83 @@
-﻿//_components.hero.scss
+﻿//-------------------------------------------
+// _components.hero.scss
+//-------------------------------------------
+
+.c-hero-slider {
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  figure {
+    position: relative;
+    margin: 0;
+  }
+
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 1rem 2rem 1rem;
+    background: $grey-light;
+  }
+
+  ul.slick-dots {
+    position: absolute;
+    bottom: 2rem;
+    right: 1rem;
+  }
+
+  .slick-next {
+    right: 1rem;
+  }
+
+  .slick-prev {
+    left: 1rem;
+  }
+
+}
+
+.c-hero__picture {
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  figure {
+    position: relative;
+    margin: 0;
+  }
+
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: $grey-light;
+  }
+
+}
+
+.c-hero__background {
+  width: 100%;
+  min-height: 350px;
+  position: relative;
+
+  h2 {
+    position: absolute;
+    left: 1.5rem;
+    bottom: 1.5rem;
+    width: 50%;
+    padding: 1rem;
+    margin: 0;
+    background: rgba(50, 50, 50, 0.75);
+    color: $white;
+  }
+}
 
 /*
 
@@ -110,80 +189,3 @@
     </div>
 
 */
-
-.c-hero-slider {
-
-  img {
-    width:100%;
-    height:auto;
-  }
-
-  figure {
-    position:relative;
-    margin:0;
-  }
-
-  figcaption {
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    padding:1rem 1rem 2rem 1rem;
-    background:$grey-light;
-  }
-
-  ul.slick-dots {
-    position:absolute;
-    bottom:2rem;
-    right:1rem;
-  }
-
-  .slick-next {
-    right:1rem;
-  }
-
-  .slick-prev {
-    left:1rem;
-  }
-
-}
-
-.c-hero__picture {
-
-  img {
-    width:100%;
-    height:auto;
-  }
-
-  figure {
-    position:relative;
-    margin:0;
-  }
-
-  figcaption {
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    padding:1rem;
-    background:$grey-light;
-  }
-
-}
-
-.c-hero__background {
-  width:100%;
-  min-height:350px;
-  position:relative;
-
-  h2 {
-    position:absolute;
-    left:1.5rem;
-    bottom:1.5rem;
-    width:50%;
-    padding:1rem;
-    margin:0;
-    background:rgba(50,50,50,0.75);
-    color:$white;
-  }
-}

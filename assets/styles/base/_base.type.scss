@@ -1,4 +1,75 @@
-﻿//_base.type.scss
+﻿//-------------------------------------------
+// _base.type.scss
+//-------------------------------------------
+
+// Typographic Scale
+
+body {
+  font-family: $font-primary;
+}
+
+p {
+  padding-top: 0;
+  margin: 0 auto 1rem auto;
+}
+
+a {
+  @include defaultTransition();
+}
+
+h1 {
+  @include font-size($h1-font-sizes);
+}
+
+h2 {
+  @include font-size($h2-font-sizes);
+}
+
+h3 {
+  @include font-size($h3-font-sizes);
+}
+
+h4 {
+  @include font-size($h4-font-sizes);
+}
+
+h5 {
+  @include font-size($h5-font-sizes);
+}
+
+h6 {
+  @include font-size($h6-font-sizes);
+}
+
+blockquote {
+  width: 85%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+  position: relative;
+}
+
+dl {
+
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    margin: 0;
+  }
+}
+
+ul, ol {
+  padding-top: 0;
+  margin: 0 0 1em 0;
+  padding: 0 0 0 1.5rem;
+
+  ul, ol {
+    margin-top: 0.5rem;
+  }
+}
 
 /*
 
@@ -103,69 +174,3 @@
 
 // Typographic Scale
 
-body {
-  font-family: $font-primary;
-}
-
-p {
-  padding-top: 0;
-  margin: 0 auto 1rem auto;
-}
-
-a {
-  @include defaultTransition();
-}
-
-h1 {
-  @include font-size($h1-font-sizes);
-}
-
-h2 {
-  @include font-size($h2-font-sizes);
-}
-
-h3 {
-  @include font-size($h3-font-sizes);
-}
-
-h4 {
-  @include font-size($h4-font-sizes);
-}
-
-h5 {
-  @include font-size($h5-font-sizes);
-}
-
-h6 {
-  @include font-size($h6-font-sizes);
-}
-
-blockquote {
-  width: 85%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-right: auto;
-  margin-left: auto;
-  position: relative;
-}
-
-dl {
-
-  dt {
-    font-weight:bold;
-  }
-
-  dd {
-    margin:0;
-  }
-}
-
-ul, ol {
-  padding-top: 0;
-  margin: 0 0 1em 0;
-  padding:0 0 0 1.5rem;
-
-  ul, ol {
-    margin-top:0.5rem;
-  }
-}
