@@ -91,7 +91,7 @@
 .c-form__element-label {
   cursor: pointer;
   font-weight: normal;
-  margin: 1rem 0;
+  margin: .5rem 0;
   @include rem(font-size, 20);
   &--block {
     @extend .c-form__element-label;
@@ -283,4 +283,19 @@
     }
     /* for IE 11 */
   }
+}
+
+.c-form__element-addon {
+    display:flex;
+    .c-form__element-addon-field {
+        flex:1;
+    }
+    .c-form__element-addon--right {
+        margin-left:10px;
+
+    }
+    .c-form__element-addon--left {
+        margin-right:10px; 
+
+    }
 }
