@@ -1,6 +1,6 @@
 ﻿//_components.forms.scss
 //Form Layouts
-//2 column form element
+//2 column gallery
 .c-form__row--2col--gal {
   @include clearfix;
   .c-form__element {
@@ -10,6 +10,7 @@
   }
 }
 
+//2 Columns
 .c-form__row--2col {
   .c-form__element {
     @include clearfix;
@@ -72,12 +73,14 @@
 
 .c-form__element-control {
   &--small {
-    width: 174px;
+    @extend .c-form__element-control;
+    @include rem(width, 174);
     @media #{$tablet-landscape} {
       width: 50%;
     }
   }
   @media #{$tablet-landscape} {
+    @extend .c-form__element-control;
     &--med {
       width: 70%;
     }
@@ -93,6 +96,13 @@
   &--block {
     @extend .c-form__element-label;
     display: block;
+  }
+  .icon-required {
+    margin-left: 10px;
+    @include square(16px);
+    svg * {
+      fill: red;
+    }
   }
 }
 
@@ -119,42 +129,9 @@
       @include rem(font-size, 13);
     }
   }
-  //Hidden Checkbox
-  &--hidden {
-    display: block;
-    .c-form__element-label {
-      display: block;
-      margin-bottom: .5rem;
-      padding: .7rem;
-      background: $white;
-      border-radius: 22px;
-      border: 1px solid $black;
-      color: $black;
-      @include rem(font-size, 16);
-      @media #{$tablet-landscape} {
-        padding: .7rem 1.2rem;
-        @include rem(font-size, 17);
-      }
-    }
-    [type="checkbox"] {
-      @extend %hidden-input;
-      &:checked {
-        > .c-form__element-label,
-        ~ .c-form__element-label {
-          background: $black;
-          color: $white;
-        }
-      }
-      &:focus {
-        > .c-form__element-label,
-        ~ .c-form__element-label {
-          border: 1px solid $grey;
-        }
-      }
-    }
-  }
   //Checkboxes -- Faux UI
   &--faux {
+    @extend .c-form__checkbox;
     [type="checkbox"] {
       @extend %hidden-input;
       &:checked > .c-form__checkbox--faux-ui,
@@ -193,9 +170,44 @@
       display: inline-block;
       @include square(13px);
       margin-right: 10px;
-      border: 1px solid #d8dde6;
+      border: 1px solid $grey;
       border-radius: 0.125rem;
       background: #fff;
+    }
+  }
+  //Hidden Checkbox
+  &--hidden {
+    display: block;
+    .c-form__element-label {
+      display: block;
+      margin-top: 0;
+      margin-bottom: .5rem;
+      padding: .7rem;
+      background: $white;
+      border-radius: 22px;
+      border: 1px solid $black;
+      color: $black;
+      @include rem(font-size, 16);
+      @media #{$tablet-landscape} {
+        padding: .7rem 1.2rem;
+        @include rem(font-size, 17);
+      }
+    }
+    [type="checkbox"] {
+      @extend %hidden-input;
+      &:checked {
+        > .c-form__element-label,
+        ~ .c-form__element-label {
+          background: $black;
+          color: $white;
+        }
+      }
+      &:focus {
+        > .c-form__element-label,
+        ~ .c-form__element-label {
+          border: 1px solid $grey;
+        }
+      }
     }
   }
 }
@@ -203,6 +215,7 @@
 .c-form__radio {
   @extend .c-form__checkbox;
   &--faux {
+    @extend .c-form__checkbox--faux;
     [type="radio"] {
       @extend %hidden-input;
       &:checked > .c-form__radio--faux-ui,
@@ -217,8 +230,8 @@
           display: block;
           content: '';
           @include square(5px);
-          border-radius:50%;
-          background:$black;
+          border-radius: 50%;
+          background: $black;
         }
       }
       &:focus > .c-form__radio--faux-ui,
@@ -240,7 +253,7 @@
       display: inline-block;
       @include square(13px);
       margin-right: 10px;
-      border: 1px solid #d8dde6;
+      border: 1px solid $grey;
       border-radius: 50%;
       background: #fff;
     }

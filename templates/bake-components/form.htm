@@ -1,23 +1,58 @@
 <div class="o-wrapper__inner">
-  <h2>Stacked</h2>
+  <h1>Form fields</h1>
+  <h2>Stacked Controls</h2>
   <div class="c-form--stacked">
     <div class="c-form__element">
-      <label for="stacked1" class="c-form__element-label--block">Small Length Control</label>
-      <div class="c-form__element-control c-form__element-control--small">
-        <input type="text" name="stacked1" id="stacked1" placeholder="Small Length Control" />
-      </div>
-    </div>
-    <div class="c-form__element">
-      <label for="stacked2" class="c-form__element-label--block">Medium Length Control</label>
-      <div class="c-form__element-control c-form__element-control--med">
-        <input type="text" name="stacked2" id="stacked2" placeholder="Medium Length Control" />
-      </div>
-    </div>
-    <div class="c-form__element">
-      <label for="stacked3" class="c-form__element-label--block">Default Length Control</label>
+      <label for="textinput" class="c-form__element-label--block">Text input</label>
       <div class="c-form__element-control">
-        <input type="text" name="stacked3" id="stacked3" placeholder="Default Length Control" />
+        <input type="text" name="textinput" id="textinput" placeholder="I'm placeholder text" />
       </div>
+    </div>
+    <div class="c-form__element">
+      <label for="readonly" class="c-form__element-label--block">Read only input</label>
+      <div class="c-form__element-control">
+        <input type="text" name="readonly" id="readonly" value="I'm value text" readonly="readonly" />
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="disabledinput" class="c-form__element-label--block">Disabled input</label>
+      <div class="c-form__element-control">
+        <input type="text" name="disabledinput" id="disabledinput" placeholder="I'm placeholder text" disabled="disabled" />
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="requireinput" class="c-form__element-label--block">Required input <span class="icon-required" data-grunticon-embed></span><span class="visually-hidden">Required</span></label>
+      <div class="c-form__element-control">
+        <input type="text" name="requireinput" id="requireinput" placeholder="I'm placeholder text" required="required" aria-required="true" />
+      </div>
+    </div>
+     <div class="c-form__element">
+      <label for="emailinput" class="c-form__element-label--block">Email input</label>
+      <div class="c-form__element-control">
+        <input type="email" name="emailinput" id="emailinput" placeholder="name@email.com" />
+      </div>
+    </div>
+     <div class="c-form__element">
+      <label for="telinput" class="c-form__element-label--block">Tel input</label>
+      <div class="c-form__element-control">
+        <input type="tel" name="telinput" id="telinput"  />
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="urlinput" class="c-form__element-label--block">Url input</label>
+      <div class="c-form__element-control">
+        <input type="url" name="urlinput" id="urlinput" placeholder="http://" />
+      </div>
+    </div>
+     <div class="c-form__element">
+      <label for="passwordinput" class="c-form__element-label--block">Password input</label>
+      <div class="c-form__element-control">
+        <input type="password" name="passwordinput" id="passwordinput"  />
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="rq-additional" class="c-form__element-label--block">Textarea</label>
+      <textarea id="rq-additional" rows="5" cols="5"></textarea>
     </div>
     <div class="c-form__element">
       <label for="select" class="c-form__element-label--block">Custom Select Menu:</label>
@@ -41,91 +76,122 @@
         </select>
       </div>
     </div>
-    <div class="c-form__element">
-      <label for="rq-additional" class="c-form__element-label--block">Textarea</label>
-      <textarea id="rq-additional" rows="5" cols="5"></textarea>
+     <div class="c-form__element">
+      <label for="numberinput" class="c-form__element-label--block">Number input</label>
+      <div class="c-form__element-control">
+        <input id="numberinput" name="numberinput" type="number" value="5" min="0" max="10" >
+      </div>
     </div>
+    <p style="color:red;font-weight:bold;">Need a calendar date picker example here</p>
+     <div class="c-form__element">
+      <label for="dateinput" class="c-form__element-label--block">Date input</label>
+      <div class="c-form__element-control">
+        <input id="dateinput" name="dateinput" type="date">
+      </div>
+    </div>
+    <h3>Control Widths</h3>
+    <p>Can be applied to any control container.</p>
+    <div class="c-form__element">
+      <label for="stacked1" class="c-form__element-label--block">Text input - small</label>
+      <div class="c-form__element-control--small">
+        <input type="text" name="stacked1" id="stacked1" placeholder="Small Length Control" />
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="stacked2" class="c-form__element-label--block">Text input - medium</label>
+      <div class="c-form__element-control--med">
+        <input type="text" name="stacked2" id="stacked2" placeholder="Medium Length Control" />
+      </div>
+    </div>
+    <h3>Checkboxes &amp; Radio buttons</h3>
     <div class="c-form__element">
       <label for="chq" class="c-form__checkbox">
         <input type="checkbox" name="chq" id="chq" />
-        <span class="c-form__element-label">Checkbox example</span>
+        <span class="c-form__element-label">Checkbox default UI</span>
       </label>
     </div>
-   
-
     <div class="c-form__element">
-      <label for="chq2" class="c-form__checkbox c-form__checkbox--faux">
+      <label for="chq2" class="c-form__checkbox--faux">
         <input type="checkbox" name="chq2" id="chq2" />
         <span class="c-form__checkbox--faux-ui"></span>
         <span class="c-form__element-label">Checkbox custom - default</span>
       </label>
     </div>
-     <div class="c-form__element">
-      <label for="chq3" class="c-form__checkbox c-form__checkbox--faux">
+    <div class="c-form__element">
+      <label for="chq3" class="c-form__checkbox--faux">
         <input type="checkbox" name="chq3" id="chq3" checked="checked" />
         <span class="c-form__checkbox--faux-ui"></span>
         <span class="c-form__element-label">Checkbox custom - checked</span>
       </label>
     </div>
-  <div class="c-form__element">
-      <label for="chq4" class="c-form__checkbox c-form__checkbox--faux">
+    <div class="c-form__element">
+      <label for="chq4" class="c-form__checkbox--faux">
         <input type="checkbox" name="chq4" id="chq4" disabled="disabled" />
         <span class="c-form__checkbox--faux-ui"></span>
         <span class="c-form__element-label">Checkbox custom - disabled</span>
       </label>
     </div>
-     <div class="c-form__element">
-      <label for="rdi" class="c-form__radio">
-        <input type="radio" name="rdi" id="rdi" />
-        <span class="c-form__element-label">Radio example</span>
+    <div class="c-form__element">
+      <label for="cb-subscribe" class="c-form__checkbox">
+        <input type="checkbox" id="cb-subscribe" name="cb-subscribe">
+        <span class="c-form__element-label c-form__element-label--terms">Smaller label text for terms &amp; conditions</span>
       </label>
     </div>
     <div class="c-form__element">
-      <label for="rdi2" class="c-form__radio c-form__radio--faux">
+      <label for="rdi" class="c-form__radio">
+        <input type="radio" name="rdi" id="rdi" />
+        <span class="c-form__element-label">Radio default UI</span>
+      </label>
+    </div>
+    <div class="c-form__element">
+      <label for="rdi2" class="c-form__radio--faux">
         <input type="radio" name="rdi" id="rdi2" />
-         <span class="c-form__radio--faux-ui"></span>
+        <span class="c-form__radio--faux-ui"></span>
         <span class="c-form__element-label">Radio custom - default</span>
       </label>
     </div>
     <div class="c-form__element">
-      <label for="rdi3" class="c-form__radio c-form__radio--faux">
+      <label for="rdi3" class="c-form__radio--faux">
         <input type="radio" name="rdi" id="rdi3" checked="checked" />
-         <span class="c-form__radio--faux-ui"></span>
+        <span class="c-form__radio--faux-ui"></span>
         <span class="c-form__element-label">Radio custom - checked</span>
       </label>
     </div>
     <div class="c-form__element">
-      <label for="rdi4" class="c-form__radio c-form__radio--faux">
+      <label for="rdi4" class="c-form__radio--faux">
         <input type="radio" name="rdi" id="rdi4" disabled="disabled" />
-         <span class="c-form__radio--faux-ui"></span>
+        <span class="c-form__radio--faux-ui"></span>
         <span class="c-form__element-label">Radio custom - disabled</span>
       </label>
     </div>
+    <h4>Hidden checkbox</h4>
     <div class="c-form__element">
-      <label for="chq-hidden1" class="c-form__checkbox c-form__checkbox--hidden">
+      <label for="chq-hidden1" class="c-form__checkbox--hidden">
         <input type="checkbox" name="chq-hidden" id="chq-hidden1" />
         <span class="c-form__element-label">Hidden Checkbox 1</span>
       </label>
     </div>
     <div class="c-form__element">
-      <label for="chq-hidden2" class="c-form__checkbox c-form__checkbox--hidden">
+      <label for="chq-hidden2" class="c-form__checkbox--hidden">
         <input type="checkbox" name="chq-hidden" id="chq-hidden2" />
         <span class="c-form__element-label">Hidden Checkbox 2</span>
       </label>
     </div>
     <div class="c-form__element">
-      <label for="chq-hidden3" class="c-form__checkbox c-form__checkbox--hidden">
+      <label for="chq-hidden3" class="c-form__checkbox--hidden">
         <input type="checkbox" name="chq-hidden" id="chq-hidden3" />
         <span class="c-form__element-label">Hidden Checkbox 3</span>
       </label>
     </div>
     <!-- File input -->
+    <h3>File Input</h3>
     <div class="c-form__element">
       <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
       <label for="file" class="c-button c-button--icon"><span>Upload document button example</span><i class="icon-upload" data-grunticon-embed></i></label>
     </div>
   </div>
-  <h2>Inline</h2>
+  <h2>Inline controls</h2>
+  <h3>Fieldset exmaple</h3>
   <div class="c-form--inline">
     <fieldset>
       <legend><span>Fieldset Legend</span></legend>
@@ -143,33 +209,26 @@
       </div>
     </fieldset>
   </div>
-  <h3>Inline Small Fields with ARIA Describedby</h3>
+  <h3>Small Fields with ARIA labelledby</h3>
+  <p>Use the WAI-ARIA aria-labelledby attribute to associate instructions with form controls. To ensure backward compatibility, the for and id attributes are also used in this example.</p>
   <div class="c-form--inline">
     <div class="c-form__element">
       <label for="rq-cd-pipelength" class="c-form__element-label">Pipe Length</label>
-      <div class="c-form__element-control c-form__element-control--small">
-        <input type="text" name="rq-cd-pipelength" id="rq-cd-pipelength" placeholder="0" aria-describedby="info-PipeLength" />
+      <div class="c-form__element-control--small">
+        <input type="text" name="rq-cd-pipelength" id="rq-cd-pipelength" placeholder="0" aria-labelledby="info-PipeLength" />
       </div>
-      <span id="info-PipeLength">Metres</span>
+      <span id="info-PipeLength" tabindex="-1">Metres</span>
     </div>
     <div class="c-form__element">
       <label for="rq-cd-pipewidth" class="c-form__element-label">Pipe Width</label>
-      <div class="c-form__element-control c-form__element-control--small">
-        <input type="text" name="rq-cd-pipewidth" id="rq-cd-pipewidth" placeholder="0" aria-describedby="info-PipeWidth" />
+      <div class="c-form__element-control--small">
+        <input type="text" name="rq-cd-pipewidth" id="rq-cd-pipewidth" placeholder="0" aria-labelledby="info-PipeWidth" />
       </div>
-      <span id="info-PipeWidth">mm</span>
+      <span id="info-PipeWidth" tabindex="-1">mm</span>
     </div>
   </div>
-  <div class="c-form--inline">
-    <div class="c-form__element">
-      <label for="cb-subscribe" class="c-form__checkbox">
-        <input type="checkbox" id="cb-subscribe" name="cb-subscribe">
-        <span class="c-form__element-label c-form__element-label--terms">Smaller label text for terms &amp; conditions</span>
-      </label>
-    </div>
-    <input type="submit" class="c-button u-right submit" value="Submit">
-  </div>
-  <h2>Two columns</h2>
+  <h2>Form layouts</h2>
+  <h3>Two columns</h3>
   <div class="c-form__row--2col">
     <div class="c-form__element">
       <div class="c-form__col">
@@ -230,7 +289,7 @@
       </fieldset>
     </div>
   </div>
-  <h2>Two columns - Gallery</h2>
+  <h3>Two columns - Gallery</h3>
   <div class="c-form__row--2col--gal">
     <div class="c-form__element">
       <label for="cb-fullname2" class="c-form__element-label--block">Full Name</label>

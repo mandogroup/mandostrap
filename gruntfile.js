@@ -71,7 +71,7 @@ module.exports = function (grunt) {
         htmllint: {
             all: {
                 options: {
-                    ignore: ['Attribute "color" not allowed on element "link" at this point.', 'Bad value "mask-icon" for attribute "rel" on element "link": The string "mask-icon" is not a registered keyword.']
+                    ignore: ['The "date" input type is not supported in all browsers. Please be sure to test, and consider using a polyfill.','Attribute "color" not allowed on element "link" at this point.', 'Bad value "mask-icon" for attribute "rel" on element "link": The string "mask-icon" is not a registered keyword.']
                 },
                 src: ["templates/dist/**/*.htm"]
             }
