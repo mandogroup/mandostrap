@@ -1,278 +1,238 @@
-﻿<!--(bake /templates/bake-components/page_head.htm)-->
-<!--(bake /templates/bake-components/page_accessmenu.htm)-->
-<!--(bake /templates/bake-components/header.htm)-->
-<!--(bake /templates/bake-components/nav.htm)-->
+﻿
+<div>
+    <div class="c-form--stacked">
+        <div class="c-form__element">
+            <label for="rq-area" class="c-form__element-label">Select service area:</label>
+            <div class="c-form__element-control c-form__element-control--med">
+                <select id="rq-area" class="js-form-select">
+                    <option value="pipeline">Pipeline Solutions</option>
+                    <option value="stack">Stack Emissions</option>
+                    <option value="water">Water Hygiene</option>
+                    <option value="noise">Noise</option>
+                </select>
+            </div>
+        </div>
+    </div>
 
-<main id="main">
-    <!--(bake /templates/bake-components/image-banner.htm)-->
-    <div class="c-requestquote">
-        <div class="o-wrapper__inner">
+    <h2 class="c-form__element-label">What services are you interested in?</h2>
 
-            <div class="o-row o-row--3col">
-                <div class="o-col--x2">
-                    <div class="c-wysiwyg">
-                        <p class="intro">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  </p>
-                    </div>
-                    <div class="form">
-                        <div class="c-form--stacked">
-                            <div class="c-form__element">
-                                <label for="rq-area" class="c-form__element-label">Select service area:</label>
-                                <div class="c-form__element-control c-form__element-control--med">
-                                    <select id="rq-area" class="js-form-select">
-                                        <option value="pipeline">Pipeline Solutions</option>
-                                        <option value="stack">Stack Emissions</option>
-                                        <option value="water">Water Hygiene</option>
-                                        <option value="noise">Noise</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-
-                        <h2 class="c-form__element-label">What services are you interested in?</h2>
-
-                        <!-- 2column -->
-                        <div class="c-form--2col">
-                            <div class="c-form__element">
-                                <label for="rq-interest1" class="c-form__checkbox c-form__checkbox--hidden">
-                                    <input type="checkbox" name="rq-interest" id="rq-interest1" class="js-hidden-form-cta" />
-                                    <span class="c-form__element-label">Chlorination &amp; pressure</span>
-                                </label>
+    <!-- 2column -->
+    <div class="c-form--2col">
+        <div class="c-form__element">
+            <label for="rq-interest1" class="c-form__checkbox c-form__checkbox--hidden">
+                <input type="checkbox" name="rq-interest" id="rq-interest1" class="js-hidden-form-cta" />
+                <span class="c-form__element-label">Chlorination &amp; pressure</span>
+            </label>
 
 
-                            </div>
-                            <div class="c-form__element">
-                                <label for="rq-interest2" class="c-form__checkbox c-form__checkbox--hidden">
-                                    <input type="checkbox" name="rq-interest" id="rq-interest2" />
-                                    <span class="c-form__element-label">Valve repairs &amp; replacements</span>
-                                </label>
+        </div>
+        <div class="c-form__element">
+            <label for="rq-interest2" class="c-form__checkbox c-form__checkbox--hidden">
+                <input type="checkbox" name="rq-interest" id="rq-interest2" />
+                <span class="c-form__element-label">Valve repairs &amp; replacements</span>
+            </label>
 
-                            </div>
-                            <div class="c-form__element">
-                                <label for="rq-interest3" class="c-form__checkbox c-form__checkbox--hidden">
-                                    <input type="checkbox" name="rq-interest" id="rq-interest3" />
-                                    <span class="c-form__element-label">Pipe repairs</span>
-                                </label>
+        </div>
+        <div class="c-form__element">
+            <label for="rq-interest3" class="c-form__checkbox c-form__checkbox--hidden">
+                <input type="checkbox" name="rq-interest" id="rq-interest3" />
+                <span class="c-form__element-label">Pipe repairs</span>
+            </label>
 
-                            </div>
-                            <div class="c-form__element">
-                                <label for="rq-interest4" class="c-form__checkbox c-form__checkbox--hidden">
-                                    <input type="checkbox" name="rq-interest" id="rq-interest4" />
-                                    <span class="c-form__element-label">Mains installation &amp; replacement</span>
-                                </label>
+        </div>
+        <div class="c-form__element">
+            <label for="rq-interest4" class="c-form__checkbox c-form__checkbox--hidden">
+                <input type="checkbox" name="rq-interest" id="rq-interest4" />
+                <span class="c-form__element-label">Mains installation &amp; replacement</span>
+            </label>
 
-                            </div>
-                            <div class="c-form__element">
-                                <label for="rq-interest5" class="c-form__checkbox c-form__checkbox--hidden">
-                                    <input type="checkbox" name="rq-interest" id="rq-interest5" />
-                                    <span class="c-form__element-label">Leak detection</span>
-                                </label>
+        </div>
+        <div class="c-form__element">
+            <label for="rq-interest5" class="c-form__checkbox c-form__checkbox--hidden">
+                <input type="checkbox" name="rq-interest" id="rq-interest5" />
+                <span class="c-form__element-label">Leak detection</span>
+            </label>
 
-                            </div>
-                            <div class="c-form__element">
-                                <label for="rq-interest6" class="c-form__checkbox c-form__checkbox--hidden">
-                                    <input type="checkbox" name="rq-interest" id="rq-interest6" />
-                                    <span class="c-form__element-label">AMR sub meter installation</span>
-                                </label>
+        </div>
+        <div class="c-form__element">
+            <label for="rq-interest6" class="c-form__checkbox c-form__checkbox--hidden">
+                <input type="checkbox" name="rq-interest" id="rq-interest6" />
+                <span class="c-form__element-label">AMR sub meter installation</span>
+            </label>
 
-                            </div>
-                        </div>
-
-
-                        <!-- Chlorination box -->
-                        <div class="c-form__detail js-hidden-form">
-                            <h2 class="c-form__element-label">Chlorination Details</h2>
-                            <div class="c-form--inline">
-                                <div class="c-form__element">
-                                    <label for="rq-cd-pipelength" class="visually-hidden">Pipe Length</label>
-                                    <div class="c-form__element-control c-form__element-control--small">
-                                        <input type="text" name="rq-cd-pipelength" id="rq-cd-pipelength" placeholder="Pipe Length" />
-                                    </div>
-                                    <span>Metres</span>
-                                </div>
-                                <div class="c-form__element">
-                                    <label for="rq-cd-pipewidth" class="visually-hidden">Pipe Width</label>
-                                    <div class="c-form__element-control c-form__element-control--small">
-                                        <input type="text" name="rq-cd-pipewidth" id="rq-cd-pipewidth" placeholder="Pipe Width" />
-                                    </div>
-                                    <span>mm</span>
-                                </div>
-                            </div>
-                            <div class="c-form--stacked">
-                                <div class="c-form__element">
-                                    <label for="rq-cd-pipematerial" class="visually-hidden">Pipe Material</label>
-                                    <div class="c-form__element-control c-form__element-control--med">
-                                        <input type="text" name="rq-cd-pipematerial" id="rq-cd-pipematerial" placeholder="Pipe Material" />
-                                    </div>
-                                </div>
-                                <div class="c-form__element">
-                                    <label for="rq-cd-outlets" class="visually-hidden">Number of outlets</label>
-                                    <div class="c-form__element-control c-form__element-control--med">
-                                        <input type="text" name="rq-cd-outlets" id="rq-cd-outlets" placeholder="Number of outlets" />
-                                    </div>
-                                </div>
-
-                            </div>
-
-                            <div class="c-form--inline">
-                                <fieldset>
-                                    <legend><span>Are there test ends?</span></legend>
-                                    <div class="c-form__element">
-                                        <label for="rq-cd-testends-yes" class="c-form__checkbox">
-                                            <input type="checkbox" name="rq-cd-testends" id="rq-cd-testends-yes" value="yes" />
-                                            <span class="c-form__element-label">Yes</span>
-                                        </label>
-                                    </div>
-                                    <div class="c-form__element">
-
-                                        <label for="rq-cd-testends-no" class="c-form__checkbox">
-                                            <input type="checkbox" name="rq-cd-testends" id="rq-cd-testends-no" value="No" />
-                                            <span class="c-form__element-label">No</span>
-                                        </label>
-
-                                    </div>
-                                </fieldset>
-                            </div>
-
-                        </div>
+        </div>
+    </div>
 
 
-
-
-                        <!-- Stacked -->
-                        <div class="c-form--stacked">
-                            <div class="c-form__element">
-                                <label for="rq-additional" class="c-form__element-label">Additional information</label>
-                                <textarea id="rq-additional" rows="5" cols="5"></textarea>
-                            </div>
-                            <!-- File input -->
-                            <div class="c-form__element">
-                                <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple />
-                                <label for="file" class="c-button c-button--icon"><span>Upload document</span><i class="icon-upload" data-grunticon-embed></i></label>
-                            </div>
-                        </div>
-
-
-                        <h2 class="c-form__element-label">Contact details</h2>
-                        <!-- 2column -->
-                        <div class="c-form--2col">
-                            <div class="c-form__element">
-                                <label for="cb-fullname" class="visually-hidden">Full Name</label>
-                                <div class="c-form__element-control">
-                                    <input type="text" id="cb-fullname" name="cb-fullname" placeholder="Full Name">
-                                </div>
-
-                            </div>
-                            <div class="c-form__element">
-                                <label for="cb-company" class="visually-hidden">Company</label>
-                                <div class="c-form__element-control">
-                                    <input type="text" id="cb-company" name="cb-company" placeholder="Company" class="required" aria-required="true">
-                                </div>
-                            </div>
-                            <div class="c-form__element">
-                                <label for="cb-email" class="visually-hidden">Email</label>
-                                <div class="c-form__element-control">
-                                    <input type="email" id="cb-email" name="cb-email" placeholder="Email address" class="required" aria-required="true">
-                                </div>
-                            </div>
-                            <div class="c-form__element">
-                                <label for="cb-email" class="visually-hidden">Telephone no</label>
-                                <div class="c-form__element-control">
-                                    <input type="tel" id="cb-tel" name="cb-tel" placeholder="Telephone no">
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <h2 class="c-form__element-label">I am also interested in&hellip;</h2>
-                        <div class="c-requestquote__interests">
-                            <h3 class="js-faq-trigger">Pipeline Solutions<span class="c-requestquote__interests-icon icon-pipeline" data-grunticon-embed></span><span class="c-requestquote__interests-qicon"></span></h3>
-                            <div class="c-requestquote__interests-items js-faq-expand">
-                                <div class="c-form--2col">
-                                    <div class="c-form__element">
-                                        <label for="rq-interest7" class="c-form__checkbox">
-                                            <input type="checkbox" name="rq-interest" id="rq-interest7" />
-                                            <span class="c-form__element-label">Chlorination &amp; pressure</span>
-                                        </label>
-                                    </div>
-                                    <div class="c-form__element">
-                                        <label for="rq-interest8" class="c-form__checkbox">
-                                            <input type="checkbox" name="rq-interest" id="rq-interest8" />
-                                            <span class="c-form__element-label">Valve repairs &amp; replacements</span>
-                                        </label>
-                                    </div>
-                                    <div class="c-form__element">
-                                        <label for="rq-interest9" class="c-form__checkbox">
-                                            <input type="checkbox" name="rq-interest" id="rq-interest9" />
-                                            <span class="c-form__element-label">Pipe repairs</span>
-                                        </label>
-                                    </div>
-                                    <div class="c-form__element">
-                                        <label for="rq-interest10" class="c-form__checkbox">
-                                            <input type="checkbox" name="rq-interest" id="rq-interest10" />
-                                            <span class="c-form__element-label">Mains installation &amp; replacement</span>
-                                        </label>
-                                    </div>
-                                    <div class="c-form__element">
-                                        <label for="rq-interest11" class="c-form__checkbox">
-                                            <input type="checkbox" name="rq-interest" id="rq-interest11" />
-                                            <span class="c-form__element-label">Leak detection</span>
-                                        </label>
-                                    </div>
-                                    <div class="c-form__element">
-                                        <label for="rq-interest12" class="c-form__checkbox">
-                                            <input type="checkbox" name="rq-interest" id="rq-interest12" />
-                                            <span class="c-form__element-label">AMR sub meter installation</span>
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                            <h3 class="js-faq-trigger">Water Quality<span class="c-requestquote__interests-icon icon-water" data-grunticon-embed></span><span class="c-requestquote__interests-qicon"></span></h3>
-                            <div class="c-requestquote__interests-items js-faq-expand">
-                                same as above
-                            </div>
-                            <h3 class="js-faq-trigger">Noise<span class="c-requestquote__interests-icon icon-noise" data-grunticon-embed></span><span class="c-requestquote__interests-qicon"></span></h3>
-                            <div class="c-requestquote__interests-items js-faq-expand">
-                                same as above
-                            </div>
-                            <h3 class="js-faq-trigger">Stack Emissions<span class="c-requestquote__interests-icon icon-air" data-grunticon-embed></span><span class="c-requestquote__interests-qicon"></span></h3>
-                            <div class="c-requestquote__interests-items js-faq-expand">
-                                same as above
-                            </div>
-                        </div>
-
-                        <div class="c-form--inline">
-                            <div class="c-form__element">
-                                <label for="cb-subscribe" class="c-form__checkbox">
-                                    <input type="checkbox" id="cb-subscribe" name="cb-subscribe">
-                                    <span class="c-form__element-label c-form__element-label--terms">Subscribe to receive news and information about NWG services</span>
-                                </label>
-                            </div>
-                            <input type="submit" class="c-button u-right submit" value="Submit">
-                        </div>
-                    </div>
-                    <!-- /.form -->
+    <!-- Chlorination box -->
+    <div class="c-form__detail js-hidden-form">
+        <h2 class="c-form__element-label">Chlorination Details</h2>
+        <div class="c-form--inline">
+            <div class="c-form__element">
+                <label for="rq-cd-pipelength" class="visually-hidden">Pipe Length</label>
+                <div class="c-form__element-control c-form__element-control--small">
+                    <input type="text" name="rq-cd-pipelength" id="rq-cd-pipelength" placeholder="Pipe Length" />
                 </div>
-                <div class="o-col">
-                    <div class="c-requestquote__contact">
-                        <h2v class="c-requestquote__contact-title">Get in contact</h2v>
-                        <p>Call us now on <a tabindex="-1" href="tel:+449111234567" class="tel c-requestquote__contact-tel">0191 123 4567</a></p>
-                        <p>Follow us on</p>
-                        <ul class="c-footer__followlinks">
-                            <li><a href="#"><span class="icon-linkedin" data-grunticon-embed></span><span class="visually-hidden">linkedIn</span></a></li>
-                            <li><a href="#"><span class="icon-twitter" data-grunticon-embed></span><span class="visually-hidden">Twitter</span></a></li>
-                        </ul>
-                    </div>
+                <span>Metres</span>
+            </div>
+            <div class="c-form__element">
+                <label for="rq-cd-pipewidth" class="visually-hidden">Pipe Width</label>
+                <div class="c-form__element-control c-form__element-control--small">
+                    <input type="text" name="rq-cd-pipewidth" id="rq-cd-pipewidth" placeholder="Pipe Width" />
+                </div>
+                <span>mm</span>
+            </div>
+        </div>
+        <div class="c-form--stacked">
+            <div class="c-form__element">
+                <label for="rq-cd-pipematerial" class="visually-hidden">Pipe Material</label>
+                <div class="c-form__element-control c-form__element-control--med">
+                    <input type="text" name="rq-cd-pipematerial" id="rq-cd-pipematerial" placeholder="Pipe Material" />
+                </div>
+            </div>
+            <div class="c-form__element">
+                <label for="rq-cd-outlets" class="visually-hidden">Number of outlets</label>
+                <div class="c-form__element-control c-form__element-control--med">
+                    <input type="text" name="rq-cd-outlets" id="rq-cd-outlets" placeholder="Number of outlets" />
                 </div>
             </div>
 
         </div>
 
+        <div class="c-form--inline">
+            <fieldset>
+                <legend><span>Are there test ends?</span></legend>
+                <div class="c-form__element">
+                    <label for="rq-cd-testends-yes" class="c-form__checkbox">
+                        <input type="checkbox" name="rq-cd-testends" id="rq-cd-testends-yes" value="yes" />
+                        <span class="c-form__element-label">Yes</span>
+                    </label>
+                </div>
+                <div class="c-form__element">
+
+                    <label for="rq-cd-testends-no" class="c-form__checkbox">
+                        <input type="checkbox" name="rq-cd-testends" id="rq-cd-testends-no" value="No" />
+                        <span class="c-form__element-label">No</span>
+                    </label>
+
+                </div>
+            </fieldset>
+        </div>
+
     </div>
 
-</main>
 
-<!-- /main-->
-<!--(bake /templates/bake-components/footer-services.htm)-->
-<!--(bake /templates/bake-components/footer-accreditations.htm)-->
-<!--(bake /templates/bake-components/footer.htm)-->
-<!--(bake /templates/bake-components/page_foot.htm)-->
+
+
+    <!-- Stacked -->
+    <div class="c-form--stacked">
+        <div class="c-form__element">
+            <label for="rq-additional" class="c-form__element-label">Additional information</label>
+            <textarea id="rq-additional" rows="5" cols="5"></textarea>
+        </div>
+        <!-- File input -->
+        <div class="c-form__element">
+            <input type="file" name="file" id="file" class="b-inputfile js-inputfile" data-multiple-caption="{count} files selected" multiple />
+            <label for="file" class="c-button c-button--icon"><span>Upload document</span><i class="icon-upload" data-grunticon-embed></i></label>
+        </div>
+    </div>
+
+
+    <h2 class="c-form__element-label">Contact details</h2>
+    <!-- 2column -->
+    <div class="c-form--2col">
+        <div class="c-form__element">
+            <label for="cb-fullname" class="visually-hidden">Full Name</label>
+            <div class="c-form__element-control">
+                <input type="text" id="cb-fullname" name="cb-fullname" placeholder="Full Name">
+            </div>
+
+        </div>
+        <div class="c-form__element">
+            <label for="cb-company" class="visually-hidden">Company</label>
+            <div class="c-form__element-control">
+                <input type="text" id="cb-company" name="cb-company" placeholder="Company" class="required" aria-required="true">
+            </div>
+        </div>
+        <div class="c-form__element">
+            <label for="cb-email" class="visually-hidden">Email</label>
+            <div class="c-form__element-control">
+                <input type="email" id="cb-email" name="cb-email" placeholder="Email address" class="required" aria-required="true">
+            </div>
+        </div>
+        <div class="c-form__element">
+            <label for="cb-email" class="visually-hidden">Telephone no</label>
+            <div class="c-form__element-control">
+                <input type="tel" id="cb-tel" name="cb-tel" placeholder="Telephone no">
+            </div>
+        </div>
+    </div>
+
+
+    <h2 class="c-form__element-label">I am also interested in&hellip;</h2>
+    <div class="c-requestquote__interests">
+        <h3 class="js-faq-trigger">Pipeline Solutions<span class="c-requestquote__interests-icon icon-pipeline" data-grunticon-embed></span><span class="c-requestquote__interests-qicon"></span></h3>
+        <div class="c-requestquote__interests-items js-faq-expand">
+            <div class="c-form--2col">
+                <div class="c-form__element">
+                    <label for="rq-interest7" class="c-form__checkbox">
+                        <input type="checkbox" name="rq-interest" id="rq-interest7" />
+                        <span class="c-form__element-label">Chlorination &amp; pressure</span>
+                    </label>
+                </div>
+                <div class="c-form__element">
+                    <label for="rq-interest8" class="c-form__checkbox">
+                        <input type="checkbox" name="rq-interest" id="rq-interest8" />
+                        <span class="c-form__element-label">Valve repairs &amp; replacements</span>
+                    </label>
+                </div>
+                <div class="c-form__element">
+                    <label for="rq-interest9" class="c-form__checkbox">
+                        <input type="checkbox" name="rq-interest" id="rq-interest9" />
+                        <span class="c-form__element-label">Pipe repairs</span>
+                    </label>
+                </div>
+                <div class="c-form__element">
+                    <label for="rq-interest10" class="c-form__checkbox">
+                        <input type="checkbox" name="rq-interest" id="rq-interest10" />
+                        <span class="c-form__element-label">Mains installation &amp; replacement</span>
+                    </label>
+                </div>
+                <div class="c-form__element">
+                    <label for="rq-interest11" class="c-form__checkbox">
+                        <input type="checkbox" name="rq-interest" id="rq-interest11" />
+                        <span class="c-form__element-label">Leak detection</span>
+                    </label>
+                </div>
+                <div class="c-form__element">
+                    <label for="rq-interest12" class="c-form__checkbox">
+                        <input type="checkbox" name="rq-interest" id="rq-interest12" />
+                        <span class="c-form__element-label">AMR sub meter installation</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <h3 class="js-faq-trigger">Water Quality<span class="c-requestquote__interests-icon icon-water" data-grunticon-embed></span><span class="c-requestquote__interests-qicon"></span></h3>
+        <div class="c-requestquote__interests-items js-faq-expand">
+            same as above
+        </div>
+        <h3 class="js-faq-trigger">Noise<span class="c-requestquote__interests-icon icon-noise" data-grunticon-embed></span><span class="c-requestquote__interests-qicon"></span></h3>
+        <div class="c-requestquote__interests-items js-faq-expand">
+            same as above
+        </div>
+        <h3 class="js-faq-trigger">Stack Emissions<span class="c-requestquote__interests-icon icon-air" data-grunticon-embed></span><span class="c-requestquote__interests-qicon"></span></h3>
+        <div class="c-requestquote__interests-items js-faq-expand">
+            same as above
+        </div>
+    </div>
+
+    <div class="c-form--inline">
+        <div class="c-form__element">
+            <label for="cb-subscribe" class="c-form__checkbox">
+                <input type="checkbox" id="cb-subscribe" name="cb-subscribe">
+                <span class="c-form__element-label c-form__element-label--terms">Subscribe to receive news and information about NWG services</span>
+            </label>
+        </div>
+        <input type="submit" class="c-button u-right submit" value="Submit">
+    </div>
+</div>
