@@ -190,8 +190,40 @@
       <label for="file" class="c-button c-button--icon"><span>Upload document button example</span><i class="icon-upload" data-grunticon-embed></i></label>
     </div>
   </div>
+
   <h2>Inline controls</h2>
-  <h3>Fieldset exmaple</h3>
+  <div class="c-form--inline">
+    <div class="c-form__element">
+      <label for="itextinput" class="c-form__element-label--block">Text input</label>
+      <div class="c-form__element-control">
+        <input type="text" name="itextinput" id="itextinput" placeholder="http://" />
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="iurlinput" class="c-form__element-label--block">Url input</label>
+      <div class="c-form__element-control">
+        <input type="url" name="iurlinput" id="iurlinput" placeholder="http://" />
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="ipasswordinput" class="c-form__element-label--block">Password input</label>
+      <div class="c-form__element-control">
+        <input type="password" name="ipasswordinput" id="ipasswordinput" />
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="iselect" class="c-form__element-label--block">Custom Select Menu:</label>
+      <div class="c-form__element-control">
+        <select id="iselect" class="js-form-select">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <h3>Fieldset example</h3>
   <div class="c-form--inline">
     <fieldset>
       <legend><span>Fieldset Legend</span></legend>
@@ -225,6 +257,40 @@
         <input type="text" name="rq-cd-pipewidth" id="rq-cd-pipewidth" placeholder="0" aria-labelledby="info-PipeWidth" />
       </div>
       <span id="info-PipeWidth" tabindex="-1">mm</span>
+    </div>
+  </div>
+    <h2>Justify controls</h2>
+  <p> Default aligns items to top. A modifier of end can be added to align items to the bottom. As used in Search tools example.</p>
+  <p><b>Note:</b> does not work well for next elements such as fieldsets.</p>
+  <div class="c-form--justify">
+    <div class="c-form__element">
+      <label for="jtextinput" class="c-form__element-label--block">Text input</label>
+      <div class="c-form__element-control">
+        <input type="text" name="jtextinput" id="jtextinput" placeholder="http://" />
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="jurlinput" class="c-form__element-label--block">Url input</label>
+      <div class="c-form__element-control">
+        <input type="url" name="jurlinput" id="jurlinput" placeholder="http://" />
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="jpasswordinput" class="c-form__element-label--block">Password input</label>
+      <div class="c-form__element-control">
+        <input type="password" name="jpasswordinput" id="jpasswordinput" />
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="jselect" class="c-form__element-label--block">Custom Select Menu:</label>
+      <div class="c-form__element-control">
+        <select id="jselect" class="js-form-select">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+        </select>
+      </div>
     </div>
   </div>
   <h2>Form layouts</h2>
@@ -351,25 +417,116 @@
         <span class="c-form__element-label">Checkbox number 5</span>
       </label>
     </div>
+    <div class="c-form__element">
+      <label for="st4" class="c-form__element-label--block">Select One:</label>
+      <div class="c-form__element-control">
+        <select id="st4" class="js-form-select">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+        </select>
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="st5" class="c-form__element-label--block">Select Two:</label>
+      <div class="c-form__element-control">
+        <select id="st5" class="js-form-select">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+        </select>
+      </div>
+    </div>
   </div>
   <h3>Search bar</h3>
+  <p>Using flexbox to easily append/prepend elements</p>
   <div class="c-form__element">
     <label for="search-main" class="c-form__element-label--block">Search this Website</label>
     <div class="c-form__element-addon">
       <input class="c-form__element-addon-field" type="search" name="search-main" id="search-main" title="Search" placeholder="Keyword">
       <button class="c-button--icon-border c-form__element-addon--right" type="submit">
-        <span class="icon-search"><span class="visually-hidden">Search</span></span> 
+        <span class="icon-search"><span class="visually-hidden">Search</span></span>
       </button>
     </div>
   </div>
-    <div class="c-form__element">
-    
+  <div class="c-form__element">
     <div class="c-form__element-addon">
-    <label for="search-main2" class="c-form__element-label--block  c-form__element-addon--left">Search this Website</label>
+      <label for="search-main2" class="c-form__element-label--block  c-form__element-addon--left">Search this Website</label>
       <input class="c-form__element-addon-field" type="search" name="search-main2" id="search-main2" title="Search" placeholder="Keyword">
       <button class="c-button--icon-border c-form__element-addon--right" type="submit">
-        <span class="icon-search"><span class="visually-hidden">Search</span></span> 
+        <span class="icon-search"><span class="visually-hidden">Search</span></span>
       </button>
+    </div>
+  </div>
+  <h3>Search tools</h3>
+  <p>Inline example using <code>align-self: flex-end</code> to align elements to the bottom.</p>
+  <div class="c-form--inline-end">
+    <div class="c-form__element">
+      <label for="st1" class="c-form__element-label--block">Text input</label>
+      <div class="c-form__element-control">
+        <input type="text" name="st1" id="st1" placeholder="I am placeholder">
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="st2" class="c-form__element-label--block">Select One:</label>
+      <div class="c-form__element-control">
+        <select id="st2" class="js-form-select">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+        </select>
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="st3" class="c-form__element-label--block">Select Two:</label>
+      <div class="c-form__element-control">
+        <select id="st3" class="js-form-select">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+        </select>
+      </div>
+    </div>
+    <div class="c-form__element">
+      <input type="submit" class="c-button" value="Submit Button">
+    </div>
+  </div>
+  <p>Example using flexbox <code>justify-content:space-between</code> space elements out. Also uses <code>align-self: flex-end</code> to align elements to the bottom.</p>
+  <div class="c-form--justify-end">
+    <div class="c-form__element">
+      <label for="jst1" class="c-form__element-label--block">Text input</label>
+      <div class="c-form__element-control">
+        <input type="text" name="jst1" id="jst1" placeholder="I am placeholder">
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="jst2" class="c-form__element-label--block">Select One:</label>
+      <div class="c-form__element-control">
+        <select id="jst2" class="js-form-select">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+        </select>
+      </div>
+    </div>
+    <div class="c-form__element">
+      <label for="jst3" class="c-form__element-label--block">Select Two:</label>
+      <div class="c-form__element-control">
+        <select id="jst3" class="js-form-select">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+        </select>
+      </div>
+    </div>
+    <div class="c-form__element">
+      <input type="submit" class="c-button" value="Submit Button">
     </div>
   </div>
 </div>

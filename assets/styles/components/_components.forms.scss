@@ -53,6 +53,15 @@
       margin-right: 3rem;
     }
   }
+  &-end {
+    @extend .c-form--inline;
+    display: flex;
+    flex-wrap: wrap;
+    .c-form__element {
+      margin-right: gutters();
+      align-self: flex-end;
+    }
+  }
 }
 
 //Stacked form
@@ -62,6 +71,19 @@
   }
   .c-form__element {
     display: block;
+  }
+}
+
+.c-form--justify {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &-end {
+    @extend .c-form--justify;
+    .c-form__element,
+    {
+      align-self: flex-end;
+    }
   }
 }
 
@@ -266,7 +288,7 @@
   &:after {
     position: absolute;
     right: 15px;
-    top: 5px;
+    top: 2px;
     content: '';
     display: inline-block;
     border-top: 8px solid rgba($black, .5);
@@ -286,16 +308,14 @@
 }
 
 .c-form__element-addon {
-    display:flex;
-    .c-form__element-addon-field {
-        flex:1;
-    }
-    .c-form__element-addon--right {
-        margin-left:10px;
-
-    }
-    .c-form__element-addon--left {
-        margin-right:10px; 
-
-    }
+  display: flex;
+  .c-form__element-addon-field {
+    flex: 1;
+  }
+  .c-form__element-addon--right {
+    margin-left: 10px;
+  }
+  .c-form__element-addon--left {
+    margin-right: 10px;
+  }
 }
