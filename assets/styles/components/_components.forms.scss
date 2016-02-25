@@ -653,9 +653,9 @@ The custom upload has a javascript dependancy (jquery.custom-file-input.js).
 ### Associated intructions
 Use the WAI-ARIA <code>aria-labelledby</code> attribute to associate instructions that cannot be placed within the <code>label</code>. 
 
-Note: <code>aria-labelledby</code> can be override the <code>label</code> by assitive technology. So in the <code>aria-labelledby</code> attribute include the <code>id</code> value.
+Note: <code>aria-labelledby</code> can override the <code>label</code> value for users of assistive technology. To compensate for this place an extra <code>id</code> on the <code>label</code> and place this value also in the <code>aria-labelledby</code> attribute.
 
-Where a label describes what the form object does, a description can provide additional detail users may need. In this case use <code>aria-decscribedby</code> instead.
+Where a label describes what the form object does, a description can provide additional detail users may need. In such cases use <code>aria-decscribedby</code> instead. As seen in this example.
 
     <div class="c-form--inline">
       <div class="c-form__element">
@@ -669,3 +669,338 @@ Where a label describes what the form object does, a description can provide add
 
 
 */
+/*
+### Inline layouts
+
+    <div class="c-form--inline">
+      <div class="c-form__element">
+        <label for="inline1" class="c-form__element-label">Username</label>
+        <div class="c-form__element-control">
+          <input type="text" name="inline1" id="inline1" placeholder="I am placeholder text">
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="inline2" class="c-form__element-label">Password</label>
+        <div class="c-form__element-control">
+          <input type="password" name="inline2" id="inline2">
+        </div>
+      </div>
+    </div>
+    <div class="c-form--inline">
+      <div class="c-form__element">
+        <label for="inline1" class="c-form__element-label--block">Username</label>
+        <div class="c-form__element-control">
+          <input type="text" name="inline1" id="inline1" placeholder="I am placeholder text">
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="inline2" class="c-form__element-label--block">Password</label>
+        <div class="c-form__element-control">
+          <input type="password" name="inline2" id="inline2">
+        </div>
+      </div>
+    </div>
+*/
+/*
+### Stacked layout
+    <div class="c-form--stacked">
+      <div class="c-form__element">
+        <label for="inline1" class="c-form__element-label--block">Username</label>
+        <div class="c-form__element-control">
+          <input type="text" name="inline1" id="inline1" placeholder="I am placeholder text">
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="inline2" class="c-form__element-label--block">Password</label>
+        <div class="c-form__element-control">
+          <input type="password" name="inline2" id="inline2">
+        </div>
+      </div>
+    </div>
+     
+*/
+/*
+### Justified layout
+Default aligns items to top.The space inbetween element will expand to fill the remaining space. A modifier of end can be added to align items to the bottom. As used in Search tools example.
+
+Note: does not work well for nested elements such as fieldsets.
+
+      <div class="c-form--justify">
+        <div class="c-form__element">
+          <label for="inline1" class="c-form__element-label--block">Username</label>
+          <div class="c-form__element-control">
+            <input type="text" name="inline1" id="inline1" placeholder="I am placeholder text">
+          </div>
+        </div>
+        <div class="c-form__element">
+          <label for="inline2" class="c-form__element-label--block">Password</label>
+          <div class="c-form__element-control">
+            <input type="password" name="inline2" id="inline2">
+          </div>
+        </div>
+      </div>
+*/
+/*
+### Search bar
+Using flexbox to easily append/prepend elements
+    <div class="c-form__element">
+      <label for="search-main" class="c-form__element-label--block">Search this Website</label>
+      <div class="c-form__element-addon">
+        <input class="c-form__element-addon-field" type="search" name="search-main" id="search-main" title="Search" placeholder="Keyword">
+        <button class="c-button--icon-border c-form__element-addon--right" type="submit">
+          <span class="icon-search"><span class="visually-hidden">Search</span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="c-form__element">
+      <div class="c-form__element-addon">
+        <label for="search-main2" class="c-form__element-label--block  c-form__element-addon--left">Search this Website</label>
+        <input class="c-form__element-addon-field" type="search" name="search-main2" id="search-main2" title="Search" placeholder="Keyword">
+        <button class="c-button--icon-border c-form__element-addon--right" type="submit">
+          <span class="icon-search"><span class="visually-hidden">Search</span></span>
+        </button>
+      </div>
+    </div>
+
+*/
+/*
+### Search tools
+First example is inline using <code>align-self: flex-end</code> to align elements to the bottom to ensure submit button aligns with inputs.
+
+Second example uses flexbox <code>justify-content:space-between</code> space elements out. Also uses <code>align-self: flex-end</code> to align elements to the bottom.
+
+    <div class="c-form--inline-end">
+      <div class="c-form__element">
+        <label for="st1" class="c-form__element-label--block">Text input</label>
+        <div class="c-form__element-control">
+          <input type="text" name="st1" id="st1" placeholder="I am placeholder">
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="st2" class="c-form__element-label--block">Select One:</label>
+        <div class="c-form__element-control">
+          <div class="c-form__element-control-select"><select id="st2" class="js-form-select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+          </select></div>
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="st3" class="c-form__element-label--block">Select Two:</label>
+        <div class="c-form__element-control">
+          <div class="c-form__element-control-select"><select id="st3" class="js-form-select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+          </select></div>
+        </div>
+      </div>
+      <div class="c-form__element">
+        <input type="submit" class="c-button" value="Submit Button">
+      </div>
+    </div>
+
+
+    <div class="c-form--justify-end">
+      <div class="c-form__element">
+        <label for="jst1" class="c-form__element-label--block">Text input</label>
+        <div class="c-form__element-control">
+          <input type="text" name="jst1" id="jst1" placeholder="I am placeholder">
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="jst2" class="c-form__element-label--block">Select One:</label>
+        <div class="c-form__element-control">
+          <div class="c-form__element-control-select"><select id="jst2" class="js-form-select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+          </select></div>
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="jst3" class="c-form__element-label--block">Select Two:</label>
+        <div class="c-form__element-control">
+          <div class="c-form__element-control-select"><select id="jst3" class="js-form-select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+          </select></div>
+        </div>
+      </div>
+      <div class="c-form__element">
+        <input type="submit" class="c-button" value="Submit Button">
+      </div>
+    </div>
+*/
+/*
+### 2 Column layout (wide screen)
+
+    <div class="c-form__row--2col">
+      <div class="c-form__element">
+        <div class="c-form__col">
+          <label for="fullname" class="c-form__element-label--block">Full Name</label>
+        </div>
+        <div class="c-form__col">
+          <div class="c-form__element-control">
+            <input type="text" id="fullname" name="fullname" placeholder="Full Name">
+          </div>
+        </div>
+      </div>
+      <div class="c-form__element">
+        <div class="c-form__col">
+          <label for="company" class="c-form__element-label--block">Company</label>
+        </div>
+        <div class="c-form__col">
+          <div class="c-form__element-control">
+            <input type="text" id="company" name="company" placeholder="Company">
+          </div>
+        </div>
+      </div>
+      <div class="c-form__element">
+        <fieldset>
+          <legend class="c-form__col"><span class="c-form__element-label">Fieldset Legend</span></legend>
+          <div class="c-form__col">
+            <div class="c-form__element">
+              <label for="option1" class="c-form__checkbox">
+                <input type="checkbox" name="fieldset" id="option1" value="option1">
+                <span class="c-form__element-label">Option 1 - Vertical</span>
+              </label>
+            </div>
+            <div class="c-form__element">
+              <label for="option2" class="c-form__checkbox">
+                <input type="checkbox" name="fieldset" id="option2" value="option2">
+                <span class="c-form__element-label">Option 2 - Vertical</span>
+              </label>
+            </div>
+            <div class="c-form__element">
+              <label for="option3" class="c-form__checkbox">
+                <input type="checkbox" name="fieldset" id="option3" value="option2">
+                <span class="c-form__element-label">Option 3 - Vertical</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="c-form__element">
+        <fieldset>
+          <legend class="c-form__col"><span class="c-form__element-label">Fieldset Legend</span></legend>
+          <div class="c-form__2col-col c-form--inline">
+            <div class="c-form__element">
+              <label for="hoption1" class="c-form__checkbox">
+                <input type="checkbox" name="fieldset" id="hoption1" value="hoption1">
+                <span class="c-form__element-label">Option 1 - Horizontal</span>
+              </label>
+            </div>
+            <div class="c-form__element">
+              <label for="hoption2" class="c-form__checkbox">
+                <input type="checkbox" name="fieldset" id="hoption2" value="hoption2">
+                <span class="c-form__element-label">Option 2 - Horizontal</span>
+              </label>
+            </div>
+            <div class="c-form__element">
+              <label for="hoption3" class="c-form__checkbox">
+                <input type="checkbox" name="fieldset" id="hoption3" value="hoption1">
+                <span class="c-form__element-label">Option 3 - Horizontal</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+*/
+/*
+### 2 Column Gallery layout (wide screen)
+
+    <div class="c-form__row--2col--gal">
+      <div class="c-form__element">
+        <label for="cb-fullname2" class="c-form__element-label--block">Full Name</label>
+        <div class="c-form__element-control">
+          <input type="text" id="cb-fullname2" name="cb-fullname2" placeholder="Full Name">
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="cb-company2" class="c-form__element-label--block">Company</label>
+        <div class="c-form__element-control">
+          <input type="text" id="cb-company2" name="cb-company2" placeholder="Company" class="required" aria-required="true">
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="cb-email" class="c-form__element-label--block">Email</label>
+        <div class="c-form__element-control">
+          <input type="email" id="cb-email" name="cb-email" placeholder="Email address" class="required" aria-required="true">
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="cb-email" class="c-form__element-label--block">Telephone no</label>
+        <div class="c-form__element-control">
+          <input type="tel" id="cb-tel" name="cb-tel" placeholder="Telephone no">
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="rq-interest7" class="c-form__checkbox">
+          <input type="checkbox" name="rq-interest" id="rq-interest7">
+          <span class="c-form__element-label">Checkbox number 1</span>
+        </label>
+      </div>
+      <div class="c-form__element">
+        <label for="rq-interest8" class="c-form__checkbox">
+          <input type="checkbox" name="rq-interest" id="rq-interest8">
+          <span class="c-form__element-label">Checkbox number 2</span>
+        </label>
+      </div>
+      <div class="c-form__element">
+        <label for="rq-interest9" class="c-form__checkbox">
+          <input type="checkbox" name="rq-interest" id="rq-interest9">
+          <span class="c-form__element-label">Checkbox number 3</span>
+        </label>
+      </div>
+      <div class="c-form__element">
+        <label for="rq-interest10" class="c-form__checkbox">
+          <input type="checkbox" name="rq-interest" id="rq-interest10">
+          <span class="c-form__element-label">Checkbox number 4</span>
+        </label>
+      </div>
+      <div class="c-form__element">
+        <label for="rq-interest11" class="c-form__checkbox">
+          <input type="checkbox" name="rq-interest" id="rq-interest11">
+          <span class="c-form__element-label">Checkbox number 5</span>
+        </label>
+      </div>
+      <div class="c-form__element">
+        <label for="rq-interest12" class="c-form__checkbox">
+          <input type="checkbox" name="rq-interest" id="rq-interest12">
+          <span class="c-form__element-label">Checkbox number 5</span>
+        </label>
+      </div>
+      <div class="c-form__element">
+        <label for="st4" class="c-form__element-label--block">Select One:</label>
+        <div class="c-form__element-control">
+          <div class="c-form__element-control-select"><select id="st4" class="js-form-select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+          </select></div>
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="st5" class="c-form__element-label--block">Select Two:</label>
+        <div class="c-form__element-control">
+          <div class="c-form__element-control-select"><select id="st5" class="js-form-select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+          </select></div>
+        </div>
+      </div>
+    </div>
+*/
+
