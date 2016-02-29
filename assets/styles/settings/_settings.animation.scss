@@ -7,4 +7,65 @@
 $transitionType: ease-in-out;
 $transitionTarget: all;
 $transitionSpeed: 0.2s;
+$transitionDelay:2s;
+$transitionIteration:2;
 
+// Animation: name duration timing-function delay direction iteration fill-mode play-state;
+@keyframes shake {
+ 0% {
+        transform: none
+    }
+    15% {
+        transform: translate3d(-5%, 0, 0) 
+    }
+    30% {
+        transform: translate3d(4%, 0, 0) 
+    }
+    45% {
+        transform: translate3d(-3%, 0, 0) 
+    }
+    60% {
+        transform: translate3d(2%, 0, 0) 
+    }
+    75% {
+        transform: translate3d(-1%, 0, 0) 
+    }
+    100% {
+        transform: none
+    }
+}
+
+@keyframes bounce {
+    0%,
+    100%,
+    20%,
+    53%,
+    80% {
+        animation-timing-function: cubic-bezier(0.2, 0.1, 0.4, 1);
+        transform: translate3d(0, 0, 0)
+    }
+    40%,
+    43% {
+        animation-timing-function: cubic-bezier(0.8, 0.05, 0.9, 0.06);
+        transform: translate3d(0, -15px, 0)
+    }
+    70% {
+        animation-timing-function: cubic-bezier(0.8, 0.05, 0.9, 0.06);
+        transform: translate3d(0, -7px, 0)
+    }
+    90% {
+        transform: translate3d(0, -2px, 0)
+    }
+} 
+
+@keyframes flash {
+    0%,
+    100%,
+    50% {
+        opacity: 1
+    }
+    25%,
+    75% {
+        opacity: 0
+    }
+}
