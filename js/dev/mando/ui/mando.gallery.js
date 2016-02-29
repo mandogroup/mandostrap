@@ -5,14 +5,15 @@ gallery = function () {
         slidesToScroll: 1,
         arrows: false,
         fade: true,
-        asNavFor: '.js-gallery-nav'
+        asNavFor: '.js-gallery-nav',
+        autoplay:true
     });
 
     $('.js-gallery-nav').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         asNavFor: '.js-gallery',
-        dots: true,
+        dots: true, 
         centerMode: true,
         focusOnSelect: true
     });

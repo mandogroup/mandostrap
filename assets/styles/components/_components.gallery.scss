@@ -1,5 +1,44 @@
 ﻿//_components.gallery.scss
 
+.c-gallery {
+  img {
+    display:block;
+    width: 100%;
+    height: auto;
+  }
+  figure {
+    position: relative;
+    width: 100%;
+    margin: 0;
+  }
+  figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem 1rem 2rem 1rem;
+    background: $grey-light;
+  }
+}
+
+.c-gallery-nav {
+  padding:0 2rem;
+  img {   
+    width: 100%;
+    height: auto;
+  }
+
+  .slick-next {
+    right:0;
+  }
+  .slick-prev {
+    left:0;
+  }
+  .c-gallery__item {
+    &:focus {outline:0;}
+  }
+}
+
 /*
 
 ### Gallery with Carousel Navigation
@@ -9,20 +48,40 @@
             <figure>
                 <picture>
                     <img
-                        src="../../assets/img/styleguide/banner--fallback.jpg"
+                        src="http://placehold.it/350x150/cc0000/ffffff"
                         alt="Banner description">
                 </picture>
-                <figcaption>Slide O1</figcaption>
+                <figcaption>Slide 01</figcaption>
             </figure>
         </div>
         <div class="c-gallery__item">
             <figure>
                 <picture>
                     <img
-                        src="../../assets/img/styleguide/banner--fallback.jpg"
+                        src="http://placehold.it/350x150/009900/ffffff"
                         alt="Banner description">
                 </picture>
-                <figcaption>Slide O2</figcaption>
+                <figcaption>Slide 02</figcaption>
+            </figure>
+        </div>
+        <div class="c-gallery__item">
+            <figure>
+                <picture>
+                    <img
+                        src="http://placehold.it/350x150/ff6600/ffffff"
+                        alt="Banner description">
+                </picture>
+                <figcaption>Slide 03</figcaption>
+            </figure>
+        </div>
+        <div class="c-gallery__item">
+            <figure>
+                <picture>
+                    <img
+                        src="http://placehold.it/350x150/66ff00/ffffff"
+                        alt="Banner description">
+                </picture>
+                <figcaption>Slide 04</figcaption>
             </figure>
         </div>
     </div>
@@ -32,99 +91,42 @@
             <figure>
                 <picture>
                     <img
-                        src="../../assets/img/styleguide/banner--fallback.jpg"
+                        src="http://placehold.it/350x150/cc0000/ffffff"
                         alt="Banner description">
                 </picture>
-                <figcaption>Nav O1</figcaption>
+                <figcaption>Nav 01</figcaption>
             </figure>
         </div>
         <div class="c-gallery__item">
             <figure>
                 <picture>
                     <img
-                        src="../../assets/img/styleguide/banner--fallback.jpg"
+                        src="http://placehold.it/350x150/009900/ffffff"
                         alt="Banner description">
                 </picture>
-                <figcaption>Nav O2</figcaption>
+                <figcaption>Nav 02</figcaption>
+            </figure>
+        </div>
+         <div class="c-gallery__item">
+            <figure>
+                <picture>
+                    <img
+                        src="http://placehold.it/350x150/ff6600/ffffff"
+                        alt="Banner description">
+                </picture>
+                <figcaption>Nav 03</figcaption>
+            </figure>
+        </div>
+         <div class="c-gallery__item">
+            <figure>
+                <picture>
+                    <img
+                        src="http://placehold.it/350x150/66ff00/ffffff"
+                        alt="Banner description">
+                </picture>
+                <figcaption>Nav 02</figcaption>
             </figure>
         </div>
     </div>
 
 */
-
-.c-hero-slider {
-
-  img {
-    width:100%;
-    height:auto;
-  }
-
-  figure {
-    position:relative;
-    margin:0;
-  }
-
-  figcaption {
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    padding:1rem 1rem 2rem 1rem;
-    background:$grey-light;
-  }
-
-  ul.slick-dots {
-    position:absolute;
-    bottom:2rem;
-    right:1rem;
-  }
-
-  .slick-next {
-    right:1rem;
-  }
-
-  .slick-prev {
-    left:1rem;
-  }
-
-}
-
-.c-hero__picture {
-
-  img {
-    width:100%;
-    height:auto;
-  }
-
-  figure {
-    position:relative;
-    margin:0;
-  }
-
-  figcaption {
-    position:absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    padding:1rem;
-    background:$grey-light;
-  }
-
-}
-
-.c-hero__background {
-  width:100%;
-  min-height:350px;
-  position:relative;
-
-  h2 {
-    position:absolute;
-    left:1.5rem;
-    bottom:1.5rem;
-    width:50%;
-    padding:1rem;
-    margin:0;
-    background:rgba(50,50,50,0.75);
-    color:$white;
-  }
-}
