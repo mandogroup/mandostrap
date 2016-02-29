@@ -1,17 +1,11 @@
 ﻿//_components.gallery.scss
-
 .c-gallery {
-  img {
-    display:block;
-    width: 100%;
-    height: auto;
-  }
-  figure {
+  .c-gallery__inner {
     position: relative;
     width: 100%;
     margin: 0;
   }
-  figcaption {
+  .c-gallery__caption {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -21,23 +15,27 @@
   }
 }
 
-.c-gallery-nav {
-  padding:0 2rem;
-  img {   
-    width: 100%;
-    height: auto;
-  }
+.c-gallery__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
+.c-gallery-nav {
+  padding: 0 2rem;
   .slick-next {
-    right:0;
+    right: 0;
   }
   .slick-prev {
-    left:0;
+    left: 0;
   }
   .c-gallery__item {
-    &:focus {outline:0;}
+    &:focus {
+      outline: 0;
+    }
   }
 }
+
 
 /*
 
@@ -45,43 +43,35 @@
 
     <div class="c-gallery js-gallery">
         <div class="c-gallery__item">
-            <figure>
+            <figure class="c-gallery__inner">
                 <picture>
-                    <img
-                        src="http://placehold.it/350x150/cc0000/ffffff"
-                        alt="Banner description">
+                    <img  class="c-gallery__image" src="http://placehold.it/350x150/cc0000/ffffff" alt="Banner description">
                 </picture>
-                <figcaption>Slide 01</figcaption>
+                <figcaption class="c-gallery__caption">Slide 01</figcaption>
             </figure>
         </div>
         <div class="c-gallery__item">
-            <figure>
+            <figure class="c-gallery__inner">
                 <picture>
-                    <img
-                        src="http://placehold.it/350x150/009900/ffffff"
-                        alt="Banner description">
+                    <img class="c-gallery__image" src="http://placehold.it/350x150/009900/ffffff" alt="Banner description">
                 </picture>
-                <figcaption>Slide 02</figcaption>
+                <figcaption class="c-gallery__caption">Slide 02</figcaption>
             </figure>
         </div>
         <div class="c-gallery__item">
-            <figure>
+            <figure class="c-gallery__inner">
                 <picture>
-                    <img
-                        src="http://placehold.it/350x150/ff6600/ffffff"
-                        alt="Banner description">
+                    <img  class="c-gallery__image" src="http://placehold.it/350x150/ff6600/ffffff" alt="Banner description">
                 </picture>
-                <figcaption>Slide 03</figcaption>
+                <figcaption class="c-gallery__caption">Slide 03</figcaption>
             </figure>
         </div>
         <div class="c-gallery__item">
-            <figure>
+            <figure class="c-gallery__inner">
                 <picture>
-                    <img
-                        src="http://placehold.it/350x150/66ff00/ffffff"
-                        alt="Banner description">
+                    <img  class="c-gallery__image" src="http://placehold.it/350x150/66ff00/ffffff" alt="Banner description">
                 </picture>
-                <figcaption>Slide 04</figcaption>
+                <figcaption class="c-gallery__caption">Slide 04</figcaption>
             </figure>
         </div>
     </div>
@@ -90,41 +80,33 @@
         <div class="c-gallery__item">
             <figure>
                 <picture>
-                    <img
-                        src="http://placehold.it/350x150/cc0000/ffffff"
-                        alt="Banner description">
+                    <img class="c-gallery__image" src="http://placehold.it/350x150/cc0000/ffffff" alt="Banner description">
                 </picture>
-                <figcaption>Nav 01</figcaption>
+                <figcaption class="c-gallery__caption">Nav 01</figcaption>
             </figure>
         </div>
         <div class="c-gallery__item">
             <figure>
                 <picture>
-                    <img
-                        src="http://placehold.it/350x150/009900/ffffff"
-                        alt="Banner description">
+                    <img class="c-gallery__image" src="http://placehold.it/350x150/009900/ffffff" alt="Banner description">
                 </picture>
-                <figcaption>Nav 02</figcaption>
+                <figcaption class="c-gallery__caption">Nav 02</figcaption>
             </figure>
         </div>
          <div class="c-gallery__item">
             <figure>
                 <picture>
-                    <img
-                        src="http://placehold.it/350x150/ff6600/ffffff"
-                        alt="Banner description">
+                    <img class="c-gallery__image" src="http://placehold.it/350x150/ff6600/ffffff" alt="Banner description">
                 </picture>
-                <figcaption>Nav 03</figcaption>
+                <figcaption class="c-gallery__caption">Nav 03</figcaption>
             </figure>
         </div>
          <div class="c-gallery__item">
             <figure>
                 <picture>
-                    <img
-                        src="http://placehold.it/350x150/66ff00/ffffff"
-                        alt="Banner description">
+                    <img class="c-gallery__image" src="http://placehold.it/350x150/66ff00/ffffff" alt="Banner description">
                 </picture>
-                <figcaption>Nav 02</figcaption>
+                <figcaption class="c-gallery__caption">Nav 02</figcaption>
             </figure>
         </div>
     </div>
