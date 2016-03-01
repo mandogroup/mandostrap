@@ -1,0 +1,104 @@
+//-------------------------------------------
+// _components.tabs.scss
+//-------------------------------------------
+
+.c-tabs{
+  padding: 2em 0;
+}
+
+// Tab Links and navigation
+
+.c-tabs__navigation{
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.c-tabs__navigation-item{
+  display: inline-block;
+}
+
+.c-tabs__navigation-action{
+  display: inline-block;
+  padding: 1em;
+  color: #000;
+  background: #e2e2e2;
+  border: 1px solid #000;
+  border-bottom: none;
+  text-decoration: none;
+
+  &.is-active{
+      background: #fff;
+  }
+
+  &--with-icon{
+    @extend .c-tabs__navigation-action
+  }
+
+  &:focus,
+  &:hover{
+    background: #f1f1f1;
+    color: #000;
+  }
+
+}
+
+// Tab content panel
+
+.c-tabs__container{
+  position: relative;
+  border: 1px solid #000;
+}
+
+.c-tabs__panel{
+  display: none;
+  padding: 1em;
+
+  &.is-open{
+    display: block;
+  }
+
+}
+
+/*
+
+### Tabs
+
+    <div class="c-tabs js-tabs">
+
+      <ul class="c-tabs__navigation" role="tablist">
+
+        <li class="c-tabs__navigation-item">
+          <a class="c-tabs__navigation-action js-tabs-button" href="#tab1" role="tab" aria-selected="true">
+            <span>Tab 1</span>
+          </a>
+        </li>
+
+        <li class="c-tabs__navigation-item">
+          <a class="c-tabs__navigation-action--with-icon js-tabs-button" href="#tab2" role="tab" aria-selected="true">
+            <span>Tab 2</span>
+          </a>
+        </li>
+
+      </ul>
+
+      <div class="c-tabs__container">
+
+        <div class="c-tabs__panel js-tabs-panel" id="tab1" aria-labelledby="tab1" role="tabpanel" aria-hidden="true">
+          <section class="c-wysiwyg">
+            <h2>Tab 1</h2>
+          </section>
+        </div>
+
+        <div class="c-tabs__panel js-tabs-panel" id="tab2" aria-labelledby="tab2" role="tabpanel" aria-hidden="true">
+          <section class="c-wysiwyg">
+            <h2>Tab 2</h2>
+          </section>
+        </div>
+
+      </div>
+
+    </div>
+
+*/
