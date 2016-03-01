@@ -12,5 +12,6 @@ $(function () {
     heroCarousel();
     cookieBanner();
     navigation();
+    gallery();
 });
 

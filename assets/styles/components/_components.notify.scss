@@ -1,0 +1,176 @@
+﻿//-------------------------------------------
+// _components.notifications.scss
+//-------------------------------------------
+[class^="c-notify"] [class^="icon"] {
+	background:none;
+}
+.c-notify__btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+.c-notify__indicator {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+}
+
+.c-notify--alertbar {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  width: 100%;
+}
+
+.c-notify__inner {
+  position: relative;
+  padding: 1rem 2rem 1rem 1rem;
+  p:last-of-type {
+    margin-bottom: 0;
+  }
+  &--icon {
+    padding-left: 3rem;
+  }
+  &--iconlarge {
+    padding-left:4.5rem;
+    .c-notify__indicator {
+      top: 0;
+      bottom: 0;
+      margin-top: auto;
+      margin-bottom: auto;
+      @include square(36px);
+      svg {
+      	 @include square(36px);
+      }
+    }
+  }
+}
+
+.c-notify--info {
+  background-color: $black;
+  color: $white;
+  animation: flash $transitionSpeed $transitionDelay;
+  svg * {
+    fill: $white;
+  }
+}
+
+.c-notify--success {
+  background-color: green;
+  color: $white;
+  animation: bounce $transitionSpeed $transitionIteration;
+  svg * {
+    fill: $white;
+  }
+}
+
+.c-notify--warning {
+  background-color: yellow;
+  color: $black;
+  animation: shake $transitionSpeed $transitionDelay $transitionIteration;
+  svg * {
+    fill: $black;
+  }
+}
+
+.c-notify--error {
+  background-color: red;
+  color: $white;
+  animation: flash $transitionSpeed $transitionDelay $transitionIteration;
+  svg * {
+    fill: $white;
+  }
+}
+
+
+/*
+### Notification
+    <div class="c-notify--info" role="alert">
+	    <div class="c-notify__inner">
+	      <p>Some information about something</p>
+	      <button type="button" class="c-button--icon-bare c-notify__btn js-notify-close"><span class="icon-close" data-grunticon-embed></span><span class="visually-hidden">Close this notification</span></button>
+	    </div>
+	</div>
+
+*/
+
+
+/*
+### Notification with Icon
+    <div class="c-notify--info" role="alert">
+	    <div class="c-notify__inner c-notify__inner--icon">
+	      <span class="icon-info c-notify__indicator" data-grunticon-embed></span>
+	      <p>Some information about something</p>
+	      <button type="button" class="c-button--icon-bare c-notify__btn js-notify-close"><span class="icon-close" data-grunticon-embed></span><span class="visually-hidden">Close this notification</span></button>
+	    </div>
+	</div>
+
+*/
+
+
+/*
+### Notification with Icon (Large icon)
+    <div class="c-notify--info" role="alert">
+	    <div class="c-notify__inner c-notify__inner--iconlarge">
+	      <span class="icon-info c-notify__indicator" data-grunticon-embed></span>
+	      <p>Some information about something</p>
+	      <button type="button" class="c-button--icon-bare c-notify__btn js-notify-close"><span class="icon-close" data-grunticon-embed></span><span class="visually-hidden">Close this notification</span></button>
+	    </div>
+	</div>
+
+*/
+
+
+/*
+### Notification with Icon (Success)
+    <div class="c-notify--success" role="alert">
+	    <div class="c-notify__inner c-notify__inner--icon">
+	      <span class="icon-success c-notify__indicator" data-grunticon-embed></span>
+	      <p>Some information about something</p>
+	      <button type="button" class="c-button--icon-bare c-notify__btn js-notify-close"><span class="icon-close" data-grunticon-embed></span><span class="visually-hidden">Close this notification</span></button>
+	    </div>
+	</div>
+
+*/
+
+
+/*
+### Notification with Icon (Warning)
+    <div class="c-notify--warning" role="alert">
+	    <div class="c-notify__inner c-notify__inner--icon">
+	      <span class="icon-warning c-notify__indicator" data-grunticon-embed></span>
+	      <p>Some information about something</p>
+	      <button type="button" class="c-button--icon-bare c-notify__btn js-notify-close"><span class="icon-close" data-grunticon-embed></span><span class="visually-hidden">Close this notification</span></button>
+	    </div>
+	</div>
+
+*/
+
+
+/*
+### Notification with Icon (Error)
+    <div class="c-notify c-notify--error" role="alert">
+	    <div class="c-notify__inner c-notify__inner--icon">
+	      <span class="icon-error c-notify__indicator" data-grunticon-embed></span>
+	      <p>Some information about something</p>
+	      <button type="button" class="c-button--icon-bare c-notify__btn js-notify-close"><span class="icon-close" data-grunticon-embed></span><span class="visually-hidden">Close this notification</span></button>
+	    </div>
+	</div>
+
+*/
+
+
+/*
+### Notification - Alert bar top of page
+The markup is vertually unchanged with an added object div <pre><code>&lt;div class="o-wrapper__inner"&gt;</code></pre>
+    <div class="c-notify--alertbar c-notify--info" role="alert">
+      <div class="o-wrapper__inner">
+	    <div class="c-notify__inner">
+	      <p>Some information about something</p>
+	      <button type="button" class="c-button--icon-bare c-notify__btn js-notify-close"><span class="icon-close" data-grunticon-embed></span><span class="visually-hidden">Close this notification</span></button>
+	    </div>
+	  </div>
+	</div>
+
+*/
