@@ -59,7 +59,7 @@
       border-style: solid;
     }
   }
-  &--tr {
+  &--top-right {
     top: -5px;
     right: -5px;
     .c-card__corner-ribbon-inner {
@@ -80,7 +80,7 @@
       }
     }
   }
-  &--tl {
+  &--top-left {
     top: -5px;
     left: -5px;
     .c-card__corner-ribbon-inner {
@@ -101,7 +101,7 @@
       }
     }
   }
-  &--bl {
+  &--bottom-left {
     bottom: -5px;
     left: -5px;
     .c-card__corner-ribbon-inner {
@@ -122,7 +122,7 @@
       }
     }
   }
-  &--br {
+  &--bottom-right {
     bottom: -5px;
     right: -5px;
     .c-card__corner-ribbon-inner {
@@ -177,7 +177,7 @@ Inline style <code>style="padding:5px"</code> is not required. It's just here so
         <a href="#" class="c-card__link">
           <div class="c-card__image" 
           style="background-image: url('http://placehold.it/500x360/cc00bb/ffffff');">
-            <div class="c-card__corner-ribbon c-card__corner-ribbon--tr">
+            <div class="c-card__corner-ribbon c-card__corner-ribbon--top-right">
               <span class="c-card__corner-ribbon-inner">Corner ribbon</span>
             </div>
           </div>
@@ -205,7 +205,7 @@ Inline style <code>style="padding:5px"</code> is not required. It's just here so
         <a href="#" class="c-card__link">
           <div class="c-card__image" 
           style="background-image: url('http://placehold.it/500x360/cc00bb/ffffff');">
-            <div class="c-card__corner-ribbon c-card__corner-ribbon--tl">
+            <div class="c-card__corner-ribbon c-card__corner-ribbon--top-left">
               <span class="c-card__corner-ribbon-inner">Corner ribbon</span>
             </div>
           </div>
@@ -233,7 +233,7 @@ Inline style <code>style="padding:5px"</code> is not required. It's just here so
         <a href="#" class="c-card__link">
           <div class="c-card__image" 
           style="background-image: url('http://placehold.it/500x360/cc00bb/ffffff');">
-            <div class="c-card__corner-ribbon c-card__corner-ribbon--bl">
+            <div class="c-card__corner-ribbon c-card__corner-ribbon--bottom-left">
               <span class="c-card__corner-ribbon-inner">Corner ribbon</span>
             </div>
           </div>
@@ -261,7 +261,7 @@ Inline style <code>style="padding:5px"</code> is not required. It's just here so
         <a href="#" class="c-card__link">
           <div class="c-card__image" 
           style="background-image: url('http://placehold.it/500x360/cc00bb/ffffff');">
-            <div class="c-card__corner-ribbon c-card__corner-ribbon--br">
+            <div class="c-card__corner-ribbon c-card__corner-ribbon--bottom-right">
               <span class="c-card__corner-ribbon-inner">Corner ribbon</span>
             </div>
           </div>
