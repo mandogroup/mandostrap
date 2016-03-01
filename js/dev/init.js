@@ -1,9 +1,9 @@
 // JavaScript Init
-
+var tab = new componentTabs();
 
 $(function () {
+    tab.init();
     // select();
-    // mandoTabs();
     // equalHeights();
     // mandoVideo();
     // faq();
