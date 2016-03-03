@@ -1,0 +1,261 @@
+﻿//-------------------------------------------
+// _components.paging.scss
+//-------------------------------------------
+%pagination__item-width {
+  min-width: 2.2rem;
+}
+
+%pagination__item-settings {
+  @extend %pagination__item-width;
+  display: inline-block;
+  padding: .5rem;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 3px;
+  border: 1px solid $grey;
+}
+
+.c-pagination {
+  padding: 0;
+  text-align: center;
+  &--left {
+    padding: 0;
+  }
+  &--right {
+    padding: 0;
+    text-align: right;
+  }
+}
+
+.c-pagination__item {
+  @extend %pagination__item-width;
+  display: inline-block;
+  list-style: none;
+}
+
+.c-pagination__current {
+  @extend %pagination__item-settings;
+  background: orange;
+  border: 1px solid $black;
+}
+
+.c-pagination__link {
+  @extend %pagination__item-settings;
+  color: $black;
+  background: $grey-light;
+  .is-active & {
+    background: orange;
+    border-color: $black;
+  }
+  &:hover,
+  &:focus {
+    background: $grey-dark;
+    color: $white;
+  }
+  &--prev,
+  &--next {
+    @extend %pagination__item-settings;
+    color: $white;
+    background: $black;
+
+    &:hover,
+    &:focus {
+      background: $grey-light;
+      color: $black;
+      .c-pagination__link--prev-arrow {
+        border-right-color: $black;
+      }
+      .c-pagination__link--next-arrow {
+        border-left-color: $black;
+      }
+    }
+  }
+  &--prev-arrow {
+    content: '';
+    @include arrow(left, $white, 5px);
+  }
+  &--next-arrow {
+    content: '';
+    @include arrow(right, $white, 5px);
+  }
+}
+
+
+/*
+
+###Pagination with Ellipsis for missing pages
+
+    <nav aria-label="Pagination">
+      <ul class="c-pagination">
+        <li class="c-pagination__item is-active">
+          <a class="c-pagination__link" href="#" aria-label="Page 1">1</a>
+        </li>
+        <li class="c-pagination__item">
+          <a class="c-pagination__link" href="#" aria-label="Page 2">2</a>
+        </li>
+        <li class="c-pagination__item">
+          <a class="c-pagination__link" href="#" aria-label="Page 3">3</a>
+        </li>
+        <li class="c-pagination__item">&hellip;</li>
+        <li class="c-pagination__item">
+          <a class="c-pagination__link" href="#" rel="last" aria-label="Last page of results" rel="last">26</a>
+        </li>
+      </ul>
+    </nav>
+*/
+
+
+/*
+
+###Pagination - Active page not a link
+
+    <nav aria-label="Pagination">
+      <ul class="c-pagination">
+        <li class="c-pagination__item is-active">
+          <span class="c-pagination__current" aria-label="Page 1">1</span>
+        </li>
+        <li class="c-pagination__item">
+          <a class="c-pagination__link" href="#" aria-label="Page 2">2</a>
+        </li>
+        <li class="c-pagination__item">
+          <a class="c-pagination__link" href="#" aria-label="Page 3">3</a>
+        </li>
+        <li class="c-pagination__item">&hellip;</li>
+        <li class="c-pagination__item">
+          <a class="c-pagination__link" href="#" rel="last" aria-label="Last page of results" rel="last">26</a>
+        </li>
+      </ul>
+    </nav>
+*/
+
+
+/*
+
+###Pagination with Prev/Next Arrows
+
+
+    <nav aria-label="Pagination">
+        <ul class="c-pagination">
+          <li class="c-pagination__item">
+            <a class="c-pagination__link--prev" href="#" aria-label="Prevous Page" rel="prev">
+              <span class="c-pagination__link--prev-arrow"></span>
+              <span class="visually-hidden">&lt;</span>
+            </a>
+          </li>
+          <li class="c-pagination__item">
+            <a class="c-pagination__link" href="#"  aria-label="Page 1">1</a>
+          </li>
+          <li class="c-pagination__item is-active">
+            <a class="c-pagination__link" href="#"  aria-label="Page 2">2</a>
+          </li>
+          <li class="c-pagination__item">
+            <a class="c-pagination__link" href="#"  aria-label="Page 3">3</a>
+          </li>
+          <li class="c-pagination__item">
+            <a class="c-pagination__link--next" href="#"  aria-label="Next Page" rel="next">
+              <span class="c-pagination__link--next-arrow"></span>
+              <span class="visually-hidden">&gt;</span>
+            </a>
+          </li>
+        </ul>
+    </nav>
+
+
+*/
+
+
+/*
+###Pagination with Prev/Next Text
+
+
+    <nav aria-label="Pagination">
+        <ul class="c-pagination">
+          <li class="c-pagination__item">
+            <a class="c-pagination__link--prev" href="#" aria-label="Prevous Page" rel="prev">
+              Prev
+            </a>
+          </li>
+          <li class="c-pagination__item">
+            <a class="c-pagination__link" href="#"  aria-label="Page 1">1</a>
+          </li>
+          <li class="c-pagination__item is-active">
+            <a class="c-pagination__link" href="#"  aria-label="Page 2">2</a>
+          </li>
+          <li class="c-pagination__item">
+            <a class="c-pagination__link" href="#"  aria-label="Page 3">3</a>
+          </li>
+          <li class="c-pagination__item">
+            <a class="c-pagination__link--next" href="#"  aria-label="Next Page" rel="next">
+              Next
+            </a>
+          </li>
+        </ul>
+    </nav>
+
+
+*/
+
+
+/*
+###Pagination - Aligned Left
+
+
+    <nav aria-label="Pagination">
+        <ul class="c-pagination--left">
+          <li class="c-pagination__item">
+            <a class="c-pagination__link--prev" href="#" aria-label="Prevous Page" rel="prev">
+              Prev
+            </a>
+          </li>
+          <li class="c-pagination__item">
+            <a class="c-pagination__link" href="#"  aria-label="Page 1">1</a>
+          </li>
+          <li class="c-pagination__item is-active">
+            <a class="c-pagination__link" href="#"  aria-label="Page 2">2</a>
+          </li>
+          <li class="c-pagination__item">
+            <a class="c-pagination__link" href="#"  aria-label="Page 3">3</a>
+          </li>
+          <li class="c-pagination__item">
+            <a class="c-pagination__link--next" href="#"  aria-label="Next Page" rel="next">
+              Next
+            </a>
+          </li>
+        </ul>
+    </nav>
+
+
+*/
+
+
+/*
+###Pagination - Aligned Right
+
+
+    <nav aria-label="Pagination">
+        <ul class="c-pagination--right">
+          <li class="c-pagination__item">
+            <a class="c-pagination__link--prev" href="#" aria-label="Prevous Page" rel="prev">
+              Prev
+            </a>
+          </li>
+          <li class="c-pagination__item">
+            <a class="c-pagination__link" href="#"  aria-label="Page 1">1</a>
+          </li>
+          <li class="c-pagination__item is-active">
+            <a class="c-pagination__link" href="#"  aria-label="Page 2">2</a>
+          </li>
+          <li class="c-pagination__item">
+            <a class="c-pagination__link" href="#"  aria-label="Page 3">3</a>
+          </li>
+          <li class="c-pagination__item">
+            <a class="c-pagination__link--next" href="#"  aria-label="Next Page" rel="next">
+              Next
+            </a>
+          </li>
+        </ul>
+    </nav>
+
+
+*/
