@@ -3,9 +3,9 @@ var tab = new componentTabs();
 
 $(function () {
     tab.init();
-    // select();
+    select();
     // equalHeights();
-    // mandoVideo();
+   // mandoVideo();
     // faq();
     // shareControl();
     carousel();
