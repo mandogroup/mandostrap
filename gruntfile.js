@@ -199,7 +199,7 @@ module.exports = function (grunt) {
                 dest: 'js/dist/mando.js'
             },
             styleguidejs: {
-            src: ['js/dev/lib/jquery.min.js','js/dev/vendor/*.js', 'js/dev/mando/**/*.js', 'js/dev/init.js'],
+            src: ['js/dev/lib/modernizr.js','js/dev/lib/jquery.min.js','js/dev/vendor/*.js', 'js/dev/mando/**/*.js', 'js/dev/init.js'],
             dest: 'js/dist/styleguidejs.js'
           },
         },

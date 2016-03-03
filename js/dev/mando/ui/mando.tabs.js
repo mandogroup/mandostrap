@@ -1,61 +1,104 @@
-﻿/*
-	mando.footerTabs.js: Plugins JavaScript
-	------------
-	Job:					Tabs
-	Template Version:		1.0
-	Produced by:			Heidi Crook
-	Start date:				17/11/2015
-	------------ 
-    Dependancies:           
-****************************************************************************************************/
+﻿function componentTabs() {
 
+  /*
+   * List of Dom Elements for tabs
+   */
+  var elements  = {
+    tabs       : $(".js-tabs"),
+    tabLink    : $(".js-tabs-button"),
+    tabWrapper : $(".js-tabs-panel")
+  };
 
-mandoTabs = function () {
+  /*
+   * Setting default load state
+   * Checks If hash is present in the Url
+   */
 
-    var activeMenuCssClass = "is-active",
-        hiddenCssClass = "is-hidden",
-        $parentContainer = $('.js-tabs'),
-        $tabLink = $('.js-tabs__link'),
-        $tabContent = $('.js-tabs__content'),
-        $tabContentWrap = $('.js-tabs__content-wrap'),
-        $defaultTab = $('.js-tabs__default');
+  function tabDefaultState() {
+    var hash = window.location.hash.substr(1);
 
-    //Initial Hide Content
-    $tabContent.addClass(hiddenCssClass);
+    elements.tabs.each(function () {
+      var $this = $(this);
 
-    $tabLink.on("click", function (e) {
-        $this = $(this);
+      $this
+        .find('.js-tabs-button')
+        .first()
+        .addClass("is-active")
+        .attr("aria-selected", "true");
 
-        //Current Tab variable
-        var currentTab = $this.attr('href');
+      $this
+        .find('.js-tabs-panel')
+        .first()
+        .addClass("is-open")
+        .attr("aria-hidden", "false");
 
-        //Is the one I clicked it active
-        if ($this.hasClass(activeMenuCssClass)) {
-            $this.removeClass(activeMenuCssClass);
-            $this.parents('.js-tabs').find('.js-tabs__content-wrap').slideUp();
+      if (hash.length > 0){
 
+        if($this.find('#'+hash).length){
+
+          $this
+            .find('.js-tabs-button')
+            .removeClass("is-active")
+            .attr("aria-selected", "false");
+
+          $this
+            .find('.js-tabs-panel')
+            .removeClass("is-open")
+            .attr("aria-hidden", "true");
+
+          $this
+            .find('.js-tabs-button[href^="#'+hash+'"]')
+            .addClass("is-active")
+            .attr("aria-selected", "true");
+
+          $this
+            .find('#'+hash)
+            .addClass("is-open")
+            .attr("aria-hidden", "false");
         }
-            //Nope
-        else {
 
-            $this.parents('.js-tabs').find('.js-tabs__content-wrap').slideUp(function () {
-                $this.parents('.js-tabs').find('.js-tabs__content').addClass(hiddenCssClass);
-                $(currentTab).removeClass(hiddenCssClass);
-                $this.parents('.js-tabs').find('.js-tabs__content-wrap').slideDown();
-            });
-
-            $this.parents('.js-tabs').find('.js-tabs__link').not($this).removeClass(activeMenuCssClass);
-            $this.addClass(activeMenuCssClass);
-
-        }
-
-        return false;
+      }
 
     });
 
-    //Open default tab
-    $defaultTab.addClass(activeMenuCssClass);
-    $($defaultTab.attr('href')).removeClass(hiddenCssClass);
+  }
 
+  /*
+   * Click action to toggle between states on tabs panels.
+   */
 
-};
+  function tabAction(){
+
+    elements.tabLink.on("click", function() {
+
+      var $this = $(this);
+      var parent = $this.closest('.js-tabs');
+      var tab_id = $this.attr('href');
+
+      parent
+        .find('.js-tabs-button')
+        .removeClass('is-active')
+        .attr("aria-selected","false");
+
+      parent
+        .find('.js-tabs-panel')
+        .removeClass('is-open')
+        .attr("aria-hidden","true");
+
+      $this
+        .addClass('is-active')
+        .attr("aria-selected","true");
+
+      parent
+        .find(tab_id)
+        .addClass('is-open')
+        .attr("aria-hidden","false");
+    });
+  }
+
+  this.init = function(){
+    tabDefaultState();
+    tabAction();
+  };
+
+}
