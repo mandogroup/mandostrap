@@ -2,12 +2,12 @@
 // _components.paging.scss
 //-------------------------------------------
 %pagination__item-width {
+  display: inline-block;
   min-width: 2.2rem;
 }
 
 %pagination__item-settings {
   @extend %pagination__item-width;
-  display: inline-block;
   padding: .5rem;
   text-align: center;
   text-decoration: none;
@@ -30,7 +30,6 @@
 
 .c-pagination__item {
   @extend %pagination__item-width;
-  display: inline-block;
   list-style: none;
 }
 
