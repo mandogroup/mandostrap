@@ -5,12 +5,12 @@
   position: relative;
   display: inline-block;
   user-select: none;
-  padding-right:1.8rem;
+  padding-right: 1.8rem;
   text-align: center;
   font-size: 85%;
   color: $grey-mid;
   white-space: normal;
-  background:$white;
+  background: $white;
   background-clip: padding-box;
   border: 1px solid $grey-mid;
   border-radius: 3px;
@@ -41,13 +41,13 @@
 }
 
 .c-pill__reset {
-  position:absolute;
-  top:0;
-  right:0;
-  bottom:0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
   border: none;
   background: none;
-  padding:0;
+  padding: 0;
   &:before {
     content: '\2716';
     display: inline-block;
@@ -60,24 +60,29 @@
     color: $black;
   }
 }
-.c-pill__icon{
-  width:0.8rem;
-  height:0.8rem;
-  margin-top:-3px;
-  margin-right:0.5rem;
+
+.c-pill__icon {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-top: -3px;
+  margin-right: 0.5rem;
 }
+
 .c-pill__avatar {
-  width:1rem;
-  height:1rem;
-  margin-right:0.5rem;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
   vertical-align: middle;
 }
+
 .c-pill__container {
-  padding:0.5rem;
-  background:rgba($grey-light, 0.5);
+  padding: 0.5rem;
+  background: rgba($grey-light, 0.5);
   border: 1px solid $grey-mid;
   border-radius: 3px;
 }
+
+
 /*
 ### Pill - Default
     <span class="c-pill">
