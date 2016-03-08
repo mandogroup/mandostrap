@@ -1,6 +1,11 @@
 ﻿//-------------------------------------------
 // _tools.mixins.scss
 //-------------------------------------------
+// Px to rem
+@mixin rem($prop, $px, $base: 16) {
+  $value: $px/$base;
+  #{$prop}: ($value) + rem;
+}
 
 //Clear fix
 @mixin clearfix {
@@ -11,13 +16,6 @@
     clear: both;
     height: 0;
   }
-}
-
-// Font-size
-@mixin font-size($size, $base: 16) {
-  $value: $size/$base;
-  font-size: ($value) + px;
-  font-size: ($value) + rem;
 }
 
 //Sizing helpers
@@ -62,15 +60,18 @@
     border-left: $size solid transparent;
     border-right: $size solid transparent;
     border-bottom: $size solid $color;
-  } @else if $direction=='right' {
+  }
+  @else if $direction=='right' {
     border-top: $size solid transparent;
     border-bottom: $size solid transparent;
     border-left: $size solid $color;
-  } @else if $direction=='bottom' {
+  }
+  @else if $direction=='bottom' {
     border-top: $size solid $color;
     border-right: $size solid transparent;
     border-left: $size solid transparent;
-  } @else if $direction=='left' {
+  }
+  @else if $direction=='left' {
     border-top: $size solid transparent;
     border-right: $size solid $color;
     border-bottom: $size solid transparent;
@@ -83,7 +84,8 @@
   $fs-font-size in $fs-map {
     @if $fs-breakpoint==null {
       @include make-font-size($fs-font-size);
-    } @else {
+    }
+    @else {
       // If $fs-font-size is a key that exists in
       // $fs-breakpoints, use the value
       @if map-has-key($fs-breakpoints, $fs-breakpoint) {
@@ -105,13 +107,13 @@
     @if (length($fs-font-size) > 1) {
       line-height: nth($fs-font-size, 2);
     }
-  } @else {
+  }
+  @else {
     font-size: $fs-font-size;
   }
 }
 
 // Transition animation mixin
-
 @mixin defaultTransition() {
   -moz-transition: $transitionTarget, $transitionSpeed, $transitionType;
   -ms-transition: $transitionTarget, $transitionSpeed, $transitionType;
