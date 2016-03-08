@@ -1,1 +1,1006 @@
-﻿
+﻿//_components.forms.scss
+//Form Layouts
+//2 column gallery
+.c-form__row--2col--gal {
+  @include clearfix;
+  .c-form__element {
+    @media #{$tablet-landscape} {
+      @include gallery(6 of 12);
+    }
+  }
+}
+
+//2 Columns
+.c-form__row--2col {
+  .c-form__element {
+    @include clearfix;
+  }
+  .c-form__col:first-child {
+    @media #{$tablet-landscape} {
+      @include span(3)
+    }
+  }
+  .c-form__col:last-child {
+    @media #{$tablet-landscape} {
+      @include span(9 last)
+    }
+  }
+}
+
+//Inline form
+.c-form--inline {
+  @include clearfix;
+  .c-form__element {
+    @media #{$tablet-landscape} {
+      margin-right: gutters();
+    }
+  }
+  .c-form__element,
+  [class^="c-form__element-control"] {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  .c-form__element-label {
+    margin-bottom: 0;
+  }
+  legend {
+    margin-bottom: .5rem;
+    @media #{$tablet-landscape} {
+      float: left;
+    }
+    span {
+      display: inline-block;
+      margin-right: 3rem;
+    }
+  }
+}
+
+.c-form--inline-end {
+  display: flex;
+  flex-wrap: wrap;
+  .c-form__element {
+    margin-right: gutters();
+    align-self: flex-end;
+  }
+}
+
+//Stacked form
+.c-form--stacked {
+  .c-form__element-label {
+    margin-top: 2rem;
+  }
+  .c-form__element {
+    display: block;
+  }
+  legend {
+    margin-bottom: .5rem;
+  }
+}
+
+//Justify form
+.c-form--justify {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  &-end {
+    @extend .c-form--justify;
+    .c-form__element,
+    {
+      align-self: flex-end;
+    }
+  }
+}
+
+//Form Elements
+.c-form__element {
+  position: relative;
+  margin-bottom: 1rem;
+  legend {
+    margin-bottom: .5rem;
+  }
+}
+
+.c-form__element-control {
+  &--small {
+    @include rem(width, 174);
+    @media #{$tablet-landscape} {
+      width: 50%;
+    }
+  }
+  @media #{$tablet-landscape} {
+    &--med {
+      width: 70%;
+    }
+  }
+}
+
+//Form Element Labels
+.c-form__element-label {
+  cursor: pointer;
+  font-weight: normal;
+  margin: .5rem 0;
+  @include rem(font-size, 20);
+  &--block {
+    @extend .c-form__element-label;
+    display: block;
+  }
+  .icon-required {
+    margin-left: 10px;
+    @include square(16px);
+    svg * {
+      fill: red;
+    }
+  }
+}
+
+//Hidden Checkbox placeholder
+%hidden-input {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  @include square(1px);
+}
+
+//Form Element Radio & Checkboxes
+[class^="c-form__checkbox"] {
+  display: table-row;
+  .c-form__element-label {
+    display: table-cell;
+    margin: 0;
+    padding: 0 10px 0 0;
+    vertical-align: middle;
+    @include rem(font-size, 15);
+    &--terms {
+      @include rem(font-size, 13);
+    }
+  }
+}
+
+//Checkboxes -- Faux UI
+.c-form__checkbox--faux {
+  [type="checkbox"] {
+    @extend %hidden-input;
+    &:checked > .c-form__checkbox--faux-ui,
+    &:checked ~ .c-form__checkbox--faux-ui {
+      &:after {
+        position: absolute;
+        top: -2px;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        display: block;
+        content: '';
+        border-bottom: 2px solid $black;
+        border-left: 2px solid $black;
+        transform: rotate(-45deg);
+        @include size(8px, 5px);
+      }
+    }
+    &:focus > .c-form__checkbox--faux-ui,
+    &:focus ~ .c-form__checkbox--faux-ui {
+      border-color: $black;
+    }
+    &:focus:checked > .c-form__checkbox--faux-ui,
+    &:focus:checked ~ .c-form__checkbox--faux-ui {
+      border-color: $black;
+    }
+    &[disabled] > .c-form__checkbox--faux-ui,
+    &[disabled] ~ .c-form__checkbox--faux-ui {
+      border-color: rgba($grey, .5);
+      background: rgba($grey, .2);
+    }
+  }
+  &-ui {
+    position: relative;
+    display: inline-block;
+    @include square(13px);
+    margin-right: 10px;
+    border: 1px solid $grey;
+    border-radius: 0.125rem;
+    background: #fff;
+  }
+}
+
+//Hidden Checkbox
+.c-form__checkbox--hidden {
+  display: block;
+  .c-form__element-label {
+    display: block;
+    margin-top: 0;
+    margin-bottom: .5rem;
+    padding: .7rem;
+    background: $white;
+    border-radius: 22px;
+    border: 1px solid $black;
+    color: $black;
+    @include rem(font-size, 16);
+    @media #{$tablet-landscape} {
+      padding: .7rem 1.2rem;
+      @include rem(font-size, 17);
+    }
+  }
+  [type="checkbox"] {
+    @extend %hidden-input;
+    &:checked {
+      > .c-form__element-label,
+      ~ .c-form__element-label {
+        background: $black;
+        color: $white;
+      }
+    }
+    &:focus {
+      > .c-form__element-label,
+      ~ .c-form__element-label {
+        border: 1px solid $grey;
+      }
+    }
+  }
+}
+
+[class^="c-form__radio"] {
+  display: table-row;
+  .c-form__element-label {
+    display: table-cell;
+    margin: 0;
+    padding: 0 10px 0 0;
+    vertical-align: middle;
+    @include rem(font-size, 15);
+  }
+}
+
+.c-form__radio--faux {
+  [type="radio"] {
+    @extend %hidden-input;
+    &:checked > .c-form__radio--faux-ui,
+    &:checked ~ .c-form__radio--faux-ui {
+      &:after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        display: block;
+        content: '';
+        @include square(5px);
+        border-radius: 50%;
+        background: $black;
+      }
+    }
+    &:focus > .c-form__radio--faux-ui,
+    &:focus ~ .c-form__radio--faux-ui {
+      border-color: $black;
+    }
+    &:focus:checked > .c-form__radio--faux-ui,
+    &:focus:checked ~ .c-form__radio--faux-ui {
+      border-color: $black;
+    }
+    &[disabled] > .c-form__radio--faux-ui,
+    &[disabled] ~ .c-form__radio--faux-ui {
+      border-color: rgba($grey, .5);
+      background: rgba($grey, .2);
+    }
+  }
+  &-ui {
+    position: relative;
+    display: inline-block;
+    @include square(13px);
+    margin-right: 10px;
+    border: 1px solid $grey;
+    border-radius: 50%;
+    background: #fff;
+  }
+}
+
+//Form Element Custom Select
+.c-form__element-control-select {
+  position: relative;
+  &:after {
+    position: absolute;
+    right: 15px;
+    top: 2px;
+    content: '';
+    display: inline-block;
+    border-top: 8px solid rgba($black, .5);
+    border-right: 8px solid rgba($black, .5);
+    transform: rotate(135deg);
+    pointer-events: none;
+    @include square(24px);
+  }
+  select {
+    appearance: none;
+    padding-right: 55px;
+    &::-ms-expand {
+      display: none; //for IE 11 
+    }
+  }
+}
+
+.c-form__element-addon {
+  display: flex;
+  .c-form__element-addon-field {
+    flex: 1;
+  }
+  .c-form__element-addon--right {
+    margin-left: 10px;
+  }
+  .c-form__element-addon--left {
+    margin-right: 10px;
+  }
+}
+
+
+/*
+### Input
+
+The input element includes support for the follwing HTML5 types: <br><code>text, tel, email, password, datetime, datetime-local, date, month, time, week, number, url, search,color.</code>
+    <div class="c-form__element">
+      <label for="textinput" class="c-form__element-label">Text input</label>
+      <div class="c-form__element-control">
+        <input type="text" name="textinput" id="textinput" placeholder="I'm placeholder text">
+      </div>
+    </div>
+
+*/
+
+
+/*
+### Input (block label)
+
+In most scenarios the block label will be used except in inline layout configurations.
+    <div class="c-form__element">
+      <label for="textinput-block" class="c-form__element-label--block">Text input</label>
+      <div class="c-form__element-control">
+        <input type="text" name="textinput-block" id="textinput-block" placeholder="I'm placeholder text">
+      </div>
+    </div>
+*/
+
+
+/*
+### Input - Read only, Disabled and Required 
+
+    <div class="c-form__element">
+      <label for="readonly" class="c-form__element-label--block">Read only input</label>
+      <div class="c-form__element-control">
+        <input type="text" name="readonly" id="readonly" value="I'm value text" readonly="readonly" />
+      </div>
+    </div>
+
+    <div class="c-form__element">
+      <label for="disabledinput" class="c-form__element-label--block">Disabled input</label>
+      <div class="c-form__element-control">
+        <input type="text" name="disabledinput" id="disabledinput" placeholder="I'm placeholder text" disabled="disabled" />
+      </div>
+    </div>
+
+    <div class="c-form__element">
+      <label for="requireinput" class="c-form__element-label--block">Required input <span class="icon-required" data-grunticon-embed></span><span class="visually-hidden">Required</span></label>
+      <div class="c-form__element-control">
+        <input type="text" name="requireinput" id="requireinput" placeholder="I'm placeholder text" required="required" aria-required="true" />
+      </div>
+    </div>
+*/
+
+
+/*
+### Textarea
+
+    <div class="c-form__element">
+      <label for="textarea" class="c-form__element-label--block">Textarea</label>
+      <textarea id="textarea" rows="5" cols="5"></textarea>
+    </div>
+*/
+
+
+/*
+### Radio
+Basic radio buttons (such as male/female for gender) that make sense from their labels alone do not require fieldset and legend.
+
+    <div class="c-form__element">
+      <label for="radiodefault" class="c-form__radio">
+        <input type="radio" name="radio" id="radiodefault" />
+        <span class="c-form__element-label">Radio default UI</span>
+      </label>
+    </div>
+
+    <div class="c-form__element">
+      <label for="radiocustom" class="c-form__radio--faux">
+        <input type="radio" name="radio" id="radiocustom" />
+        <span class="c-form__radio--faux-ui"></span>
+        <span class="c-form__element-label">Radio custom - default</span>
+      </label>
+    </div>
+
+    <div class="c-form__element">
+      <label for="radiochecked" class="c-form__radio--faux">
+        <input type="radio" name="radio" id="radiochecked" checked="checked" />
+        <span class="c-form__radio--faux-ui"></span>
+        <span class="c-form__element-label">Radio custom - checked</span>
+      </label>
+    </div>
+
+    <div class="c-form__element">
+      <label for="radiodisabled" class="c-form__radio--faux">
+        <input type="radio" name="radio" id="radiodisabled" disabled="disabled" />
+        <span class="c-form__radio--faux-ui"></span>
+        <span class="c-form__element-label">Radio custom - disabled</span>
+      </label>
+    </div>
+*/
+
+
+/*
+### Checkboxes
+Single checkboxes that make sense from their labels alone do not require fieldset and legend.
+
+    <div class="c-form__element">
+      <label for="checkboxdefault" class="c-form__checkbox">
+        <input type="checkbox" name="check" id="checkboxdefault" />
+        <span class="c-form__element-label">Checkbox default UI</span>
+      </label>
+    </div>
+    <div class="c-form__element">
+      <label for="checkboxcustom" class="c-form__checkbox--faux">
+        <input type="checkbox" name="check" id="checkboxcustom" />
+        <span class="c-form__checkbox--faux-ui"></span>
+        <span class="c-form__element-label">Checkbox custom - default</span>
+      </label>
+    </div>
+    <div class="c-form__element">
+      <label for="checkboxchecked" class="c-form__checkbox--faux">
+        <input type="checkbox" name="check" id="checkboxchecked" checked="checked" />
+        <span class="c-form__checkbox--faux-ui"></span>
+        <span class="c-form__element-label">Checkbox custom - checked</span>
+      </label>
+    </div>
+    <div class="c-form__element">
+      <label for="checkboxdisabled" class="c-form__checkbox--faux">
+        <input type="checkbox" name="check" id="checkboxdisabled" disabled="disabled" />
+        <span class="c-form__checkbox--faux-ui"></span>
+        <span class="c-form__element-label">Checkbox custom - disabled</span>
+      </label>
+    </div>
+    <div class="c-form__element">
+      <label for="checkterms" class="c-form__checkbox">
+        <input type="checkbox" name="check" id="checkterms" >
+        <span class="c-form__element-label c-form__element-label--terms">Smaller label text for terms &amp; conditions</span>
+      </label>
+    </div>
+    <div class="c-form__element">
+      <label for="chq-hidden1" class="c-form__checkbox--hidden">
+        <input type="checkbox" name="chq-hidden" id="chq-hidden1" />
+        <span class="c-form__element-label">Hidden Checkbox 1</span>
+      </label>
+    </div>
+    <div class="c-form__element">
+      <label for="chq-hidden2" class="c-form__checkbox--hidden">
+        <input type="checkbox" name="chq-hidden" id="chq-hidden2" />
+        <span class="c-form__element-label">Hidden Checkbox 2</span>
+      </label>
+    </div>
+    <div class="c-form__element">
+      <label for="chq-hidden3" class="c-form__checkbox--hidden">
+        <input type="checkbox" name="chq-hidden" id="chq-hidden3" />
+        <span class="c-form__element-label">Hidden Checkbox 3</span>
+      </label>
+    </div>
+*/
+
+
+/*
+### Fieldset
+Single checkboxes or basic radio buttons (such as male/female for gender) that make sense from their labels alone do not require fieldset and legend. 
+
+
+    <div class="c-form--inline">
+      <fieldset>
+        <legend><span class="c-form__element-label">Inline</span></legend>
+        <div class="c-form__element">
+          <label for="fieldset-option1" class="c-form__checkbox">
+            <input type="checkbox" name="fieldset" id="fieldset-option1" value="option1" />
+            <span class="c-form__element-label">Option 1</span>
+          </label>
+        </div>
+        <div class="c-form__element">
+          <label for="fieldset-option2" class="c-form__checkbox">
+            <input type="checkbox" name="fieldset" id="fieldset-option2" value="option2" />
+            <span class="c-form__element-label">Option 2</span>
+          </label>
+        </div>
+        <div class="c-form__element">
+          <label for="fieldset-option3" class="c-form__checkbox">
+            <input type="checkbox" name="fieldset" id="fieldset-option3" value="option3" />
+            <span class="c-form__element-label">Option 3</span>
+          </label>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="c-form--stacked">
+      <fieldset>
+        <legend><span class="c-form__element-label--block">Stacked</span></legend>
+        <div class="c-form__element">
+          <label for="fieldset-option1" class="c-form__checkbox">
+            <input type="checkbox" name="fieldset" id="fieldset-option1" value="option1" />
+            <span class="c-form__element-label">Option 1</span>
+          </label>
+        </div>
+        <div class="c-form__element">
+          <label for="fieldset-option2" class="c-form__checkbox">
+            <input type="checkbox" name="fieldset" id="fieldset-option2" value="option2" />
+            <span class="c-form__element-label">Option 2</span>
+          </label>
+        </div>
+        <div class="c-form__element">
+          <label for="fieldset-option3" class="c-form__checkbox">
+            <input type="checkbox" name="fieldset" id="fieldset-option3" value="option3" />
+            <span class="c-form__element-label">Option 3</span>
+          </label>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="c-form__row--2col">
+      <div class="c-form__element">
+        <fieldset>
+          <legend class="c-form__col"><span class="c-form__element-label">Two Columns (wide screen: legend left, options right)</span></legend>
+          <div class="c-form__col">
+            <div class="c-form__element">
+              <label for="fieldset-option4" class="c-form__checkbox">
+                <input type="checkbox" name="fieldset" id="fieldset-option4" value="option4" />
+                <span class="c-form__element-label">Option 4</span>
+              </label>
+            </div>
+            <div class="c-form__element">
+              <label for="fieldset-option5" class="c-form__checkbox">
+                <input type="checkbox" name="fieldset" id="fieldset-option5" value="option5" />
+                <span class="c-form__element-label">Option 5</span>
+              </label>
+            </div>
+            <div class="c-form__element">
+              <label for="fieldset-option6" class="c-form__checkbox">
+                <input type="checkbox" name="fieldset" id="fieldset-option6" value="option6" />
+                <span class="c-form__element-label">Option 6</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="c-form__element">
+        <fieldset>
+          <legend class="c-form__col"><span class="c-form__element-label">Two Columns (wide screen: legend left, options right)</span></legend>
+          <div class="c-form__2col-col c-form--inline">
+            <div class="c-form__element">
+              <label for="fieldset-option7" class="c-form__checkbox">
+                <input type="checkbox" name="fieldset" id="fieldset-option7" value="option7" />
+                <span class="c-form__element-label">Option 7</span>
+              </label>
+            </div>
+            <div class="c-form__element">
+              <label for="fieldset-option8" class="c-form__checkbox">
+                <input type="checkbox" name="fieldset" id="fieldset-option8" value="option8" />
+                <span class="c-form__element-label">Option 8</span>
+              </label>
+            </div>
+            <div class="c-form__element">
+              <label for="fieldset-option9" class="c-form__checkbox">
+                <input type="checkbox" name="fieldset" id="fieldset-option9" value="option9" />
+                <span class="c-form__element-label">Option 9</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+  </div>
+*/
+
+
+/*
+### Select
+The custom drop down arrow has a javascript dependancy (mando.select.js) to ensure it is only implemented in browsers that support pointer events. The <code>select</code> is subsequently wrapped
+in a <code>&lt;div class=&quot;c-form__element-control-select&quot;&gt;&lt;/div&gt;</code> for styling to be applied.
+
+    <div class="c-form__element">
+      <label for="select" class="c-form__element-label--block">Custom Select Menu:</label>
+      <div class="c-form__element-control">
+        <select id="select" class="js-form-select">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+        </select>
+      </div>
+    </div>
+
+*/
+
+
+/*
+### Multi Select
+
+    <div class="c-form__element">
+      <label for="selectmulti" class="c-form__element-label--block">Custom Select Menu Multiple:</label>
+      <div class="c-form__element-control">
+        <select id="selectmulti" multiple="multiple">
+          <option value="option1">Option 1</option>
+          <option value="option2">Option 2</option>
+          <option value="option3">Option 3</option>
+          <option value="option4">Option 4</option>
+        </select>
+      </div>
+    </div>
+
+*/
+
+
+/*
+### File upload
+The custom upload has a javascript dependancy (jquery.custom-file-input.js). 
+
+    <div class="c-form__element">
+      <input type="file" name="file" id="file" class="b-inputfile js-inputfile" data-multiple-caption="{count} files selected" multiple />
+      <label for="file" class="c-button--icon-right"><span>Upload document</span><i class="icon-upload" data-grunticon-embed></i></label>
+    </div>
+
+*/
+
+/*
+### Associated intructions
+Use the WAI-ARIA <code>aria-labelledby</code> attribute to associate instructions that cannot be placed within the <code>label</code>. 
+
+Note: <code>aria-labelledby</code> can override the <code>label</code> value for users of assistive technology. To compensate for this place an extra <code>id</code> on the <code>label</code> and place this value also in the <code>aria-labelledby</code> attribute.
+
+Where a label describes what the form object does, a description can provide additional detail users may need. In such cases use <code>aria-decscribedby</code> instead. As seen in this example.
+
+    <div class="c-form--inline">
+      <div class="c-form__element">
+        <label for="pipelength" id="label-pipelength" class="c-form__element-label">Pipe Length</label>
+        <div class="c-form__element-control--small">
+          <input type="text" name="pipelength" id="pipelength" placeholder="0" aria-labelledby="label-pipelength info-PipeLength">
+        </div>
+        <span id="info-PipeLength" tabindex="-1">Metres</span>
+      </div>
+    </div>
+
+
+*/
+/*
+### Inline layouts
+
+    <div class="c-form--inline">
+      <div class="c-form__element">
+        <label for="inline1" class="c-form__element-label">Username</label>
+        <div class="c-form__element-control">
+          <input type="text" name="inline1" id="inline1" placeholder="I am placeholder text">
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="inline2" class="c-form__element-label">Password</label>
+        <div class="c-form__element-control">
+          <input type="password" name="inline2" id="inline2">
+        </div>
+      </div>
+    </div>
+    <div class="c-form--inline">
+      <div class="c-form__element">
+        <label for="inline1" class="c-form__element-label--block">Username</label>
+        <div class="c-form__element-control">
+          <input type="text" name="inline1" id="inline1" placeholder="I am placeholder text">
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="inline2" class="c-form__element-label--block">Password</label>
+        <div class="c-form__element-control">
+          <input type="password" name="inline2" id="inline2">
+        </div>
+      </div>
+    </div>
+*/
+/*
+### Stacked layout
+    <div class="c-form--stacked">
+      <div class="c-form__element">
+        <label for="inline1" class="c-form__element-label--block">Username</label>
+        <div class="c-form__element-control">
+          <input type="text" name="inline1" id="inline1" placeholder="I am placeholder text">
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="inline2" class="c-form__element-label--block">Password</label>
+        <div class="c-form__element-control">
+          <input type="password" name="inline2" id="inline2">
+        </div>
+      </div>
+    </div>
+     
+*/
+/*
+### Justified layout
+Default aligns items to top.The space inbetween element will expand to fill the remaining space. A modifier of end can be added to align items to the bottom. As used in Search tools example.
+
+Note: does not work well for nested elements such as fieldsets.
+
+      <div class="c-form--justify">
+        <div class="c-form__element">
+          <label for="inline1" class="c-form__element-label--block">Username</label>
+          <div class="c-form__element-control">
+            <input type="text" name="inline1" id="inline1" placeholder="I am placeholder text">
+          </div>
+        </div>
+        <div class="c-form__element">
+          <label for="inline2" class="c-form__element-label--block">Password</label>
+          <div class="c-form__element-control">
+            <input type="password" name="inline2" id="inline2">
+          </div>
+        </div>
+      </div>
+*/
+/*
+### Search bar
+Using flexbox to easily append/prepend elements
+    <div class="c-form__element">
+      <label for="search-main" class="c-form__element-label--block">Search this Website</label>
+      <div class="c-form__element-addon">
+        <input class="c-form__element-addon-field" type="search" name="search-main" id="search-main" title="Search" placeholder="Keyword">
+        <button class="c-button--icon-border c-form__element-addon--right" type="submit">
+          <span class="icon-search"><span class="visually-hidden">Search</span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="c-form__element">
+      <div class="c-form__element-addon">
+        <label for="search-main2" class="c-form__element-label--block  c-form__element-addon--left">Search this Website</label>
+        <input class="c-form__element-addon-field" type="search" name="search-main2" id="search-main2" title="Search" placeholder="Keyword">
+        <button class="c-button--icon-border c-form__element-addon--right" type="submit">
+          <span class="icon-search"><span class="visually-hidden">Search</span></span>
+        </button>
+      </div>
+    </div>
+
+*/
+/*
+### Search tools
+First example is inline using <code>align-self: flex-end</code> to align elements to the bottom to ensure submit button aligns with inputs.
+
+Second example uses flexbox <code>justify-content:space-between</code> space elements out. Also uses <code>align-self: flex-end</code> to align elements to the bottom.
+
+    <div class="c-form--inline-end">
+      <div class="c-form__element">
+        <label for="st1" class="c-form__element-label--block">Text input</label>
+        <div class="c-form__element-control">
+          <input type="text" name="st1" id="st1" placeholder="I am placeholder">
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="st2" class="c-form__element-label--block">Select One:</label>
+        <div class="c-form__element-control">
+          <div class="c-form__element-control-select"><select id="st2" class="js-form-select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+          </select></div>
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="st3" class="c-form__element-label--block">Select Two:</label>
+        <div class="c-form__element-control">
+          <div class="c-form__element-control-select"><select id="st3" class="js-form-select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+          </select></div>
+        </div>
+      </div>
+      <div class="c-form__element">
+        <input type="submit" class="c-button" value="Submit Button">
+      </div>
+    </div>
+
+
+    <div class="c-form--justify-end">
+      <div class="c-form__element">
+        <label for="jst1" class="c-form__element-label--block">Text input</label>
+        <div class="c-form__element-control">
+          <input type="text" name="jst1" id="jst1" placeholder="I am placeholder">
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="jst2" class="c-form__element-label--block">Select One:</label>
+        <div class="c-form__element-control">
+          <div class="c-form__element-control-select"><select id="jst2" class="js-form-select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+          </select></div>
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="jst3" class="c-form__element-label--block">Select Two:</label>
+        <div class="c-form__element-control">
+          <div class="c-form__element-control-select"><select id="jst3" class="js-form-select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+          </select></div>
+        </div>
+      </div>
+      <div class="c-form__element">
+        <input type="submit" class="c-button" value="Submit Button">
+      </div>
+    </div>
+*/
+/*
+### 2 Column layout (wide screen)
+
+    <div class="c-form__row--2col">
+      <div class="c-form__element">
+        <div class="c-form__col">
+          <label for="fullname" class="c-form__element-label--block">Full Name</label>
+        </div>
+        <div class="c-form__col">
+          <div class="c-form__element-control">
+            <input type="text" id="fullname" name="fullname" placeholder="Full Name">
+          </div>
+        </div>
+      </div>
+      <div class="c-form__element">
+        <div class="c-form__col">
+          <label for="company" class="c-form__element-label--block">Company</label>
+        </div>
+        <div class="c-form__col">
+          <div class="c-form__element-control">
+            <input type="text" id="company" name="company" placeholder="Company">
+          </div>
+        </div>
+      </div>
+      <div class="c-form__element">
+        <fieldset>
+          <legend class="c-form__col"><span class="c-form__element-label">Fieldset Legend</span></legend>
+          <div class="c-form__col">
+            <div class="c-form__element">
+              <label for="option1" class="c-form__checkbox">
+                <input type="checkbox" name="fieldset" id="option1" value="option1">
+                <span class="c-form__element-label">Option 1 - Vertical</span>
+              </label>
+            </div>
+            <div class="c-form__element">
+              <label for="option2" class="c-form__checkbox">
+                <input type="checkbox" name="fieldset" id="option2" value="option2">
+                <span class="c-form__element-label">Option 2 - Vertical</span>
+              </label>
+            </div>
+            <div class="c-form__element">
+              <label for="option3" class="c-form__checkbox">
+                <input type="checkbox" name="fieldset" id="option3" value="option2">
+                <span class="c-form__element-label">Option 3 - Vertical</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="c-form__element">
+        <fieldset>
+          <legend class="c-form__col"><span class="c-form__element-label">Fieldset Legend</span></legend>
+          <div class="c-form__2col-col c-form--inline">
+            <div class="c-form__element">
+              <label for="hoption1" class="c-form__checkbox">
+                <input type="checkbox" name="fieldset" id="hoption1" value="hoption1">
+                <span class="c-form__element-label">Option 1 - Horizontal</span>
+              </label>
+            </div>
+            <div class="c-form__element">
+              <label for="hoption2" class="c-form__checkbox">
+                <input type="checkbox" name="fieldset" id="hoption2" value="hoption2">
+                <span class="c-form__element-label">Option 2 - Horizontal</span>
+              </label>
+            </div>
+            <div class="c-form__element">
+              <label for="hoption3" class="c-form__checkbox">
+                <input type="checkbox" name="fieldset" id="hoption3" value="hoption1">
+                <span class="c-form__element-label">Option 3 - Horizontal</span>
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+*/
+/*
+### 2 Column Gallery layout (wide screen)
+
+    <div class="c-form__row--2col--gal">
+      <div class="c-form__element">
+        <label for="cb-fullname2" class="c-form__element-label--block">Full Name</label>
+        <div class="c-form__element-control">
+          <input type="text" id="cb-fullname2" name="cb-fullname2" placeholder="Full Name">
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="cb-company2" class="c-form__element-label--block">Company</label>
+        <div class="c-form__element-control">
+          <input type="text" id="cb-company2" name="cb-company2" placeholder="Company" class="required" aria-required="true">
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="cb-email" class="c-form__element-label--block">Email</label>
+        <div class="c-form__element-control">
+          <input type="email" id="cb-email" name="cb-email" placeholder="Email address" class="required" aria-required="true">
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="cb-email" class="c-form__element-label--block">Telephone no</label>
+        <div class="c-form__element-control">
+          <input type="tel" id="cb-tel" name="cb-tel" placeholder="Telephone no">
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="rq-interest7" class="c-form__checkbox">
+          <input type="checkbox" name="rq-interest" id="rq-interest7">
+          <span class="c-form__element-label">Checkbox number 1</span>
+        </label>
+      </div>
+      <div class="c-form__element">
+        <label for="rq-interest8" class="c-form__checkbox">
+          <input type="checkbox" name="rq-interest" id="rq-interest8">
+          <span class="c-form__element-label">Checkbox number 2</span>
+        </label>
+      </div>
+      <div class="c-form__element">
+        <label for="rq-interest9" class="c-form__checkbox">
+          <input type="checkbox" name="rq-interest" id="rq-interest9">
+          <span class="c-form__element-label">Checkbox number 3</span>
+        </label>
+      </div>
+      <div class="c-form__element">
+        <label for="rq-interest10" class="c-form__checkbox">
+          <input type="checkbox" name="rq-interest" id="rq-interest10">
+          <span class="c-form__element-label">Checkbox number 4</span>
+        </label>
+      </div>
+      <div class="c-form__element">
+        <label for="rq-interest11" class="c-form__checkbox">
+          <input type="checkbox" name="rq-interest" id="rq-interest11">
+          <span class="c-form__element-label">Checkbox number 5</span>
+        </label>
+      </div>
+      <div class="c-form__element">
+        <label for="rq-interest12" class="c-form__checkbox">
+          <input type="checkbox" name="rq-interest" id="rq-interest12">
+          <span class="c-form__element-label">Checkbox number 5</span>
+        </label>
+      </div>
+      <div class="c-form__element">
+        <label for="st4" class="c-form__element-label--block">Select One:</label>
+        <div class="c-form__element-control">
+          <div class="c-form__element-control-select"><select id="st4" class="js-form-select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+          </select></div>
+        </div>
+      </div>
+      <div class="c-form__element">
+        <label for="st5" class="c-form__element-label--block">Select Two:</label>
+        <div class="c-form__element-control">
+          <div class="c-form__element-control-select"><select id="st5" class="js-form-select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+            <option value="option4">Option 4</option>
+          </select></div>
+        </div>
+      </div>
+    </div>
+*/
+
