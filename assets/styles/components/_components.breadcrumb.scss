@@ -1,0 +1,43 @@
+﻿//-------------------------------------------
+// _components.breadcrumnb.scss
+//-------------------------------------------
+.c-breadcrumb {
+  margin:0;
+  padding:1rem;
+  background:$grey-light;
+}
+
+.c-breadcrumb__item {
+    display: inline-block;
+    list-style:none; 
+    &:not(:last-child):after {
+      content:'';
+      margin-left:.25rem;
+      @include arrow(right,$black, 5px);
+    }
+
+}
+/*
+### Breadcrumb
+      <ol class="c-breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
+        <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+          <a href="#"  itemprop="item">
+            <span itemprop="name">Descendant Page Name</span></a>
+          <meta itemprop="position" content="1" />
+        </li>
+        <li class="c-breadcrumb__item" itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+          <a itemprop="item" href="#">
+            <span itemprop="name">Descendant Page Name</span></a>
+          <meta itemprop="position" content="2" />
+        </li>
+        <li class="c-breadcrumb__item is-active" itemprop="itemListElement" itemscope
+            itemtype="http://schema.org/ListItem">
+            <span itemprop="name">Current Page Name</span>
+            <meta itemprop="position" content="3" />
+        </li>
+      </ol>
+
+
+*/
