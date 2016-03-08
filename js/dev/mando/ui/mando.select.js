@@ -13,7 +13,6 @@ var select;
 
 (function ($) {
     select = function () {
-
         // Detect pointer events
         var pointerEventsSupported = (function () {
             var element = document.createElement('x'),

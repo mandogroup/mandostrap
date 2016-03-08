@@ -1,11 +1,11 @@
 // JavaScript Init
-
+var tab = new componentTabs();
 
 $(function () {
-    // select();
-    // mandoTabs();
+    tab.init();
+    select();
     // equalHeights();
-    // mandoVideo();
+   // mandoVideo();
     // faq();
     // shareControl();
     carousel();
