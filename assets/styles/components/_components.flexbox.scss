@@ -1,0 +1,51 @@
+﻿//-------------------------------------------
+// _components.flexbox.scss
+//-------------------------------------------
+.c-flexbox__container {
+    display: flex;
+}
+
+.c-flexbox__card {
+    flex: 1;
+    background: $grey;
+    margin-right: gutter();
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.c-flexbox__hermit {
+    margin-right: auto;
+    background: $black;
+    color: $white;
+}
+
+.c-flexbox__hermit--full {
+    flex: 1;
+    background: $black;
+    color: $white;
+}
+
+.c-flexbox__1 {
+    order: 3;
+    margin-right: gutter();
+    min-width: 2em;
+    min-height: 2em;
+    background: $grey;
+}
+
+.c-flexbox__2 {
+    order: 1;
+    margin-right: gutter();
+    min-width: 2em;
+    min-height: 2em;
+    background: $grey;
+}
+
+.c-flexbox__3 {
+    order: 2;
+    margin-right: gutter();
+    min-width: 2em;
+    min-height: 2em;
+    background: $grey;
+}
