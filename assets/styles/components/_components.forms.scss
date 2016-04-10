@@ -311,6 +311,7 @@
     @include square(24px);
   }
   select {
+    -webkit-appearance: none;
     appearance: none;
     padding-right: 55px;
     &::-ms-expand {

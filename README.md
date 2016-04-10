@@ -88,6 +88,9 @@ We currently use **Grunt (0.4.5)** as our task manager, listed below are our tas
     grunt-sass           : 1.1.0-beta"
     // Compile Sass to CSS using node-sass (removes the need for ruby)
 
+    grunt-sass-globbing": "^1.4.0"
+    // Generates main.scss @imports from partial directories
+
     grunt-svgmin         : 3.1.0
     // Minify SVG using SVGO
 

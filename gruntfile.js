@@ -8,6 +8,19 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('sassdown');
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
+        sass_globbing: {
+            your_target: {
+              files: {
+                 'assets/styles/main.scss': ['assets/styles/vendor/*.scss', 'assets/styles/settings/*', 'assets/styles/tools/*', 'assets/styles/base/*', 'assets/styles/objects/*', 'assets/styles/components/*','assets/styles/trumps/*']
+         
+              },
+              options: {
+                useSingleQuotes: false,
+                signature: '// Main.scss - grunt generated'
+              }
+            }
+          },
         sass: {
             options: {
                 sourceMap: true,
@@ -19,6 +32,7 @@ module.exports = function (grunt) {
                 }
             }
         },
+        
         sassdown: {
             styleguide: {
                 options: {
@@ -245,7 +259,7 @@ module.exports = function (grunt) {
         watch: {
             css: {
                 files: ['assets/styles/**/*.scss'],
-                tasks: ['sass', 'postcss:default','modernizr'],
+                tasks: ['sass_globbing','sass', 'postcss:default','modernizr'],
                 options: {
                     nospawn: true
                 }
@@ -318,7 +332,7 @@ module.exports = function (grunt) {
     // ===================================================
     // TASK DEFINITIONS
     // ===================================================
-    grunt.registerTask('default', ['realFavicon', 'bowercopy','sass', 'postcss:default', 'bake', 'concat', 'uglify', 'modernizr', 'svgmin', 'grunticon:myIcons']);
-    grunt.registerTask('dev', ['sass', 'postcss:default', 'bake', 'sassdown', 'htmllint', 'jshint', 'watch']);
-    grunt.registerTask('styleguide', ['sass', 'postcss:styleguidecss','concat:styleguidejs','sassdown']);
+    grunt.registerTask('default', ['realFavicon', 'bowercopy','sass_globbing','sass', 'postcss:default', 'bake', 'concat', 'uglify', 'modernizr', 'svgmin', 'grunticon:myIcons']);
+    grunt.registerTask('dev', ['sass_globbing','sass', 'postcss:default', 'bake', 'sassdown', 'htmllint', 'jshint', 'watch']);
+    grunt.registerTask('styleguide', ['sass_globbing','sass', 'postcss:styleguidecss','concat:styleguidejs','sassdown']);
 };
