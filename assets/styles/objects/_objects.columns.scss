@@ -15,7 +15,7 @@
   @extend .o-row;
   .o-col {
     margin-bottom: gutter();
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop) {
       @include span(6);
       &:first-child {
         @include span(6 first);
@@ -32,7 +32,7 @@
   @extend .o-row;
   .o-col {
     margin-bottom: gutter();
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop) {
       @include span(3);
       &:first-child {
         @include span(3 first);
@@ -44,7 +44,7 @@
   }
   .o-col--x2 {
     margin-bottom: gutter();
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop) {
       @include span(9);
       &:first-child {
         @include span(9 first);
@@ -55,7 +55,7 @@
     }
   }
   &.o-row--spread {
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop) {
       .o-col {
         margin-right: 0;
       }
@@ -72,7 +72,7 @@
   @extend .o-row;
   .o-col {
     margin-bottom: gutter();
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop) {
       @include span(3);
       &:first-child {
         @include span(3 first);
@@ -84,7 +84,7 @@
   }
   .o-col--x2 {
     margin-bottom: gutter();
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop) {
       @include span(6);
       &:first-child {
         @include span(6 first);
@@ -95,7 +95,7 @@
     }
   }
   &.o-row--spreadright {
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop)  {
       .o-col--x2 {
         @include span(6 wide);
         margin-right: 0;
@@ -103,7 +103,7 @@
     }
   }
   &.o-row--spreadleft {
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop)  {
       .o-col {
         margin-right: 0;
       }
@@ -114,7 +114,7 @@
     }
   }
   &.o-row--spread {
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop)  {
       .o-col {
         margin-right: 0;
       }
@@ -131,7 +131,7 @@
   @extend .o-row;
   .o-col {
     margin-bottom: gutter();
-    @media #{$tablet-portrait} {
+    @include mq($from: tablet)  {
       @include gallery(6 of 12);
     }
   }
@@ -142,10 +142,10 @@
   @extend .o-row;
   .o-col {
     margin-bottom: gutter();
-    @media #{$tablet-portrait} {
+    @include mq($from: tablet)  {
       @include gallery(6 of 12);
     }
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop)  {
       @include gallery(4 of 12);
     }
   }
@@ -155,10 +155,10 @@
 .o-row--4col--gal {
   .o-col {
     margin-bottom: gutter();
-    @media #{$tablet-portrait} {
+    @include mq($from: tablet)  {
       @include gallery(6 of 12);
     }
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop)  {
       @include gallery(3 of 12);
     }
   }
