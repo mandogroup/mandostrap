@@ -41,7 +41,8 @@ We currently use **Bower** as our package manager, listed below are our common d
     slick-carousel  : "~1.5.9", // Carousel plugin
     enquire         : "~2.1.2", // A library for responding to CSS media queries.
     susy            : "~2.2.7", // CSS grid system
-    js-cookie       : "~2.1.0"  //  JavaScript API for handling cookies
+    js-cookie       : "~2.1.0"  // JavaScript API for handling cookies
+    sass-mq         : "~3.2.9"  // Helps compose meqia queries in an elegant way
 
 
 ### Task manager

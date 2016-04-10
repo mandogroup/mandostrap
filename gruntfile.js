@@ -104,7 +104,8 @@ module.exports = function (grunt) {
                 files: {
                     'settings/_settings.reset.scss': 'normalize-css/normalize.css',
                     'vendor/_slick.scss': 'slick-carousel/slick/slick.scss',
-                    'vendor/susy/': 'susy/sass/'
+                    'vendor/susy/': 'susy/sass/',
+                    'vendor/_mq.scss': 'sass-mq/_mq.scss'
                 }
             },
             js: {

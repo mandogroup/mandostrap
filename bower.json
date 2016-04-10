@@ -1,6 +1,6 @@
 {
   "name": "baseproject",
-  "description": "Mondo strap",
+  "description": "Mando strap",
   "main": "gruntfile.js",
   "authors": [
     "Mando"
@@ -22,6 +22,7 @@
     "slick-carousel": "~1.5.9",
     "enquire": "~2.1.2",
     "susy": "~2.2.7",
-    "js-cookie": "~2.1.0"
+    "js-cookie": "~2.1.0",
+    "sass-mq": "~3.2.9"
   }
 }

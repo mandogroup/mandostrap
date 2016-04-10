@@ -47,7 +47,7 @@
     background: $grey-light - 20%;
   }
 
-  @media #{$tablet-portrait} {
+  @include mq($from: tablet) {
     display: none;
   }
 
@@ -97,7 +97,7 @@
     clear: both;
   }
 
-  @media #{$tablet-portrait} {
+  @include mq($from: tablet) {
     float: left;
     display: block;
     position: static;
@@ -114,7 +114,7 @@
   margin: 0;
   clear: both;
 
-  @media #{$tablet-portrait} {
+  @include mq($from: tablet) {
     list-style: none;
     margin: 0;
     padding: 0;
@@ -126,7 +126,7 @@
   display: block;
   width: 100%;
 
-  @media #{$tablet-portrait} {
+  @include mq($from: tablet) {
     display: block;
     float: left;
     width: auto;
@@ -186,7 +186,7 @@
   display: none;
   background: $grey-light - 20%;
 
-  @media #{$tablet-portrait} {
+  @include mq($from: tablet) {
     position: absolute;
     padding: 1rem;
     margin: auto;
@@ -206,7 +206,7 @@
   padding: 0.5rem 1.5rem;
   display: block;
   text-decoration: none;
-  @media #{$tablet-portrait} {
+  @include mq($from: tablet) {
     padding: 0.5rem;
   }
 
@@ -242,7 +242,7 @@ body.is-pushed {
 
   }
 
-  @media #{$tablet-portrait} {
+  @include mq($from: tablet) {
     display: none;
   }
 
