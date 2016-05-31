@@ -28,7 +28,7 @@
   display: none;
   visibility: hidden;
 
-  @media #{$tablet-landscape} {
+  @include mq($from: desktop)  {
     display: block;
     visibility: visible;
 
@@ -41,7 +41,7 @@
 
 .is-hidden-desktop {
 
-  @media #{$tablet-landscape} {
+  @include mq($from: desktop) {
     display: none;
     visibility: hidden;
   }

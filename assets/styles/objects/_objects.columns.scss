@@ -15,7 +15,7 @@
   @extend .o-row;
   .o-col {
     margin-bottom: gutter();
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop) {
       @include span(6);
       &:first-child {
         @include span(6 first);
@@ -32,7 +32,7 @@
   @extend .o-row;
   .o-col {
     margin-bottom: gutter();
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop) {
       @include span(3);
       &:first-child {
         @include span(3 first);
@@ -44,7 +44,7 @@
   }
   .o-col--x2 {
     margin-bottom: gutter();
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop) {
       @include span(9);
       &:first-child {
         @include span(9 first);
@@ -55,7 +55,7 @@
     }
   }
   &.o-row--spread {
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop) {
       .o-col {
         margin-right: 0;
       }
@@ -72,7 +72,7 @@
   @extend .o-row;
   .o-col {
     margin-bottom: gutter();
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop) {
       @include span(3);
       &:first-child {
         @include span(3 first);
@@ -84,7 +84,7 @@
   }
   .o-col--x2 {
     margin-bottom: gutter();
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop) {
       @include span(6);
       &:first-child {
         @include span(6 first);
@@ -95,7 +95,7 @@
     }
   }
   &.o-row--spreadright {
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop)  {
       .o-col--x2 {
         @include span(6 wide);
         margin-right: 0;
@@ -103,7 +103,7 @@
     }
   }
   &.o-row--spreadleft {
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop)  {
       .o-col {
         margin-right: 0;
       }
@@ -114,7 +114,7 @@
     }
   }
   &.o-row--spread {
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop)  {
       .o-col {
         margin-right: 0;
       }
@@ -131,7 +131,7 @@
   @extend .o-row;
   .o-col {
     margin-bottom: gutter();
-    @media #{$tablet-portrait} {
+    @include mq($from: tablet)  {
       @include gallery(6 of 12);
     }
   }
@@ -142,10 +142,10 @@
   @extend .o-row;
   .o-col {
     margin-bottom: gutter();
-    @media #{$tablet-portrait} {
+    @include mq($from: tablet)  {
       @include gallery(6 of 12);
     }
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop)  {
       @include gallery(4 of 12);
     }
   }
@@ -155,10 +155,10 @@
 .o-row--4col--gal {
   .o-col {
     margin-bottom: gutter();
-    @media #{$tablet-portrait} {
+    @include mq($from: tablet)  {
       @include gallery(6 of 12);
     }
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop)  {
       @include gallery(3 of 12);
     }
   }
@@ -168,28 +168,28 @@
 /*
 ### Sidebar - Right
 
-<div class="o-row--3col">
-    <div class="o-col--x2" style="background:#ccc">
-        o-col--x2
+    <div class="o-row--3col">
+        <div class="o-col--x2" style="background:#ccc">
+            o-col--x2
+        </div>
+        <div class="o-col" style="background:#999">
+            o-col
+        </div>
     </div>
-    <div class="o-col" style="background:#999">
-        o-col
-    </div>
-</div>
 */
 
 
 /*
 ### Sidebar - Right - example of spread
 
-<div class="o-row--3col o-row--spread">
-    <div class="o-col--x2" style="background:#ccc">
-        o-col--x2
+    <div class="o-row--3col o-row--spread">
+        <div class="o-col--x2" style="background:#ccc">
+            o-col--x2
+        </div>
+        <div class="o-col" style="background:#999">
+            o-col
+        </div>
     </div>
-    <div class="o-col" style="background:#999">
-        o-col
-    </div>
-</div>
 
 */
 
@@ -197,14 +197,14 @@
 /*
 ### Sidebar - Left
 
-<div class="o-row--3col">
-    <div class="o-col" style="background:#999">
-        o-col
+    <div class="o-row--3col">
+        <div class="o-col" style="background:#999">
+            o-col
+        </div>
+        <div class="o-col--x2" style="background:#ccc">
+            o-col--x2
+        </div>
     </div>
-    <div class="o-col--x2" style="background:#ccc">
-        o-col--x2
-    </div>
-</div>
 
 */
 
@@ -212,14 +212,14 @@
 /*
 ### Sidebar - Left - example of spread
 
-<div class="o-row--3col o-row--spread">
-    <div class="o-col" style="background:#999">
-        o-col
+    <div class="o-row--3col o-row--spread">
+        <div class="o-col" style="background:#999">
+            o-col
+        </div>
+        <div class="o-col--x2" style="background:#ccc">
+            o-col--x2
+        </div>
     </div>
-    <div class="o-col--x2" style="background:#ccc">
-        o-col--x2
-    </div>
-</div>
 
 */
 
@@ -227,17 +227,17 @@
 /*
 ### Sidebar - Left and Right
 
-<div class="o-row--4col">
-    <div class="o-col" style="background:#ccc">
-        o-col
+    <div class="o-row--4col">
+        <div class="o-col" style="background:#ccc">
+            o-col
+        </div>
+        <div class="o-col--x2" style="background:#999">
+            o-col--x2
+        </div>
+        <div class="o-col" style="background:#ccc">
+            o-col
+        </div>
     </div>
-    <div class="o-col--x2" style="background:#999">
-        o-col--x2
-    </div>
-    <div class="o-col" style="background:#ccc">
-        o-col
-    </div>
-</div>
 
 */
 
@@ -245,65 +245,65 @@
 /*
 ### Sidebar - Left and Right - example of spread both sides
 
-<div class="o-row--4col o-row--spread">
-    <div class="o-col" style="background:#ccc">
-        o-col
+    <div class="o-row--4col o-row--spread">
+        <div class="o-col" style="background:#ccc">
+            o-col
+        </div>
+        <div class="o-col--x2" style="background:#999">
+            o-col--x2
+        </div>
+        <div class="o-col" style="background:#ccc">
+            o-col
+        </div>
     </div>
-    <div class="o-col--x2" style="background:#999">
-        o-col--x2
-    </div>
-    <div class="o-col" style="background:#ccc">
-        o-col
-    </div>
-</div>
 */
 
 
 /*
 ### Sidebar - Left and Right - example of spread left
 
-<div class="o-row--4col  o-row--spreadleft">
-    <div class="o-col" style="background:#ccc">
-        o-col
+    <div class="o-row--4col  o-row--spreadleft">
+        <div class="o-col" style="background:#ccc">
+            o-col
+        </div>
+        <div class="o-col--x2" style="background:#999">
+            o-col--x2
+        </div>
+        <div class="o-col" style="background:#ccc">
+            o-col
+        </div>
     </div>
-    <div class="o-col--x2" style="background:#999">
-        o-col--x2
-    </div>
-    <div class="o-col" style="background:#ccc">
-        o-col
-    </div>
-</div>
 */
 
 
 /*
 ### Sidebar - Left and Right - example of spread right
 
-<div class="o-row--4col  o-row--spreadright">
-    <div class="o-col" style="background:#ccc">
-        o-col
+    <div class="o-row--4col  o-row--spreadright">
+        <div class="o-col" style="background:#ccc">
+            o-col
+        </div>
+        <div class="o-col--x2" style="background:#999">
+            o-col--x2
+        </div>
+        <div class="o-col" style="background:#ccc">
+            o-col
+        </div>
     </div>
-    <div class="o-col--x2" style="background:#999">
-        o-col--x2
-    </div>
-    <div class="o-col" style="background:#ccc">
-        o-col
-    </div>
-</div>
 */
 
 
 /*
 ### 2 Equal Columns
 
-<div class="o-row--2col">
-    <div class="o-col" style="background:#ccc">
-        o-col
+    <div class="o-row--2col">
+        <div class="o-col" style="background:#ccc">
+            o-col
+        </div>
+        <div class="o-col" style="background:#999">
+            o-col
+        </div>
     </div>
-    <div class="o-col" style="background:#999">
-        o-col
-    </div>
-</div>
 
 
 */
@@ -312,20 +312,20 @@
 /*
 ### 2 Column Gallery
 
-<div class="o-row--2col--gal">
-    <div class="o-col" style="background:#ccc">
-        o-col
+    <div class="o-row--2col--gal">
+        <div class="o-col" style="background:#ccc">
+            o-col
+        </div>
+        <div class="o-col" style="background:#999">
+            o-col
+        </div>
+        <div class="o-col" style="background:#ccc">
+            o-col
+        </div>
+        <div class="o-col" style="background:#999">
+            o-col
+        </div>
     </div>
-    <div class="o-col" style="background:#999">
-        o-col
-    </div>
-    <div class="o-col" style="background:#ccc">
-        o-col
-    </div>
-    <div class="o-col" style="background:#999">
-        o-col
-    </div>
-</div>
 
 
 */
@@ -334,26 +334,26 @@
 /*
 ### 3 Column Gallery
 
-<div class="o-row--3col--gal">
-    <div class="o-col" style="background:#ccc">
-        o-col
+    <div class="o-row--3col--gal">
+        <div class="o-col" style="background:#ccc">
+            o-col
+        </div>
+        <div class="o-col" style="background:#999">
+            o-col
+        </div>
+        <div class="o-col" style="background:#ccc">
+            o-col
+        </div>
+        <div class="o-col" style="background:#999">
+            o-col
+        </div>
+        <div class="o-col" style="background:#ccc">
+            o-col
+        </div>
+        <div class="o-col" style="background:#999">
+            o-col
+        </div>
     </div>
-    <div class="o-col" style="background:#999">
-        o-col
-    </div>
-    <div class="o-col" style="background:#ccc">
-        o-col
-    </div>
-    <div class="o-col" style="background:#999">
-        o-col
-    </div>
-    <div class="o-col" style="background:#ccc">
-        o-col
-    </div>
-    <div class="o-col" style="background:#999">
-        o-col
-    </div>
-</div>
 
 */
 
@@ -361,32 +361,32 @@
 /*
 ### 4 Column Gallery
 
-<div class="o-row--4col--gal">
-    <div class="o-col" style="background:#ccc">
-        o-col
+    <div class="o-row--4col--gal">
+        <div class="o-col" style="background:#ccc">
+            o-col
+        </div>
+        <div class="o-col" style="background:#999">
+            o-col
+        </div>
+        <div class="o-col" style="background:#ccc">
+            o-col
+        </div>
+        <div class="o-col" style="background:#999">
+            o-col
+        </div>
+        <div class="o-col" style="background:#ccc">
+            o-col
+        </div>
+        <div class="o-col" style="background:#999">
+            o-col
+        </div>
+        <div class="o-col" style="background:#ccc">
+            o-col
+        </div>
+        <div class="o-col" style="background:#999">
+            o-col
+        </div>
     </div>
-    <div class="o-col" style="background:#999">
-        o-col
-    </div>
-    <div class="o-col" style="background:#ccc">
-        o-col
-    </div>
-    <div class="o-col" style="background:#999">
-        o-col
-    </div>
-    <div class="o-col" style="background:#ccc">
-        o-col
-    </div>
-    <div class="o-col" style="background:#999">
-        o-col
-    </div>
-    <div class="o-col" style="background:#ccc">
-        o-col
-    </div>
-    <div class="o-col" style="background:#999">
-        o-col
-    </div>
-</div>
 
 
 */
