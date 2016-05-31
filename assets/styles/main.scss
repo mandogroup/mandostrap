@@ -1,66 +1,38 @@
-/*
+// Main.scss - grunt generated
 
-main.scss: Main stylesheet imports
-------------
-Template Version:		1.0
-Start date:				20/10/2015
-------------
-
-TABLE OF CONTENTS
-==0    VENDOR
-==1    SETTINGS
-==2    TOOLS
-==3    BASE
-==4    OBJECTS
-==5    COMPONENTS
-    --- add layers if required e.g. THEME
-==X    TRUMPS
-
-
-//==0    VENDOR*/
-@import "vendor/_slick";
-
-//==1    SETTINGS - Global variables, config switches
-@import "settings/_settings.colors";
-@import "settings/_settings.reset";
-@import "settings/_settings.grid";
-@import "settings/_settings.breakpoints";
-@import "settings/_settings.fonts";
-@import "settings/_settings.animation";
-
-//==2    TOOLS - Default mixins and functions
-@import "tools/_tools.mixins";
-
-//==3    BASE - H1-H6, basic links, lists
-@import "base/_base.links";
-@import "base/_base.page";
-@import "base/_base.type";
-@import "base/_base.forms";
-
-//==4    OBJECTS - cosmetic free patterns
-@import "objects/_objects.wrappers";
-@import "objects/_objects.columns";
-
-//==5    COMPONENTS - designed chunks of UI
-@import "components/_components.browserupgrade";
-@import "components/_components.accessmenu";
-@import "components/_components.cookie";
-@import "components/_components.buttons";
-@import "components/_components.wysiwyg";
-@import "components/_components.forms";
-@import "components/_components.carousel";
-@import "components/_components.hero";
-@import "components/_components.navigation";
-@import "components/_components.picture";
-@import "components/_components.gallery";
-@import "components/_components.notify";
-@import "components/_components.tabs";
-@import "components/_components.pills";
-
-//==X    TRUMPS - helpers & overrides
-@import "trumps/_trumps.utilities";
-@import "trumps/_trumps.overrides";
-@import "trumps/_trumps.print";
-//@import "_trumps.hacks";
-
-
+@import "vendor/slick";
+@import "vendor/mq";
+@import "settings/settings.animation";
+@import "settings/settings.breakpoints";
+@import "settings/settings.colors";
+@import "settings/settings.fonts";
+@import "settings/settings.grid";
+@import "settings/settings.reset";
+@import "tools/tools.mixins";
+@import "base/base.forms";
+@import "base/base.links";
+@import "base/base.page";
+@import "base/base.type";
+@import "objects/objects.columns";
+@import "objects/objects.wrappers";
+@import "components/components.accessmenu";
+@import "components/components.breadcrumb";
+@import "components/components.browserupgrade";
+@import "components/components.buttons";
+@import "components/components.cards";
+@import "components/components.carousel";
+@import "components/components.cookie";
+@import "components/components.errorpages";
+@import "components/components.forms";
+@import "components/components.gallery";
+@import "components/components.hero";
+@import "components/components.navigation";
+@import "components/components.notify";
+@import "components/components.pagination";
+@import "components/components.picture";
+@import "components/components.tabs";
+@import "components/components.wysiwyg";
+@import "trumps/trumps.hacks";
+@import "trumps/trumps.overrides";
+@import "trumps/trumps.print";
+@import "trumps/trumps.utilities";

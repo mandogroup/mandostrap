@@ -4,7 +4,7 @@
 .c-form__row--2col--gal {
   @include clearfix;
   .c-form__element {
-    @media #{$tablet-landscape} {
+     @include mq($from: desktop) {
       @include gallery(6 of 12);
     }
   }
@@ -16,12 +16,12 @@
     @include clearfix;
   }
   .c-form__col:first-child {
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop){
       @include span(3)
     }
   }
   .c-form__col:last-child {
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop) {
       @include span(9 last)
     }
   }
@@ -31,7 +31,7 @@
 .c-form--inline {
   @include clearfix;
   .c-form__element {
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop) {
       margin-right: gutters();
     }
   }
@@ -45,7 +45,7 @@
   }
   legend {
     margin-bottom: .5rem;
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop) {
       float: left;
     }
     span {
@@ -103,11 +103,11 @@
 .c-form__element-control {
   &--small {
     @include rem(width, 174);
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop) {
       width: 50%;
     }
   }
-  @media #{$tablet-landscape} {
+  @include mq($from: desktop) {
     &--med {
       width: 70%;
     }
@@ -217,7 +217,7 @@
     border: 1px solid $black;
     color: $black;
     @include rem(font-size, 16);
-    @media #{$tablet-landscape} {
+    @include mq($from: desktop) {
       padding: .7rem 1.2rem;
       @include rem(font-size, 17);
     }
@@ -311,6 +311,7 @@
     @include square(24px);
   }
   select {
+    -webkit-appearance: none;
     appearance: none;
     padding-right: 55px;
     &::-ms-expand {

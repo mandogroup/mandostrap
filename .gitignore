@@ -73,6 +73,7 @@ node_modules/
 .css.map
 .map
 main.css
+main.scss
 app.min.js
 vendor.min.js
 main.css.map

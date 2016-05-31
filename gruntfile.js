@@ -8,6 +8,19 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('sassdown');
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
+        sass_globbing: {
+            your_target: {
+              files: {
+                 'assets/styles/main.scss': ['assets/styles/vendor/*.scss', 'assets/styles/settings/*', 'assets/styles/tools/*', 'assets/styles/base/*', 'assets/styles/objects/*', 'assets/styles/components/*','assets/styles/trumps/*']
+         
+              },
+              options: {
+                useSingleQuotes: false,
+                signature: '// Main.scss - grunt generated'
+              }
+            }
+          },
         sass: {
             options: {
                 sourceMap: true,
@@ -19,6 +32,7 @@ module.exports = function (grunt) {
                 }
             }
         },
+        
         sassdown: {
             styleguide: {
                 options: {
@@ -27,8 +41,10 @@ module.exports = function (grunt) {
                       'js/dist/styleguidejs.js'
 
                     ],
-                    template: 'templates/styleguide-template.hbs'
+                    template: 'templates/styleguide-template.hbs',
+                    highlight: 'monokai'
                 },
+
                 files: [{
                     expand: true,
                     cwd: 'assets/styles/',
@@ -45,14 +61,28 @@ module.exports = function (grunt) {
 
         // Runs through distribution CSS file and add vendor prefixers where necessary (overwriting original)
         postcss: {
-            options: {
-                map: true,
-                processors: [
-                    require('autoprefixer')({ browsers: ['ie 9','last 2 versions'] })
-                ]
+            default: {
+                options: {
+                    map: true,
+                    processors: [
+                        require('autoprefixer')({ browsers: ['ie 9','last 2 versions'] })
+                    ]
+                },
+                dist: {
+                    src: 'assets/styles/main.css'
+                }
             },
-            dist: {
-                src: 'assets/styles/main.css'
+
+            styleguidecss: {
+                options: {
+                    map: true,
+                    processors: [
+                        require('autoprefixer')({ browsers: ['ie 9','last 2 versions'] })
+                    ]
+                },
+                src: 'assets/styles/styleguide/styleguide.scss',
+                dest: 'assets/styles/styleguide.css'
+                
             }
         },
         // HTML Bake - Templating Utility
@@ -88,7 +118,8 @@ module.exports = function (grunt) {
                 files: {
                     'settings/_settings.reset.scss': 'normalize-css/normalize.css',
                     'vendor/_slick.scss': 'slick-carousel/slick/slick.scss',
-                    'vendor/susy/': 'susy/sass/'
+                    'vendor/susy/': 'susy/sass/',
+                    'vendor/_mq.scss': 'sass-mq/_mq.scss'
                 }
             },
             js: {
@@ -228,7 +259,7 @@ module.exports = function (grunt) {
         watch: {
             css: {
                 files: ['assets/styles/**/*.scss'],
-                tasks: ['sass', 'postcss','modernizr'],
+                tasks: ['sass_globbing','sass', 'postcss:default','modernizr'],
                 options: {
                     nospawn: true
                 }
@@ -301,7 +332,7 @@ module.exports = function (grunt) {
     // ===================================================
     // TASK DEFINITIONS
     // ===================================================
-    grunt.registerTask('default', ['realFavicon', 'bowercopy','sass', 'postcss', 'bake', 'concat', 'uglify', 'modernizr', 'svgmin', 'grunticon:myIcons']);
-    grunt.registerTask('dev', ['sass', 'postcss', 'bake', 'sassdown', 'htmllint', 'jshint', 'watch']);
-    grunt.registerTask('styleguide', ['sass', 'postcss','concat:styleguidejs','sassdown']);
+    grunt.registerTask('default', ['realFavicon', 'bowercopy','sass_globbing','sass', 'postcss:default', 'bake', 'concat', 'uglify', 'modernizr', 'svgmin', 'grunticon:myIcons']);
+    grunt.registerTask('dev', ['sass_globbing','sass', 'postcss:default', 'bake', 'sassdown', 'htmllint', 'jshint', 'watch']);
+    grunt.registerTask('styleguide', ['sass_globbing','sass', 'postcss:styleguidecss','concat:styleguidejs','sassdown']);
 };
