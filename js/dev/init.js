@@ -13,5 +13,6 @@ $(function () {
     cookieBanner();
     navigation();
     gallery();
+    dropList();
 });
 

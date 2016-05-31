@@ -1,0 +1,114 @@
+﻿//-------------------------------------------
+// _components.droplist.scss
+//-------------------------------------------
+.c-droplist__wrap {
+  position: relative;
+  border: 1px solid $grey;
+  border-radius: 3px;
+  &.is-active {
+    .c-droplist {
+      display: block;
+    }
+  }
+}
+
+.c-droplist__select {
+  display: none;
+  margin: 0;
+  padding: .5rem;
+  .no-js & {
+    display: block;
+  }
+}
+
+.c-droplist__button {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: .5rem;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  &:after {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    @include arrow(bottom, $black, 5px);
+    .is-active & {
+      transform: rotate(-180deg);
+    }
+  }
+  &:focus {
+    background: $grey-light;
+    outline: 0;
+  }
+}
+
+.c-droplist {
+  position: absolute;
+  top: 2rem;
+  left: -1px;
+  right: -1px;
+  display: none;
+  width: calc(100% + 2px);
+  margin: 0;
+  padding: .5rem;
+  border-radius: 0 0 3px 3px;
+  border: 1px solid $grey;
+  border-top: 0;
+  background: $white;
+  .no-js & {
+    position: static;
+    display: block;
+    border: 0;
+  }
+}
+
+.c-droplist__item {
+  list-style: none;
+  background: $grey-light;
+  &:nth-child(even) {
+    background: $grey;
+  }
+}
+
+.c-droplist__link {
+  display: block;
+  padding: .5rem;
+  text-decoration: none;
+  &:hover {
+    background: $black;
+    color: $white;
+  }
+}
+
+
+/*
+###Drop list
+      <div class="c-droplist__wrap js-droplist__wrap">
+          <p class="c-droplist__select  js-droplist__select">Please choose</p>
+          <ul class="c-droplist">
+            <li class="c-droplist__item">
+              <a class="c-droplist__link" href="#">Option 1</a>
+            </li>
+            <li class="c-droplist__item">
+              <a class="c-droplist__link" href="#">Option 2</a>
+            </li>
+            <li class="c-droplist__item">
+              <a class="c-droplist__link" href="#">Option 3</a>
+            </li>
+            <li class="c-droplist__item">
+              <a class="c-droplist__link" href="#">Option 4</a>
+            </li>
+            <li class="c-droplist__item">
+              <a class="c-droplist__link" href="#">Option 5</a>
+            </li>
+        </ul>
+      </div>
+   
+
+
+
+
+*/
