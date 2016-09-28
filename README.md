@@ -1,3 +1,5 @@
+Deprecated and no longer in use
+
 # Mandostrap (name to be changed)
 
 *This is a work in progress*
